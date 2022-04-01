@@ -1,5 +1,38 @@
 {% extends "base.html.twig" %}
 {% block title %}Report{% endblock %}
 {% block content %}
-    <h1>Report</h1>
+{% apply markdown_to_html %}
+Rapporter
+========
+
+Kursmoment 1
+------------
+Jag har sedan tidigare pluggat lite på spelprogrammering och gjort en del spel. Där har jag i princip alltid använt mig utav objektorienterad programmering. Känner mig mer bekväm med den typen av programmering än funktionsbaserat.
+
+PHPs sätt att skriva objektorienterat påminner mig ganska mycket om c språken. Både i syntax och vad det finns för möjligheter med arv. Det är inte så mycket man behöver förstå för att skapa sina första klasser. Kan vara bra att veta vad en klass är och syntaxen för just PHP. En klass är en ritning och ett objekt är en "fysisk version" utifrån sin ritning. En klass innehåller medlemsvariabler och funktioner/metoder. Dessa kan man göra både privata och publika, kort sagt nås privata saker endast inuti klassen själv medans publika kan kallas på från andra ställen. Generellt sätt så vill du inte påverka medlemsvariabler direkt från andra klasser, detta sker oftast genom getter och setter funktioner för att t.ex kontrollera värden eller liknande. Vill du ta emot värden för att initiera dina objekt kan du använda dig av klassens konstruktor. Det är den som kallas på när du anropar new Klassnamn(). 
+
+Kodbasen vi använder påminner mycket om express och flask som vi jobbat med i tidigare kurser. En skillnad här är att vi inte har skrivit något för att starta upp server och koppla ihop routes eller liknande. Vi bara lägger dom i rätt mapp med rätt klass och annotations på route funktionerna och så magiskt vet servern om vad den ska serva.
+
+PHP the right way: Stort dokument. Intressant att det finns en simpel inbyggd webserver. Tycker det är intressant med templates och hade gärna lärt mig mer om det samt hur man skriver dom mer generaliserade och återanvändbara.
+
+TIL: Att det finns en inbyggd liten server i php.
+
+Kursmoment 2
+------------
+
+Kursmoment 3
+------------
+
+Kursmoment 4
+------------
+
+Kursmoment 5
+------------
+
+Kursmoment 6
+------------
+
+Kursmoment 7-10
+------------
+{% endapply %}
 {% endblock %}
