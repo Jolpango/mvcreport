@@ -1,0 +1,12 @@
+{% extends "base.html.twig" %}
+{% block title %}About{% endblock %}
+{% block content %}
+{% apply markdown_to_html %}
+mvc (v2)
+========
+<img src="assets/mvc.png" width=250px style="align-self: center">
+Kursen mvc handlar om objektorienterade programeringstekniker i språket PHP.
+Vi kommer lära oss att använda olika PHP ramverk och hur man drifsätter det.
+
+{% endapply %}
+{% endblock %}

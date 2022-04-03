@@ -1,0 +1,17 @@
+{% extends "base.html.twig" %}
+{% block title %}Index{% endblock %}
+{% block content %}
+{% apply markdown_to_html %}
+Hej
+========
+<img src="assets/me.jpg" width=250px style="align-self: center">
+Om mig
+En presentation av mig själv, om mig själv, tillsammans med en liten bild.
+
+namn är Joel Funk Persson, född i Växjö 1997. Flyttade till Karlskrona efter studenten för att läsa spelprogrammering. Gick där i 2 år innan jag insåg att det inte var det jag ville syssla med. Har de senaste 2-3 åren jobbat på Mios lager, och nu är jag äntligen tillbaka i skolan.
+
+Har varit intresserad av programmering sen jag gick i mellanstadiet och hittade GameMaker studio. Har efter det programmerat mycket på fritiden och på extrakurser i gymnasiet, och såklart 2 år på BTH spelprogrammering.
+
+Bortsett från det uppenbara som spel och datorer så är jag mycket intresserad av bilar och träslöjd, DIY och liknande. Tycker mycket om att arbteta med händerna och vara kreativ.
+{% endapply %}
+{% endblock %}
