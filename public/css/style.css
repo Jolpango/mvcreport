@@ -18,8 +18,6 @@ body {
     position: fixed;
     width: 100%;
     height: 100%;
-    /* width: max(100%, 100vh);
-    height: min(100%, 100vw); */
     background-repeat: no-repeat;
     object-fit: cover;
     z-index: -999;

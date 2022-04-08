@@ -8,15 +8,15 @@
         {% block stylesheets %}
             <link rel="stylesheet" href="https://unpkg.com/open-props"/>
             {# <link rel="stylesheet" href="https://unpkg.com/open-props/normalize.min.css"/> #}
-            <link rel="stylesheet" href="css/style.css"/>
+            <link rel="stylesheet" href="/css/style.css"/>
         {% endblock %}
 
         {% block javascripts %}
-            <link rel="stylesheet" href="javascript/base.js"/>
+            <link rel="stylesheet" href="/javascript/base.js"/>
         {% endblock %}
     </head>
     <body class="flex flex-col">
-        <img src="assets/typewriter.jpg" class="background-image">
+        <img src="/assets/typewriter.jpg" class="background-image">
         {% block header %}
             {% include "views/header.html.twig" %}
         {% endblock %}

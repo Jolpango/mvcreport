@@ -1,0 +1,11 @@
+{% extends "base.html.twig" %}
+{% block content %}
+    <h1>Kort navigations centralen</h1>
+    <ul>
+        <li><a href={{url("card-deck")}}>Kortlek</a></li>
+        <li><a href={{url("card-deck-shuffle")}}>Blanda kortleken</a></li>
+        <li><a href={{url("card-deck-draw")}}>Dra ett kort</a></li>
+        <li><a href={{url("card-deck-deal")}}>Dela ut kort</a></li>
+        <li><a href={{url("card-deck-joker")}}>Kortlek med jokrar</a></li>
+    </ul>
+{% endblock %}
