@@ -3,21 +3,7 @@
 namespace App\Cards;
 
 class Card {
-    protected int $value;
-    protected string $suit;
-
-    public function __construct($value, $suit) {
-        $this->value = $value;
-        $this->suit = $suit;
-    }
-
-    public function toString(): string {
-        return "{$this->value} of {$this->suit}";
-    }
-}
-
-class CardGraphic extends Card {
-    private static array $valueToString = [
+    public static array $valueToString = [
         1 => "Ace",
         2 => "Two",
         3 => "Three",
@@ -29,23 +15,33 @@ class CardGraphic extends Card {
         9 => "Nine",
         10 => "Ten",
         11 => "Jack",
-        13 => "Queen",
-        14 => "King",
-        25 => "Joker"
+        12 => "Queen",
+        13 => "King",
+        ];
+    public static array $suits = [
+        "Hearts",
+        "Diamonds",
+        "Spades",
+        "Cloves"
     ];
+    protected int $value;
+    protected string $suit;
 
     public function __construct($value, $suit) {
-        parent::__construct($value, $suit);
+        $this->value = $value;
+        $this->suit = $suit;
     }
 
     public function toString(): string {
-        $valueString = self::$valueToString[$this->value] ?? $this->value;
-        return "{$valueString} of {$this->suit}";
+        return "{$this->value} of {$this->suit}";
     }
 
-    public function toCSSClass(): string {
-        $valueClass = strtolower(self::$valueToString[$this->value]) ?? $this->value;
-        $suitClass = strtolower($this->suit);
-        return ".{$stringValue} .{$stringSuit}";
+    public function getValue(): int {
+        return $this->value;
+    }
+
+    public function getSuit(): string {
+        return $this->suit;
     }
 }
+

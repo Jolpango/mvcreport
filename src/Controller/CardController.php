@@ -2,12 +2,15 @@
 
 namespace App\Controller;
 
+use App\Cards\TwigDeck;
 use Symfony\Bundle\FrameworkBundle\Controller\AbstractController;
 use Symfony\Component\HttpFoundation\Response;
 use Symfony\Component\Routing\Annotation\Route;
+use Symfony\Component\HttpFoundation\Session\SessionInterface;
 
 class CardController extends AbstractController
 {
+    private $deck;
     /**
      * @Route("/card", name="card")
      */
@@ -18,23 +21,33 @@ class CardController extends AbstractController
         /**
      * @Route("/card/deck", name="card-deck")
      */
-    public function cardDeckRoute(): Response
+    public function cardDeckRoute(SessionInterface $session): Response
     {
-        return $this->render("card.html.twig");
+        $this->deck = new TwigDeck($session->get("cards") ?? []);
+        $session->set("cards", $this->deck->toArray());
+        return $this->render("displaycards.html.twig",
+            ["cards" => $this->deck->twigArray()]);
     }
     /**
      * @Route("/card/deck/shuffle", name="card-deck-shuffle")
      */
-    public function cardDeckShuffleRoute(): Response
+    public function cardDeckShuffleRoute(SessionInterface $session): Response
     {
-        return $this->render("card.html.twig");
+        $this->deck = new TwigDeck($session->get("cards") ?? []);
+        $this->deck->shuffleCards();
+        $session->set("cards", $this->deck->toArray());
+        return $this->redirectToRoute("card-deck");
     }
     /**
-     * @Route("/card/deck/draw/:number", name="card-deck-draw")
+     * @Route("/card/deck/draw/{nrOfCards}", name="card-deck-draw")
      */
-    public function cardDeckDrawRoute(): Response
+    public function cardDeckDrawRoute(int $nrOfCards, SessionInterface $session): Response
     {
-        return $this->render("card.html.twig");
+        $this->deck = new TwigDeck($session->get("cards") ?? []);
+        $drawnDeck = new TwigDeck([], $autoload=false);
+        $drawnDeck->addCards($this->deck->draw($nrOfCards));
+        $session->set("cards", $this->deck->toArray());
+        return $this->render("displaycards.html.twig", ["cards" => $drawnDeck->twigArray()]);
     }
     /**
      * @Route("/card/deck/deal/:players/:cards", name="card-deck-deal")

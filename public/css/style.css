@@ -63,6 +63,24 @@ footer {
     text-align: center;
 }
 
+.card-container {
+    flex-wrap: wrap;
+    gap: 1em;
+}
+
+.card {
+    height: 15em;
+    width: 10em;
+    border-radius: 5px;
+    border: 1px black solid;
+    background-color: aliceblue;
+}
+
+.card p {
+    width: 100%;
+    text-align: center;
+}
+
 .flex {
     display: flex;
 }
@@ -81,6 +99,10 @@ footer {
 
 .space-evenly {
     justify-content: space-evenly;
+}
+
+.align-center {
+    align-items: center;
 }
 
 .navbar {

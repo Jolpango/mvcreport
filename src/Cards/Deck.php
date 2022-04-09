@@ -1,44 +1,52 @@
 <?php
 
 namespace App\Cards;
+use App\Cards\Card;
 
 class Deck implements IDeck
-{
-    private array $cards = [];
-    private array $suits = [
-        "Hearts",
-        "Diamonds",
-        "Spades",
-        "Cloves"
-    ];
-    public function __construct(bool $loadBasicDeck=true) {
-        // Load basic playing deck
-        if ($loadBasicDeck) {
-            foreach ($this->suits as $suit) {
-                for ($i = 0; $i < 15; $i++) {
-                    array_push($this->cards, new GraphicCard($i, $suit));
+{    
+    protected array $cards = [];
+    public function __construct(array $toLoad=[], $autoload) {
+        if ($autoload) {
+            if (count($toLoad) > 0) {
+                foreach ($toLoad as $card) {
+                    array_push($this->cards, new Card($card["value"], $card["suit"]));
                 }
+            } else {
+                foreach ($this->suits as $suit) {
+                    foreach (Card::$valueToString as $k => $v) {
+                        array_push($this->cards, new Card($k, $suit));
+                    }
+                }
+                // $this->shuffleCards();
             }
-            $this->shuffle();
         }
     }
 
     public function addCard(Card $card) {
         array_push($this->cards, $card);
-        $this->shuffle();
+        $this->shuffleCards();
     }
 
     public function addCards(array $cards) {
-        array_push($this->cards, $cards);
-        $this->shuffle();
+        $this->cards = array_merge($this->cards, $cards);
+        $this->shuffleCards();
     }
 
-    public function shuffle(): bool {
+    public function shuffleCards(): bool {
         return shuffle($this->cards);
     }
 
     public function draw($count) {
         //Removes and return $count nr of cards from the end
-        return array_splice($this->cards, count($this->cards) - $counts, $count);
+        return array_splice($this->cards, count($this->cards) - $count, $count);
+    }
+
+    public function toArray(): array {
+        $returnArray = [];
+        foreach ($this->cards as $card) {
+            array_push($returnArray, ["value" => $card->getValue(), "suit" => $card->getSuit()]);
+        }
+        return $returnArray;
     }
 }
