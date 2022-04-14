@@ -19,7 +19,14 @@ TIL: Att det finns en inbyggd liten server i php.
 
 Kursmoment 2
 ------------
+Arv - Det är när en klass ärver från en annan. Med detta menas att allt som föräldern är, blir också barnet. Barnet har tillgång till allt som är protected och uppåt.
+Komposition - Komposition är när en klass har en relation med en annan klass. En klass har ägandeskap över den andra.
+interface - En Implementaitonslös template. Beskriver vilka funktioner som finns och det är "subklassernas" uppgift att implementera dom.
+trait - Trait är som lösa kodmoduler som klasser kan "ärva" eller ha. Det är lite som att klistra in funktionalitet/variabler. Något jag skulle ha använt i mina kontrollers för att få dom att dela SessionsFunktionerna som jag skrev i båda kontrollerna.
 
+Jag skapade två Deckklasser och två kortklasser. En för att representera det generiska beteendet och en för att lägga på extra funktionalitet som jag använder mig utav i twig/css. Jag skapade lite funktioner för att enkelt ladda in och spara till session. I alla routes så laddar jag in föregående, gör mina operationer i routen och sedan sparar jag ner det igen. Deck klassen skickar med en array som twig kan använda för att rendera. Det jag skulle gjort bättre är att flytta den lilla logiken jag har till en model klass som hanterar all logik.
+
+Jag gjorde inte flödeschemat för denna veckan, stog att man skulle göra det i kmom03 så svarar på den frågan då.
 
 TIL: Att man inte kan ärva från flera klasser samtidigt i php.
 
