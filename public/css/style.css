@@ -81,6 +81,16 @@ footer {
     text-align: center;
 }
 
+.flash {
+    background-color: yellow;
+    padding: 0.5em;
+    margin-block: 5px;
+}
+
+.flash-container {
+    margin-bottom: 2em;
+}
+
 .flex {
     display: flex;
 }
@@ -112,6 +122,10 @@ footer {
     gap: 5em;
 }
 
+.text-center {
+    text-align: center;
+}
+
 .navbar a {
     font-size: 1.5rem;
     color: white;
@@ -121,6 +135,12 @@ footer {
 .navbar a:visited {
     color: white;
 }
+
+.hearts,
+.diamonds {
+    color: red;
+}
+
 
 @media only screen and (max-width: 1000px) {
 

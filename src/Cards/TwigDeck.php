@@ -1,29 +1,37 @@
 <?php
 
 namespace App\Cards;
+
 use App\Cards\CardGraphic;
 
 class TwigDeck extends Deck
 {
-    public function __construct(array $toLoad=[], $autoload=true) {
+    public function __construct($newDeck = false)
+    {
         // Load basic playing deck
-        if ($autoload) {
-            if (count($toLoad) > 0) {
-                foreach ($toLoad as $card) {
-                    array_push($this->cards, new CardGraphic($card["value"], $card["suit"]));
-                }
-            } else {
-                foreach (Card::$suits as $suit) {
-                    foreach (Card::$valueToString as $k => $v) {
+        if ($newDeck) {
+            foreach (Card::$suits as $suit) {
+                foreach (Card::$valueToString as $k => $v) {
+                    if ($v !== "Joker") {
                         array_push($this->cards, new CardGraphic($k, $suit));
                     }
                 }
-                // $this->shuffleCards();
             }
+            // $this->shuffleCards();
         }
     }
 
-    public function twigArray(): array {
+    public static function fromArray(array $toLoad): Deck
+    {
+        $deck = new TwigDeck();
+        foreach ($toLoad as $card) {
+            array_push($deck->cards, new CardGraphic($card["value"], $card["suit"]));
+        }
+        return $deck;
+    }
+
+    public function twigArray(): array
+    {
         $returnArray = [];
         foreach ($this->cards as $card) {
             $cardDict = [

@@ -1,4 +1,7 @@
 {% extends "base.html.twig" %}
 {% block content %}
+<h1>Kortleken</h1>
+{% include "views/flash.html.twig" %}
+<h2>Det finns {{ cards|length }} kort kvar i leken</h2>
 {% include "views/carddiv.html.twig" %}
 {% endblock %}

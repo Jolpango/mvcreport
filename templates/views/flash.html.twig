@@ -1,0 +1,5 @@
+<div class="flash-container">
+    {% for message in app.flashes('messages') %}
+    <h3 class="flash">{{ message }}</h3>
+    {% endfor %}
+</div>

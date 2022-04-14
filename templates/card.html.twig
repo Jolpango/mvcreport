@@ -5,7 +5,9 @@
         <li><a href={{url("card-deck")}}>Kortlek</a></li>
         <li><a href={{url("card-deck-shuffle")}}>Blanda kortleken</a></li>
         <li><a href={{path("card-deck-draw", {nrOfCards: 1})}}>Dra ett kort</a></li>
-        <li><a href={{url("card-deck-deal")}}>Dela ut kort</a></li>
+        <li><a href={{path("card-deck-deal", {nrOfPlayers: 2, nrOfCards: 2})}}>Dela ut kort</a></li>
         <li><a href={{url("card-deck-joker")}}>Kortlek med jokrar</a></li>
+        <li><a href={{url("card-deck-reset")}}>Ny kortlek</a></li>
+        <li><a href={{url("card-api-deck")}}>JSON kortlek</a></li>
     </ul>
 {% endblock %}

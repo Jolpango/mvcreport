@@ -1,0 +1,26 @@
+<!-- Displays all cards passed here.
+player structure:
+players = [
+    string "name"
+    [
+        {
+            int "value",
+            string "suit",
+            string "toString",
+            string "cssClass",
+        }
+    ]
+]
+-->
+{% for player in players %}
+<div class="flex flex-col align-center space-evenly">
+<h2>Spelare: {{player.name}}</h2>
+<div class="flex flex align-center space-evenly card-container">
+    {% for card in player.hand %}
+    <div class="flex align-center justify-center card {{card.cssClass}} ">
+        <p>{{card.toString}}</p>
+    </div>
+    {% endfor %}
+</div>
+</div>
+{% endfor %}

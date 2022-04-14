@@ -2,7 +2,14 @@
 
 namespace App\Cards;
 
-class Card {
+class Card
+{
+    public static array $suits = [
+        "Hearts",
+        "Diamonds",
+        "Spades",
+        "Cloves"
+        ];
     public static array $valueToString = [
         1 => "Ace",
         2 => "Two",
@@ -17,31 +24,37 @@ class Card {
         11 => "Jack",
         12 => "Queen",
         13 => "King",
+        25 => "Joker"
         ];
-    public static array $suits = [
-        "Hearts",
-        "Diamonds",
-        "Spades",
-        "Cloves"
-    ];
     protected int $value;
     protected string $suit;
 
-    public function __construct($value, $suit) {
+    public static function setValueArray(array $newValues)
+    {
+        Card::$valueToString = $newValues;
+    }
+
+    public function __construct($value, $suit)
+    {
         $this->value = $value;
         $this->suit = $suit;
     }
 
-    public function toString(): string {
+    public function toString(): string
+    {
+        if ($this->suit === "Joker") {
+            return $this->suit;
+        }
         return "{$this->value} of {$this->suit}";
     }
 
-    public function getValue(): int {
+    public function getValue(): int
+    {
         return $this->value;
     }
 
-    public function getSuit(): string {
+    public function getSuit(): string
+    {
         return $this->suit;
     }
 }
-
