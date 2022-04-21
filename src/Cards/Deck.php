@@ -4,7 +4,7 @@ namespace App\Cards;
 
 use App\Cards\Card;
 
-class Deck implements IDeck, \Countable
+class Deck implements IDeck, \Countable, \Serializable
 {
     protected array $cards = [];
     public function __construct($newDeck = false)
@@ -65,5 +65,16 @@ class Deck implements IDeck, \Countable
             array_push($returnArray, ["value" => $card->getValue(), "suit" => $card->getSuit()]);
         }
         return $returnArray;
+    }
+
+    public function serialize() {
+        $data = [
+            "cards" => serialize($this->cards)
+        ];
+        return serialize($data);
+    }
+    public function unserialize($data) {
+        $data = unserialize($data);
+        $this->cards = unserialize($data["cards"]);
     }
 }

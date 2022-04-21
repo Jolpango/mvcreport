@@ -1,0 +1,12 @@
+{% extends "base.html.twig" %}
+{% block content %}
+<h1>Players turn</h1>
+{% include "views/flash.html.twig" %}
+<h2>Bank</h2>
+{% include "views/carddiv.html.twig" with {"cards": cpu.hand} %}
+<p>Banks hand is worth {{cpu.points}}</p>
+<h2>Your cards</h2>
+{% include "views/carddiv.html.twig" with {"cards": player.hand} %}
+<p>Your hand is worth {{player.points}}</p>
+
+{% endblock %}

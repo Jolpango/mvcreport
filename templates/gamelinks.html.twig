@@ -1,0 +1,9 @@
+{% extends "base.html.twig" %}
+{% block content %}
+    <h1>Kort navigations centralen</h1>
+    <ul>
+        <li><a href={{url("game-play")}}>Spela 21</a></li>
+        <li><a href={{url("game-reset")}}>Start om</a></li>
+    </ul>
+{{dump(game)}}
+{% endblock %}

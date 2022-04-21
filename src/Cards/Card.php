@@ -2,7 +2,7 @@
 
 namespace App\Cards;
 
-class Card
+class Card implements \Serializable
 {
     public static array $suits = [
         "Hearts",
@@ -56,5 +56,18 @@ class Card
     public function getSuit(): string
     {
         return $this->suit;
+    }
+
+    public function serialize() {
+        $data = [
+            "value" => $this->value,
+            "suit" => $this->suit
+        ];
+        return serialize($data);
+    }
+    public function unserialize($data) {
+        $data = unserialize($data);
+        $this->suit = $data["suit"];
+        $this->value = $data["value"];
     }
 }
