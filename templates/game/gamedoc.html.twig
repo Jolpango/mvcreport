@@ -1,0 +1,28 @@
+{% extends "base.html.twig" %}
+{% block content %}
+{% apply markdown_to_html %}
+Kortspel problemlösning
+==========================
+
+Vad?
+------------
+Kortspelet 21 kommer jag att implementera.
+
+Vad kommer att behövas?
+---------------------
+Jag kommer att behöva kort, en kortlek och 2 stycken spelare varav den ena är styrd av datorn.
+Den funktionaliteten kommer jag att samla i en Game Klass av något slag. Minimalt med kod i kontroller klassen.
+Det ska finnas en spelsida som står för att spelplanen ritas ut för användaren, samt att förse spelaren med alternativ.
+Spelet i grunden kommer bestå av 4 stycken states:
+Start handen:
+Start handen delas ut till spelare och banken.
+Spelarens tur:
+Spelaren får val av antingen dra ett nytt kort om dom kan, eller välja att nöja sig.
+Datorns tur:
+Datorn drar kort som spelaren gör, fast med förbestämda regler.
+Resultat:
+Spelet är nu slut och det är dags att visa hur det gick.
+
+
+{% endapply %}
+{% endblock %}
