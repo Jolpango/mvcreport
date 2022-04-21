@@ -2,7 +2,7 @@
 {% block content %}
 <h1>Card Game 21</h1>
 {% include "views/flash.html.twig" %}
-<form action={{url("game-play-process")}} method="post">
+<form class="flex flex-row space-evenly align-center" action={{url("game-play-process")}} method="post">
     <input type="hidden" id="type" name="type" value="DEAL_START">
     <button type="submit">Start game</button>
 </form>
