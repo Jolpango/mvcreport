@@ -42,7 +42,7 @@ class CardGameController extends AbstractController
     public function cardGamePlayRoute(SessionInterface $session): Response
     {
         $game = $this->getGame($session);
-        // return $this->render($game->renderPath(), ["game" => serialize($game)]);
+        $session->set("game", serialize($game));
         return $this->render($game->renderPath(), $game->renderData());
     }
 

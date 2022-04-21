@@ -25,7 +25,6 @@ class CardGame implements \Serializable
     private TwigDeck $deck;
     private TwigPlayer $player;
     private TwigPlayer $cpu;
-    private TwigDeck $discardPile;
 
     public function __construct($nrOfDecks=2)
     {
@@ -123,7 +122,7 @@ class CardGame implements \Serializable
         if (CardGame::$States[$this->state] !== "PLAYER") {
             return ["It is not the players turn, you cannot do this"];
         }
-        $messages = ["Processing user input"];
+        $messages = ["Your cards are now locked in"];
         $this->advanceState();
         return $messages;
     }
@@ -133,8 +132,8 @@ class CardGame implements \Serializable
             return ["It is not the end, you cannot do this"];
         }
         $messages = ["Starting new round"];
-        $this->discardPile->addCards($this->player->clear());
-        $this->discardPile->addCards($this->cpu->clear());
+        $this->deck->addCards($this->player->clear());
+        $this->deck->addCards($this->cpu->clear());
         $this->advanceState();
         return $messages;
     }
@@ -143,11 +142,16 @@ class CardGame implements \Serializable
         if (CardGame::$States[$this->state] !== "PLAYER") {
             return ["It is not the players turn, you cannot do this"];
         }
-        $messages = ["Processing user input"];
+        $messages = ["Processing user input..."];
         array_push($messages, "Drawing card...");
         $card = $this->deck->draw(1);
         array_push($messages, "You drew " . $card[0]->toString());
         $this->player->addCards($card);
+        $bestPoint = PointSystem::BestPoint(PointSystem::Points21($this->player->hand()));
+        if (!$bestPoint) {
+            array_push($messages, "You got fat");
+            $this->state = 3;
+        }
         return $messages;
     }
 
@@ -186,7 +190,21 @@ class CardGame implements \Serializable
     }
 
     private function buildResultData(): array {
-        return $this->buildPlayerData();
+        $resultMessage = "Bank wins";
+        $cpuBestPoint = PointSystem::BestPoint(PointSystem::Points21($this->cpu->hand()));
+        $playerBestPoint = PointSystem::BestPoint(PointSystem::Points21($this->player->hand()));
+        if ($playerBestPoint > $cpuBestPoint) {
+            $resultMessage = "Player wins";
+        }
+        $gameData = [
+            "player" => array_merge($this->player->twigArray(), [
+                    "points" => $playerBestPoint,
+            ]),
+            "cpu" => array_merge($this->cpu->twigArray(), [
+                    "points" => $cpuBestPoint,
+            ]),
+            "resultMessage" => $resultMessage
+        ];
         return $gameData;
     }
 
@@ -195,7 +213,6 @@ class CardGame implements \Serializable
             "player" => serialize($this->player),
             "cpu" => serialize($this->cpu),
             "deck" => serialize($this->deck),
-            "discardPile" => serialize($this->discardPile) ,
             "state" => serialize($this->state)
         ];
         return serialize($data);
@@ -205,7 +222,6 @@ class CardGame implements \Serializable
         $this->player = unserialize($data["player"]);
         $this->cpu = unserialize($data["cpu"]);
         $this->deck = unserialize($data["deck"]);
-        $this->discardPile = unserialize($data["discardPile"]);
         $this->state = unserialize($data["state"]);
     }
 }
