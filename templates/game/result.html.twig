@@ -1,0 +1,24 @@
+{% extends "base.html.twig" %}
+{% block content %}
+<h1>Final result</h1>
+{% include "views/flash.html.twig" %}
+<h2>Bank</h2>
+{% include "views/carddiv.html.twig" with {"cards": cpu.hand} %}
+<p class="text-center">
+    Possible points:
+    {% for point in cpu.points %}
+    {{point}} 
+    {% endfor %}
+</p>
+<h2>Your cards</h2>
+{% include "views/carddiv.html.twig" with {"cards": player.hand} %}
+<p class="text-center">
+    Possible points:
+    {% for point in player.points %}
+    {{point}} 
+    {% endfor %}
+</p>
+<form class="flex flex-row space-evenly align-center"action={{url("game-play-process")}} method="post">
+    <button type="submit" name="type" value="NEW_ROUND">New round</button>
+</form>
+{% endblock %}

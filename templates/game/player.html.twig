@@ -4,9 +4,29 @@
 {% include "views/flash.html.twig" %}
 <h2>Bank</h2>
 {% include "views/carddiv.html.twig" with {"cards": cpu.hand} %}
-<p>Banks hand is worth {{cpu.points}}</p>
+<p class="text-center">
+    Possible points:
+    {% for point in cpu.points %}
+    {{point}} 
+    {% endfor %}
+</p>
 <h2>Your cards</h2>
 {% include "views/carddiv.html.twig" with {"cards": player.hand} %}
-<p>Your hand is worth {{player.points}}</p>
+<form action={{url("game-play-process")}} method="post">
+    <div class="flex flex-row align-center space-evenly">
+        <div>
+            <p class="text-center">
+                Possible points:
+                {% for point in player.points %}
+                {{point}} 
+                {% endfor %}
+            </p>
+        </div>
+        <div>
+            <button type="submit" name="type" value="PLAYER_DRAW">Draw a card</button>
+            <button type="submit" name="type" value="PLAYER_LOCK">Lock in</button>
+        </div>
+    </div>
 
+</form>
 {% endblock %}

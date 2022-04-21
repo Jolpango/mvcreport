@@ -4,8 +4,8 @@ namespace App\Cards;
 
 use App\Cards\TwigDeck;
 use App\Cards\TwigPlayer;
+use App\Cards\PointSystem;
 use Symfony\Component\HttpFoundation\Request;
-
 
 class CardGame implements \Serializable
 {
@@ -53,13 +53,19 @@ class CardGame implements \Serializable
                 $messages = $this->dealStarterCards();
                 break;
             case "PROCESS_CPU":
-                $messages =  $this->processCPU();
+                $messages = $this->processCPU();
                 break;
-            case "PLAYER":
-                $messages =  $this->processPlayerRequest($request);
+            case "PLAYER_LOCK":
+                $messages = $this->processPlayerLock();
+                break;
+            case "PLAYER_DRAW":
+                $messages = $this->processPlayerDraw();
+                break;
+            case "NEW_ROUND":
+                $messages = $this->newRound();
                 break;
             default:
-                $messages =  ["An unexpected error occurred"];
+                $messages = ["An unexpected error occurred"];
                 break;
         }
         return $messages;
@@ -70,10 +76,10 @@ class CardGame implements \Serializable
             return ["It is not the start of the game, you cannot do this"];
         }
         $messages = ["Dealing starter cards"];
-        array_push($messages, "Dealing 2 cards to you");
-        array_push($messages, "Dealing 2 cards to the bank");
-        $this->player->addCards($this->deck->draw(2));
-        $this->cpu->addCards($this->deck->draw(2));
+        array_push($messages, "Dealing 1 cards to you");
+        array_push($messages, "Dealing 1 cards to the bank");
+        $this->player->addCards($this->deck->draw(1));
+        $this->cpu->addCards($this->deck->draw(1));
 
         $this->advanceState();
         return $messages;
@@ -83,17 +89,65 @@ class CardGame implements \Serializable
         if (CardGame::$States[$this->state] !== "CPU") {
             return ["It is not the banks turn, you cannot do this"];
         }
-        $messages = ["Computer is thinking..."];
-
+        $messages = ["Computer/Developer is thinking..."];
+        $pointsArray = PointSystem::Points21($this->cpu->hand());
+        $playerPoints = PointSystem::Points21($this->player->hand());
+        while($this->shouldCPUDraw()) {
+            $card = $this->deck->draw(1);
+            array_push($messages, "Computer drew " . $card[0]->toString());
+            $this->cpu->addCards($card);
+            $pointsArray = PointSystem::Points21($this->cpu->hand());
+        }
+        array_push($messages, "Computer has finished thinking");
+        $this->advanceState();
         return $messages;
     }
 
-    public function processPlayerRequest(Request $request): array {
+    private function shouldCPUDraw(): bool {
+        $cpuPoints = PointSystem::Points21($this->cpu->hand());
+        $playerPoints = PointSystem::Points21($this->player->hand());
+        $playerBestPoint = PointSystem::BestPoint($playerPoints);
+        $cpuBestPoint = PointSystem::BestPoint($cpuPoints);
+        $cutOffPoint = 17;
+        // cpu is fat
+        if (!$cpuBestPoint || !$playerBestPoint) {
+            return false;
+        }
+        if ($cpuBestPoint >= $playerBestPoint) {
+            return false;
+        }
+        return true;
+    }
+
+    public function processPlayerLock(): array {
         if (CardGame::$States[$this->state] !== "PLAYER") {
             return ["It is not the players turn, you cannot do this"];
         }
         $messages = ["Processing user input"];
+        $this->advanceState();
+        return $messages;
+    }
 
+    public function newRound(): array {
+        if (CardGame::$States[$this->state] !== "GAMEOVER") {
+            return ["It is not the end, you cannot do this"];
+        }
+        $messages = ["Starting new round"];
+        $this->discardPile->addCards($this->player->clear());
+        $this->discardPile->addCards($this->cpu->clear());
+        $this->advanceState();
+        return $messages;
+    }
+
+    public function processPlayerDraw(): array {
+        if (CardGame::$States[$this->state] !== "PLAYER") {
+            return ["It is not the players turn, you cannot do this"];
+        }
+        $messages = ["Processing user input"];
+        array_push($messages, "Drawing card...");
+        $card = $this->deck->draw(1);
+        array_push($messages, "You drew " . $card[0]->toString());
+        $this->player->addCards($card);
         return $messages;
     }
 
@@ -121,19 +175,18 @@ class CardGame implements \Serializable
 
     private function buildPlayerData(): array {
         $gameData = [
-            "player" => $this->player->twigArray(),
-            "cpu" => $this->cpu->twigArray()
+            "player" => array_merge($this->player->twigArray(), ["points" => PointSystem::Points21($this->player->hand())]),
+            "cpu" => array_merge($this->cpu->twigArray(), ["points" => PointSystem::Points21($this->cpu->hand())])
         ];
         return $gameData;
     }
 
     private function buildCPUData(): array {
-        return buildPlayerData();
+        return $this->buildPlayerData();
     }
 
     private function buildResultData(): array {
-        $gameData = [];
-
+        return $this->buildPlayerData();
         return $gameData;
     }
 
