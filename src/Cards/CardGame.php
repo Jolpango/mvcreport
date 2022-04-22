@@ -74,9 +74,11 @@ class CardGame implements \Serializable
         if (CardGame::$States[$this->state] !== "NEW") {
             return ["It is not the start of the game, you cannot do this"];
         }
+        $this->deck->shuffleCards();
         $messages = ["Dealing starter cards"];
-        array_push($messages, "Dealing 1 cards to you");
-        array_push($messages, "Dealing 1 cards to the bank");
+        array_push($messages, "Shuffling...");
+        array_push($messages, "Dealing 1 card to you");
+        array_push($messages, "Dealing 1 card to the bank");
         $this->player->addCards($this->deck->draw(1));
         $this->cpu->addCards($this->deck->draw(1));
 
@@ -151,6 +153,9 @@ class CardGame implements \Serializable
         if (!$bestPoint) {
             array_push($messages, "You got fat");
             $this->state = 3;
+        } else if ($bestPoint === 21) {
+            array_push($messages, "BLACKJACK!");
+            $this->advanceState();
         }
         return $messages;
     }

@@ -33,17 +33,8 @@ class PointSystem
         if (count($aces) === 0) {
             array_push($possiblePoints, $sumWithoutAces);
         } else {
-            $combinations = possibleCombinations(count($aces));
-            foreach($combinations as $combination) {
-                $sum = 0;
-                foreach($combination as $big) {
-                    if($big) {
-                        $sum += 14;
-                    } else {
-                        $sum += 1;
-                    }
-                }
-                array_push($possiblePoints, $sum + $sumWithoutAces);
+            for ($i = 0; $i <= count($aces); $i++) {
+                array_push($possiblePoints, $sumWithoutAces + $i * 1 + (count($aces) - $i) * 14);
             }
         }
         $possiblePoints = array_unique($possiblePoints);
