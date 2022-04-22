@@ -23,6 +23,13 @@ Datorn drar kort som spelaren gör, fast med förbestämda regler.
 Resultat:
 Spelet är nu slut och det är dags att visa hur det gick.
 
+Vilka problem behöver lösas?
+-----------------------------
+Logikproblem 1 :
+Hur ska man räkna ut alla möjliga kombinationer av poäng när man har ett eller flera ess?
+Säg att man har 5 st ess och några andra kort. Det man först får göra är att separera essen till sin egna array. Vi räknar ihop poängen av korten som inte är ess och sparar dom.
+När vi sen ska räkna ut kombinatonerna av ess är det egentligen rätt simpelt. Med 5st ess så kan 0-5 vara 1 och 0-5 vara 14, om 3st är 14 så måste 2st vara 1. Det vill säga vi kan loopa igenom antalet ess och för varje iteration gå från att ha 5 ess som ettor till att ha 5 ess som 14. ( Ess med 14 = (i), Ess med ettor = (essCount - i) )
+
 
 {% endapply %}
 {% endblock %}
