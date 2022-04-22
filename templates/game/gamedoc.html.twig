@@ -30,6 +30,12 @@ Hur ska man räkna ut alla möjliga kombinationer av poäng när man har ett ell
 Säg att man har 5 st ess och några andra kort. Det man först får göra är att separera essen till sin egna array. Vi räknar ihop poängen av korten som inte är ess och sparar dom.
 När vi sen ska räkna ut kombinatonerna av ess är det egentligen rätt simpelt. Med 5st ess så kan 0-5 vara 1 och 0-5 vara 14, om 3st är 14 så måste 2st vara 1. Det vill säga vi kan loopa igenom antalet ess och för varje iteration gå från att ha 5 ess som ettor till att ha 5 ess som 14. ( Ess med 14 = (i), Ess med ettor = (essCount - i) )
 
+"Logikproblem" 2 :
+Hur ska man få fram rätt information att presentera till användaren?
+Det jag tänker göra är att skapa två stycken routes. Den ena för att visa upp spelets nuvarande state och det andra ska vara en processing sida.
+I display routen ska man ladda in Game objektet från sessionen, anropa funktioner för att få path till rätt view och rätt genererad data.
+Processing routen ska ta emot en request(POST), anropa en funktion i GameKlassen som processar requesten och avancerar spelet till nästa state eller liknande. Sen sparas det ner till session och man redirictas till display routen och allt börjar om igen.
+
 
 {% endapply %}
 {% endblock %}
