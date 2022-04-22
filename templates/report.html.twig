@@ -32,6 +32,15 @@ TIL: Att man inte kan ärva från flera klasser samtidigt i php.
 
 Kursmoment 3
 ------------
+Fråga från kmom02: Berätta hur det kändes att modellera ett kortspel med flödesdiagram och psuedokod. Var det något som du tror stödjer dig i din problemlösning och tankearbete för att strukturera koden kring en applikation?
+Det gick bra. Är inte särskilt förtjust i att skriva pseudokod när det handlar om enkla eller abstrakta problem. Tycker det gör mer nytta om man pratar om lite mer komplicerade algoritmer eller liknande. Har programmerat en del spel innan så jag är ganska van vid att kunna strukturera och spel/separera koden på ett relativt logiskt sätt. Använde mig mycket utav kontrollers och liknande för att hantera olika skärmar i spel, och det passade utmärkt att applicera den kunskapen här.
+
+Jag är ganska nöjd med min implementation. Jag tycker att jag fick till ett väldigt bra interface mot gameklassen. Detta gjorde att kontroller klassen blev väldigt simpel men också ganska dynamiskt med tanke på hur jag enkelt kan ändra hur gameklassen fungerar och sedan ändra responsen. Skulle kanske kunna bryta ner Gameklassen i ytterliggare lite småproblem ifall man skulle vilja göra det lite mer avancerat.
+När en användare klickar på någon knapp som jag förser dom med så kommer man skickas till post sidan. Där återskapar jag mitt gameobjekt från sessionen. Det blev enkelt att spara ner hela klassobjekt i sessionen efter jag kollat upp hur serializeinterfacet funkar. När jag har fått tag på mitt gameobjekt igen så anropar jag funktionen game.processRequest(), vilket tar emot ett requestobjekt. Väl inne i funktionen så kollar jag så att min variabel "type" finns med och sedan switchcase på den. type variabeln ska innehålla ett av fem olika strängar. Beroende på vilken det är så kommer funktionen att avancera spelet på olika sätt. Det finns också safeguards för att se till så att man inte kan göra en request i fel state av spelet. processRequest funktionen returnerar en array av strängar. Det blir lite som en chatt/logg över vad som händer under spelets gång, väl tillbaka i kontrollerklassen så lägger jag till alla meddelandeden som flashes. Detta gör det enkelt för mig att visa upp för spelaren vad som faktiskt sker.
+
+Tycker symfony verkar som ett bra ramverk. Kanske inte det bästa för att göra spel i via post/gets. Tycker om den här typen av routing och sätta upp servrar. Tror nog dock att jag föredrar express över detta, mycket med tanke på att jag tycker mer om javascript samt den templatemotorn vi använde där. Twig tycker jag är bra, men lite "stel".
+
+TIL: Att Serializable är ett trevligt interface att implementera, gjorde det mycket enkelt för mig att spara ner mitt objekt.
 
 Kursmoment 4
 ------------

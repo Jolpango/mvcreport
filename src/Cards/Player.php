@@ -19,7 +19,8 @@ class Player implements \Countable, \Serializable
         return count($this->hand);
     }
 
-    public function hand(): array {
+    public function hand(): array
+    {
         return $this->hand;
     }
 
@@ -36,24 +37,28 @@ class Player implements \Countable, \Serializable
         return $returnDict;
     }
 
-    public function clear(): array {
+    public function clear(): array
+    {
         $hand = $this->hand;
         $this->hand = [];
         return $hand;
     }
 
-    public function addCards(array $cards) {
+    public function addCards(array $cards)
+    {
         $this->hand = array_merge($this->hand, $cards);
     }
 
-    public function serialize() {
+    public function serialize()
+    {
         $data = [
             "hand" => serialize($this->hand),
             "name" => serialize($this->name)
         ];
         return serialize($data);
     }
-    public function unserialize($data) {
+    public function unserialize($data)
+    {
         $data = unserialize($data);
         $this->hand = unserialize($data["hand"]);
         $this->name = unserialize($data["name"]);

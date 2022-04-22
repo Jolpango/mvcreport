@@ -12,7 +12,7 @@ use Symfony\Component\HttpFoundation\Session\SessionInterface;
 
 class CardController extends AbstractController
 {
-    private $deck;
+    private TwigDeck $deck;
     private function loadFromSession(SessionInterface $session)
     {
         // If there are no cards in session. load a new deck

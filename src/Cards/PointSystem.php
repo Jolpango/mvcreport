@@ -4,12 +4,13 @@ namespace App\Cards;
 
 use App\Cards\Player;
 
-function possibleCombinations($length) {
+function possibleCombinations($length)
+{
     $totalCombos = pow(2, $length);
-    
+
     $sequences = array();
 
-    for($x = 0; $x < $totalCombos; $x++) {
+    for ($x = 0; $x < $totalCombos; $x++) {
         $sequences[$x] = str_split(str_pad(decbin($x), $length, 0, STR_PAD_LEFT));
     }
     return $sequences;
@@ -17,7 +18,8 @@ function possibleCombinations($length) {
 
 class PointSystem
 {
-    public static function Points21(array $cards): array {
+    public static function points21(array $cards): array
+    {
         $possiblePoints = [];
         $arrayOfValues = [];
         $handWithoutAces = array_filter($cards, function ($card) {
@@ -27,7 +29,7 @@ class PointSystem
             return $card->getValue() === 1;
         });
         $sumWithoutAces = 0;
-        foreach($handWithoutAces as $card) {
+        foreach ($handWithoutAces as $card) {
             $sumWithoutAces += $card->getValue();
         }
         if (count($aces) === 0) {
@@ -41,9 +43,10 @@ class PointSystem
         return $possiblePoints;
     }
 
-    public static function BestPoint($points): int {
+    public static function bestPoint($points): int
+    {
         $bestPoint = 0;
-        foreach($points as $point) {
+        foreach ($points as $point) {
             if ($point <= 21 && $point > $bestPoint) {
                 $bestPoint = $point;
             }

@@ -10,7 +10,7 @@ class Deck implements IDeck, \Countable, \Serializable
     public function __construct($newDeck = false)
     {
         if ($newDeck) {
-            foreach ($this->suits as $suit) {
+            foreach (Card::$suits as $suit) {
                 foreach (Card::$valueToString as $k => $v) {
                     if ($v !== "Joker") {
                         array_push($this->cards, new Card($k, $suit));
@@ -67,13 +67,15 @@ class Deck implements IDeck, \Countable, \Serializable
         return $returnArray;
     }
 
-    public function serialize() {
+    public function serialize()
+    {
         $data = [
             "cards" => serialize($this->cards)
         ];
         return serialize($data);
     }
-    public function unserialize($data) {
+    public function unserialize($data)
+    {
         $data = unserialize($data);
         $this->cards = unserialize($data["cards"]);
     }

@@ -58,14 +58,16 @@ class Card implements \Serializable
         return $this->suit;
     }
 
-    public function serialize() {
+    public function serialize()
+    {
         $data = [
             "value" => $this->value,
             "suit" => $this->suit
         ];
         return serialize($data);
     }
-    public function unserialize($data) {
+    public function unserialize($data)
+    {
         $data = unserialize($data);
         $this->suit = $data["suit"];
         $this->value = $data["value"];

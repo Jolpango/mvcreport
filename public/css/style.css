@@ -25,6 +25,11 @@ body {
     background-color: black;
 }
 
+code,
+pre {
+    background-color: #fff;
+}
+
 .site-header {
     background-color: rgba(1, 1, 1, 0.7);
     padding-inline: 5rem;

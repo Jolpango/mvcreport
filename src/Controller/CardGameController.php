@@ -12,8 +12,9 @@ use Symfony\Component\HttpFoundation\Request;
 
 class CardGameController extends AbstractController
 {
-    private function getGame(SessionInterface $session): CardGame {
-        $game;
+    private function getGame(SessionInterface $session): CardGame
+    {
+        $game = null;
         if ($session->get("game")) {
             $game = unserialize($session->get("game"));
         } else {
@@ -27,6 +28,13 @@ class CardGameController extends AbstractController
     public function cardGameIndexRoute(SessionInterface $session): Response
     {
         return $this->render("gamelinks.html.twig", ["game" => unserialize($session->get("game"))]);
+    }
+    /**
+     * @Route("/game/card", name="game-doc")
+     */
+    public function cardGameDocRoute(): Response
+    {
+        return $this->render("game/gamedoc.html.twig");
     }
     /**
      * @Route("/game/reset", name="game-reset")

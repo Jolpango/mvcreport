@@ -28,14 +28,55 @@ Vilka problem behöver lösas?
 Logikproblem 1 :
 Hur ska man räkna ut alla möjliga kombinationer av poäng när man har ett eller flera ess?
 Säg att man har 5 st ess och några andra kort. Det man först får göra är att separera essen till sin egna array. Vi räknar ihop poängen av korten som inte är ess och sparar dom.
-När vi sen ska räkna ut kombinatonerna av ess är det egentligen rätt simpelt. Med 5st ess så kan 0-5 vara 1 och 0-5 vara 14, om 3st är 14 så måste 2st vara 1. Det vill säga vi kan loopa igenom antalet ess och för varje iteration gå från att ha 5 ess som ettor till att ha 5 ess som 14. ( Ess med 14 = (i), Ess med ettor = (essCount - i) )
+När vi sen ska räkna ut kombinatonerna av ess är det egentligen rätt simpelt. Med 5st ess så kan 0-5 vara 1 och 0-5 vara 14, om 3st är 14 så måste 2st vara 1. Det vill säga vi kan loopa igenom antalet ess och för varje iteration gå från att ha 5 ess som ettor till att ha 5 ess som 14.
+<pre>
+<code>
+    for int i = 0; i <= numberOfAces; i++
+        aces14 = i * 14
+        aces1 = (numberOfAces - i) * 1 
+        aceCombination.push(aces1 + aces14)
+</code>
+</pre>
+
 
 "Logikproblem" 2 :
 Hur ska man få fram rätt information att presentera till användaren?
 Det jag tänker göra är att skapa två stycken routes. Den ena för att visa upp spelets nuvarande state och det andra ska vara en processing sida.
 I display routen ska man ladda in Game objektet från sessionen, anropa funktioner för att få path till rätt view och rätt genererad data.
-Processing routen ska ta emot en request(POST), anropa en funktion i GameKlassen som processar requesten och avancerar spelet till nästa state eller liknande. Sen sparas det ner till session och man redirictas till display routen och allt börjar om igen.
+Processing routen ska ta emot en request(POST), anropa en funktion i GameKlassen som processar requesten och avancerar spelet till nästa state eller liknande. Sen sparas det ner till session och man redirictas till display routen och allt börjar om igen. Följer man dessa enkla "regler" så kommer utvecklingen av själva spelet gå fort.
+<pre>
+<code>
+    // Display route
+    Game game
+    if gameFromSession() is not null
+        game = gameFromSession()
+    else
+        game = new Game
+    render(game.pathToView, game.viewData)
 
+    // Process route
+    game = gameFromSession()
+    messages = game.processRequest(requestFromPost)
+    for message in messages
+        addflash(message)
+    saveGameToSession()
+    redirect("displayroute")
+</code>
+</pre>
+
+
+Vilka klasser kommer att behövas för att lösa detta?
+-----------------------------------------------------
+En CardGameController för att hantera routes och "pratet" mellan view och model.
+
+En CardGame klass för att kapsla in spelets alla objekt och hantera logiken av spelets flöde.
+
+En Card, Deck och Player klass. Dessa kommer från tidigare kursmoment och kommer nog inte att behöva ändras, möjligtvis lägga till någon funktion.
+
+En PointSystem klass för att minska ner ansvarsområdet för CardGame klassen. Jag kommer att lägga till de få funktionerna som statiska medlemmar av klassen. Iochmed att klassen ej kommer att behöva ha några medlemsvariabler utan klassen är bara där för att hjälpa till med lite uträkning av poäng.
+
+<img src="{{asset('assets/uml.png')}}">
+<img src="{{asset('assets/sequence.png')}}">
 
 {% endapply %}
 {% endblock %}
