@@ -2,6 +2,9 @@
 
 namespace App\Cards;
 
+/**
+ * Class Card, represents basic playing card
+ */
 class Card implements \Serializable
 {
     public static array $suits = [
@@ -29,17 +32,29 @@ class Card implements \Serializable
     protected int $value;
     protected string $suit;
 
-    public static function setValueArray(array $newValues)
+    /**
+     * @param array $newValues
+     *
+     * @return void
+     */
+    public static function setValueArray(array $newValues): void
     {
         Card::$valueToString = $newValues;
     }
 
+    /**
+     * @param mixed $value
+     * @param mixed $suit
+     */
     public function __construct($value, $suit)
     {
         $this->value = $value;
         $this->suit = $suit;
     }
 
+    /**
+     * @return string
+     */
     public function toString(): string
     {
         if ($this->suit === "Joker") {
@@ -48,17 +63,26 @@ class Card implements \Serializable
         return "{$this->value} of {$this->suit}";
     }
 
+    /**
+     * @return int
+     */
     public function getValue(): int
     {
         return $this->value;
     }
 
+    /**
+     * @return string
+     */
     public function getSuit(): string
     {
         return $this->suit;
     }
 
-    public function serialize()
+    /**
+     * @return string
+     */
+    public function serialize(): string
     {
         $data = [
             "value" => $this->value,
@@ -66,7 +90,12 @@ class Card implements \Serializable
         ];
         return serialize($data);
     }
-    public function unserialize($data)
+    /**
+     * @param string $data
+     *
+     * @return void
+     */
+    public function unserialize(string $data): void
     {
         $data = unserialize($data);
         $this->suit = $data["suit"];

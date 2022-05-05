@@ -3,7 +3,7 @@ Search.appendIndex(
                 {
             "fqsen": "\\App\\Cards\\Card",
             "name": "Card",
-            "summary": "",
+            "summary": "Class\u0020Card,\u0020represents\u0020basic\u0020playing\u0020card",
             "url": "classes/App-Cards-Card.html"
         },                {
             "fqsen": "\\App\\Cards\\Card\u003A\u003AsetValueArray\u0028\u0029",
@@ -63,7 +63,7 @@ Search.appendIndex(
         },                {
             "fqsen": "\\App\\Cards\\CardGame",
             "name": "CardGame",
-            "summary": "",
+            "summary": "Card\u0020Game\u002021ish.\u0020handles\u0020requests\u0020and\u0020returns\u0020proper\u0020data\u0020for\u0020rendering",
             "url": "classes/App-Cards-CardGame.html"
         },                {
             "fqsen": "\\App\\Cards\\CardGame\u003A\u003A__construct\u0028\u0029",
@@ -73,47 +73,47 @@ Search.appendIndex(
         },                {
             "fqsen": "\\App\\Cards\\CardGame\u003A\u003AadvanceState\u0028\u0029",
             "name": "advanceState",
-            "summary": "",
+            "summary": "Advances\u0020the\u0020state\u0020of\u0020the\u0020gane\u0020by\u00201",
             "url": "classes/App-Cards-CardGame.html#method_advanceState"
         },                {
             "fqsen": "\\App\\Cards\\CardGame\u003A\u003AprocessRequest\u0028\u0029",
             "name": "processRequest",
-            "summary": "",
+            "summary": "Processes\u0020the\u0020request\u0020from\u0020the\u0020user",
             "url": "classes/App-Cards-CardGame.html#method_processRequest"
         },                {
             "fqsen": "\\App\\Cards\\CardGame\u003A\u003AdealStarterCards\u0028\u0029",
             "name": "dealStarterCards",
-            "summary": "",
+            "summary": "Deals\u0020starter\u0020cards\nReturns\u0020an\u0020array\u0020of\u0020strings\u0020documenting\u0020what\u0020happened",
             "url": "classes/App-Cards-CardGame.html#method_dealStarterCards"
         },                {
             "fqsen": "\\App\\Cards\\CardGame\u003A\u003AprocessCPU\u0028\u0029",
             "name": "processCPU",
-            "summary": "",
+            "summary": "Processes\u0020the\u0020cpus\u0020turn.",
             "url": "classes/App-Cards-CardGame.html#method_processCPU"
         },                {
             "fqsen": "\\App\\Cards\\CardGame\u003A\u003AshouldCPUDraw\u0028\u0029",
             "name": "shouldCPUDraw",
-            "summary": "",
+            "summary": "Calculates\u0020whether\u0020or\u0020not\u0020the\u0020cpu\u0020should\u0020draw\u0020a\u0020card\u0020or\u0020settle",
             "url": "classes/App-Cards-CardGame.html#method_shouldCPUDraw"
         },                {
             "fqsen": "\\App\\Cards\\CardGame\u003A\u003AprocessPlayerLock\u0028\u0029",
             "name": "processPlayerLock",
-            "summary": "",
+            "summary": "Locks\u0020in\u0020the\u0020players\u0020cards\u0020and\u0020advances\u0020state\nReturns\u0020an\u0020array\u0020of\u0020strings\u0020documenting\u0020what\u0020happened",
             "url": "classes/App-Cards-CardGame.html#method_processPlayerLock"
         },                {
             "fqsen": "\\App\\Cards\\CardGame\u003A\u003AnewRound\u0028\u0029",
             "name": "newRound",
-            "summary": "",
+            "summary": "Clears\u0020the\u0020board,\u0020adds\u0020back\u0020the\u0020cards.\u0020Advances\u0020the\u0020state\nReturns\u0020an\u0020array\u0020of\u0020strings\u0020documenting\u0020what\u0020happened",
             "url": "classes/App-Cards-CardGame.html#method_newRound"
         },                {
             "fqsen": "\\App\\Cards\\CardGame\u003A\u003AprocessPlayerDraw\u0028\u0029",
             "name": "processPlayerDraw",
-            "summary": "",
+            "summary": "Draws\u0020a\u0020card\u0020for\u0020the\u0020player.\u0020Advances\u0020if\u0020player\u0020becomes\u0020fat.",
             "url": "classes/App-Cards-CardGame.html#method_processPlayerDraw"
         },                {
             "fqsen": "\\App\\Cards\\CardGame\u003A\u003ArenderPath\u0028\u0029",
             "name": "renderPath",
-            "summary": "",
+            "summary": "Returns\u0020a\u0020path\u0020to\u0020twig\u0020template\u0020based\u0020on\u0020the\u0020state",
             "url": "classes/App-Cards-CardGame.html#method_renderPath"
         },                {
             "fqsen": "\\App\\Cards\\CardGame\u003A\u003ArenderData\u0028\u0029",
@@ -123,32 +123,32 @@ Search.appendIndex(
         },                {
             "fqsen": "\\App\\Cards\\CardGame\u003A\u003AbuildNewGameData\u0028\u0029",
             "name": "buildNewGameData",
-            "summary": "",
+            "summary": "Not\u0020yet\u0020implemented.\u0020Might\u0020not\u0020want\u0020to",
             "url": "classes/App-Cards-CardGame.html#method_buildNewGameData"
         },                {
             "fqsen": "\\App\\Cards\\CardGame\u003A\u003AbuildPlayerData\u0028\u0029",
             "name": "buildPlayerData",
-            "summary": "",
+            "summary": "Returns\u0020array\u0020of\u0020information\u0020used\u0020in\u0020rendering",
             "url": "classes/App-Cards-CardGame.html#method_buildPlayerData"
         },                {
             "fqsen": "\\App\\Cards\\CardGame\u003A\u003AbuildCPUData\u0028\u0029",
             "name": "buildCPUData",
-            "summary": "",
+            "summary": "Returns\u0020array\u0020of\u0020information\u0020used\u0020in\u0020rendering",
             "url": "classes/App-Cards-CardGame.html#method_buildCPUData"
         },                {
             "fqsen": "\\App\\Cards\\CardGame\u003A\u003AbuildResultData\u0028\u0029",
             "name": "buildResultData",
-            "summary": "",
+            "summary": "Returns\u0020array\u0020of\u0020information\u0020used\u0020in\u0020rendering",
             "url": "classes/App-Cards-CardGame.html#method_buildResultData"
         },                {
             "fqsen": "\\App\\Cards\\CardGame\u003A\u003Aserialize\u0028\u0029",
             "name": "serialize",
-            "summary": "",
+            "summary": "Serializes\u0020this\u0020object",
             "url": "classes/App-Cards-CardGame.html#method_serialize"
         },                {
             "fqsen": "\\App\\Cards\\CardGame\u003A\u003Aunserialize\u0028\u0029",
             "name": "unserialize",
-            "summary": "",
+            "summary": "Unserialize\u0020string,\u0020creates\u0020object",
             "url": "classes/App-Cards-CardGame.html#method_unserialize"
         },                {
             "fqsen": "\\App\\Cards\\CardGame\u003A\u003A\u0024States",
@@ -183,7 +183,7 @@ Search.appendIndex(
         },                {
             "fqsen": "\\App\\Cards\\CardGraphic",
             "name": "CardGraphic",
-            "summary": "",
+            "summary": "Class\u0020Card,\u0020represents\u0020basic\u0020playing\u0020card",
             "url": "classes/App-Cards-CardGraphic.html"
         },                {
             "fqsen": "\\App\\Cards\\CardGraphic\u003A\u003A__construct\u0028\u0029",

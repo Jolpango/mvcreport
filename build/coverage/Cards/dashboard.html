@@ -1,0 +1,378 @@
+<!DOCTYPE html>
+<html lang="en">
+ <head>
+  <meta charset="UTF-8">
+  <title>Dashboard for C:\Users\Joel\dbwebb-kurser\mvc\me\report\src\Cards</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link href="../_css/bootstrap.min.css" rel="stylesheet" type="text/css">
+  <link href="../_css/nv.d3.min.css" rel="stylesheet" type="text/css">
+  <link href="../_css/style.css" rel="stylesheet" type="text/css">
+  <link href="../_css/custom.css" rel="stylesheet" type="text/css">
+ </head>
+ <body>
+  <header>
+   <div class="container-fluid">
+    <div class="row">
+     <div class="col-md-12">
+      <nav aria-label="breadcrumb">
+       <ol class="breadcrumb">
+         <li class="breadcrumb-item"><a href="../index.html">C:\Users\Joel\dbwebb-kurser\mvc\me\report\src</a></li>
+         <li class="breadcrumb-item"><a href="index.html">Cards</a></li>
+         <li class="breadcrumb-item active">(Dashboard)</li>
+
+       </ol>
+      </nav>
+     </div>
+    </div>
+   </div>
+  </header>
+  <div class="container-fluid">
+   <div class="row">
+    <div class="col-md-12">
+     <h2>Classes</h2>
+    </div>
+   </div>
+   <div class="row">
+    <div class="col-md-6">
+     <h3>Coverage Distribution</h3>
+     <div id="classCoverageDistribution" style="height: 300px;">
+       <svg></svg>
+     </div>
+    </div>
+    <div class="col-md-6">
+     <h3>Complexity</h3>
+     <div id="classComplexity" style="height: 300px;">
+       <svg></svg>
+     </div>
+    </div>
+   </div>
+   <div class="row">
+    <div class="col-md-6">
+     <h3>Insufficient Coverage</h3>
+     <div class="scrollbox">
+      <table class="table">
+       <thead>
+        <tr>
+         <th>Class</th>
+         <th class="text-right">Coverage</th>
+        </tr>
+       </thead>
+       <tbody>
+       <tr><td><a href="Card.php.html#8">App\Cards\Card</a></td><td class="text-right">0%</td></tr>
+       <tr><td><a href="CardGame.php.html#13">App\Cards\CardGame</a></td><td class="text-right">0%</td></tr>
+       <tr><td><a href="CardGraphic.php.html#5">App\Cards\CardGraphic</a></td><td class="text-right">0%</td></tr>
+       <tr><td><a href="Deck.php.html#7">App\Cards\Deck</a></td><td class="text-right">0%</td></tr>
+       <tr><td><a href="DeckSessionHandler.php.html#10">App\Cards\DeckSessionHandler</a></td><td class="text-right">0%</td></tr>
+       <tr><td><a href="Player.php.html#7">App\Cards\Player</a></td><td class="text-right">0%</td></tr>
+       <tr><td><a href="PointSystem.php.html#19">App\Cards\PointSystem</a></td><td class="text-right">0%</td></tr>
+       <tr><td><a href="TwigDeck.php.html#7">App\Cards\TwigDeck</a></td><td class="text-right">0%</td></tr>
+       <tr><td><a href="TwigPlayer.php.html#7">App\Cards\TwigPlayer</a></td><td class="text-right">0%</td></tr>
+
+       </tbody>
+      </table>
+     </div>
+    </div>
+    <div class="col-md-6">
+     <h3>Project Risks</h3>
+     <div class="scrollbox">
+      <table class="table">
+       <thead>
+        <tr>
+         <th>Class</th>
+         <th class="text-right"><abbr title="Change Risk Anti-Patterns (CRAP) Index">CRAP</abbr></th>
+        </tr>
+       </thead>
+       <tbody>
+       <tr><td><a href="CardGame.php.html#13">App\Cards\CardGame</a></td><td class="text-right">1640</td></tr>
+       <tr><td><a href="Deck.php.html#7">App\Cards\Deck</a></td><td class="text-right">272</td></tr>
+       <tr><td><a href="Player.php.html#7">App\Cards\Player</a></td><td class="text-right">90</td></tr>
+       <tr><td><a href="TwigDeck.php.html#7">App\Cards\TwigDeck</a></td><td class="text-right">90</td></tr>
+       <tr><td><a href="Card.php.html#8">App\Cards\Card</a></td><td class="text-right">72</td></tr>
+       <tr><td><a href="PointSystem.php.html#19">App\Cards\PointSystem</a></td><td class="text-right">72</td></tr>
+       <tr><td><a href="CardGraphic.php.html#5">App\Cards\CardGraphic</a></td><td class="text-right">20</td></tr>
+       <tr><td><a href="DeckSessionHandler.php.html#10">App\Cards\DeckSessionHandler</a></td><td class="text-right">12</td></tr>
+       <tr><td><a href="TwigPlayer.php.html#7">App\Cards\TwigPlayer</a></td><td class="text-right">6</td></tr>
+
+       </tbody>
+      </table>
+     </div>
+    </div>
+   </div>
+   <div class="row">
+    <div class="col-md-12">
+     <h2>Methods</h2>
+    </div>
+   </div>
+   <div class="row">
+    <div class="col-md-6">
+     <h3>Coverage Distribution</h3>
+     <div id="methodCoverageDistribution" style="height: 300px;">
+       <svg></svg>
+     </div>
+    </div>
+    <div class="col-md-6">
+     <h3>Complexity</h3>
+     <div id="methodComplexity" style="height: 300px;">
+       <svg></svg>
+     </div>
+    </div>
+   </div>
+   <div class="row">
+    <div class="col-md-6">
+     <h3>Insufficient Coverage</h3>
+     <div class="scrollbox">
+      <table class="table">
+       <thead>
+        <tr>
+         <th>Method</th>
+         <th class="text-right">Coverage</th>
+        </tr>
+       </thead>
+       <tbody>
+       <tr><td><a href="Card.php.html#40"><abbr title="App\Cards\Card::setValueArray">setValueArray</abbr></a></td><td class="text-right">0%</td></tr>
+       <tr><td><a href="Card.php.html#49"><abbr title="App\Cards\Card::__construct">__construct</abbr></a></td><td class="text-right">0%</td></tr>
+       <tr><td><a href="Card.php.html#58"><abbr title="App\Cards\Card::toString">toString</abbr></a></td><td class="text-right">0%</td></tr>
+       <tr><td><a href="Card.php.html#69"><abbr title="App\Cards\Card::getValue">getValue</abbr></a></td><td class="text-right">0%</td></tr>
+       <tr><td><a href="Card.php.html#77"><abbr title="App\Cards\Card::getSuit">getSuit</abbr></a></td><td class="text-right">0%</td></tr>
+       <tr><td><a href="Card.php.html#85"><abbr title="App\Cards\Card::serialize">serialize</abbr></a></td><td class="text-right">0%</td></tr>
+       <tr><td><a href="Card.php.html#98"><abbr title="App\Cards\Card::unserialize">unserialize</abbr></a></td><td class="text-right">0%</td></tr>
+       <tr><td><a href="CardGame.php.html#35"><abbr title="App\Cards\CardGame::__construct">__construct</abbr></a></td><td class="text-right">0%</td></tr>
+       <tr><td><a href="CardGame.php.html#48"><abbr title="App\Cards\CardGame::advanceState">advanceState</abbr></a></td><td class="text-right">0%</td></tr>
+       <tr><td><a href="CardGame.php.html#63"><abbr title="App\Cards\CardGame::processRequest">processRequest</abbr></a></td><td class="text-right">0%</td></tr>
+       <tr><td><a href="CardGame.php.html#95"><abbr title="App\Cards\CardGame::dealStarterCards">dealStarterCards</abbr></a></td><td class="text-right">0%</td></tr>
+       <tr><td><a href="CardGame.php.html#117"><abbr title="App\Cards\CardGame::processCPU">processCPU</abbr></a></td><td class="text-right">0%</td></tr>
+       <tr><td><a href="CardGame.php.html#140"><abbr title="App\Cards\CardGame::shouldCPUDraw">shouldCPUDraw</abbr></a></td><td class="text-right">0%</td></tr>
+       <tr><td><a href="CardGame.php.html#162"><abbr title="App\Cards\CardGame::processPlayerLock">processPlayerLock</abbr></a></td><td class="text-right">0%</td></tr>
+       <tr><td><a href="CardGame.php.html#177"><abbr title="App\Cards\CardGame::newRound">newRound</abbr></a></td><td class="text-right">0%</td></tr>
+       <tr><td><a href="CardGame.php.html#194"><abbr title="App\Cards\CardGame::processPlayerDraw">processPlayerDraw</abbr></a></td><td class="text-right">0%</td></tr>
+       <tr><td><a href="CardGame.php.html#219"><abbr title="App\Cards\CardGame::renderPath">renderPath</abbr></a></td><td class="text-right">0%</td></tr>
+       <tr><td><a href="CardGame.php.html#224"><abbr title="App\Cards\CardGame::renderData">renderData</abbr></a></td><td class="text-right">0%</td></tr>
+       <tr><td><a href="CardGame.php.html#242"><abbr title="App\Cards\CardGame::buildNewGameData">buildNewGameData</abbr></a></td><td class="text-right">0%</td></tr>
+       <tr><td><a href="CardGame.php.html#253"><abbr title="App\Cards\CardGame::buildPlayerData">buildPlayerData</abbr></a></td><td class="text-right">0%</td></tr>
+       <tr><td><a href="CardGame.php.html#266"><abbr title="App\Cards\CardGame::buildCPUData">buildCPUData</abbr></a></td><td class="text-right">0%</td></tr>
+       <tr><td><a href="CardGame.php.html#275"><abbr title="App\Cards\CardGame::buildResultData">buildResultData</abbr></a></td><td class="text-right">0%</td></tr>
+       <tr><td><a href="CardGame.php.html#299"><abbr title="App\Cards\CardGame::serialize">serialize</abbr></a></td><td class="text-right">0%</td></tr>
+       <tr><td><a href="CardGame.php.html#315"><abbr title="App\Cards\CardGame::unserialize">unserialize</abbr></a></td><td class="text-right">0%</td></tr>
+       <tr><td><a href="CardGraphic.php.html#11"><abbr title="App\Cards\CardGraphic::__construct">__construct</abbr></a></td><td class="text-right">0%</td></tr>
+       <tr><td><a href="CardGraphic.php.html#19"><abbr title="App\Cards\CardGraphic::toString">toString</abbr></a></td><td class="text-right">0%</td></tr>
+       <tr><td><a href="CardGraphic.php.html#31"><abbr title="App\Cards\CardGraphic::toCSSClass">toCSSClass</abbr></a></td><td class="text-right">0%</td></tr>
+       <tr><td><a href="Deck.php.html#10"><abbr title="App\Cards\Deck::__construct">__construct</abbr></a></td><td class="text-right">0%</td></tr>
+       <tr><td><a href="Deck.php.html#24"><abbr title="App\Cards\Deck::fromArray">fromArray</abbr></a></td><td class="text-right">0%</td></tr>
+       <tr><td><a href="Deck.php.html#33"><abbr title="App\Cards\Deck::addCard">addCard</abbr></a></td><td class="text-right">0%</td></tr>
+       <tr><td><a href="Deck.php.html#39"><abbr title="App\Cards\Deck::count">count</abbr></a></td><td class="text-right">0%</td></tr>
+       <tr><td><a href="Deck.php.html#44"><abbr title="App\Cards\Deck::addCards">addCards</abbr></a></td><td class="text-right">0%</td></tr>
+       <tr><td><a href="Deck.php.html#50"><abbr title="App\Cards\Deck::shuffleCards">shuffleCards</abbr></a></td><td class="text-right">0%</td></tr>
+       <tr><td><a href="Deck.php.html#55"><abbr title="App\Cards\Deck::draw">draw</abbr></a></td><td class="text-right">0%</td></tr>
+       <tr><td><a href="Deck.php.html#61"><abbr title="App\Cards\Deck::toArray">toArray</abbr></a></td><td class="text-right">0%</td></tr>
+       <tr><td><a href="Deck.php.html#70"><abbr title="App\Cards\Deck::serialize">serialize</abbr></a></td><td class="text-right">0%</td></tr>
+       <tr><td><a href="Deck.php.html#77"><abbr title="App\Cards\Deck::unserialize">unserialize</abbr></a></td><td class="text-right">0%</td></tr>
+       <tr><td><a href="DeckSessionHandler.php.html#13"><abbr title="App\Cards\DeckSessionHandler::loadFromSession">loadFromSession</abbr></a></td><td class="text-right">0%</td></tr>
+       <tr><td><a href="DeckSessionHandler.php.html#22"><abbr title="App\Cards\DeckSessionHandler::saveToSession">saveToSession</abbr></a></td><td class="text-right">0%</td></tr>
+       <tr><td><a href="Player.php.html#11"><abbr title="App\Cards\Player::__construct">__construct</abbr></a></td><td class="text-right">0%</td></tr>
+       <tr><td><a href="Player.php.html#17"><abbr title="App\Cards\Player::count">count</abbr></a></td><td class="text-right">0%</td></tr>
+       <tr><td><a href="Player.php.html#22"><abbr title="App\Cards\Player::hand">hand</abbr></a></td><td class="text-right">0%</td></tr>
+       <tr><td><a href="Player.php.html#27"><abbr title="App\Cards\Player::toArray">toArray</abbr></a></td><td class="text-right">0%</td></tr>
+       <tr><td><a href="Player.php.html#40"><abbr title="App\Cards\Player::clear">clear</abbr></a></td><td class="text-right">0%</td></tr>
+       <tr><td><a href="Player.php.html#47"><abbr title="App\Cards\Player::addCards">addCards</abbr></a></td><td class="text-right">0%</td></tr>
+       <tr><td><a href="Player.php.html#52"><abbr title="App\Cards\Player::serialize">serialize</abbr></a></td><td class="text-right">0%</td></tr>
+       <tr><td><a href="Player.php.html#60"><abbr title="App\Cards\Player::unserialize">unserialize</abbr></a></td><td class="text-right">0%</td></tr>
+       <tr><td><a href="PointSystem.php.html#21"><abbr title="App\Cards\PointSystem::points21">points21</abbr></a></td><td class="text-right">0%</td></tr>
+       <tr><td><a href="PointSystem.php.html#46"><abbr title="App\Cards\PointSystem::bestPoint">bestPoint</abbr></a></td><td class="text-right">0%</td></tr>
+       <tr><td><a href="TwigDeck.php.html#9"><abbr title="App\Cards\TwigDeck::__construct">__construct</abbr></a></td><td class="text-right">0%</td></tr>
+       <tr><td><a href="TwigDeck.php.html#24"><abbr title="App\Cards\TwigDeck::fromArray">fromArray</abbr></a></td><td class="text-right">0%</td></tr>
+       <tr><td><a href="TwigDeck.php.html#33"><abbr title="App\Cards\TwigDeck::twigArray">twigArray</abbr></a></td><td class="text-right">0%</td></tr>
+       <tr><td><a href="TwigPlayer.php.html#9"><abbr title="App\Cards\TwigPlayer::twigArray">twigArray</abbr></a></td><td class="text-right">0%</td></tr>
+
+       </tbody>
+      </table>
+     </div>
+    </div>
+    <div class="col-md-6">
+     <h3>Project Risks</h3>
+     <div class="scrollbox">
+      <table class="table">
+       <thead>
+        <tr>
+         <th>Method</th>
+         <th class="text-right"><abbr title="Change Risk Anti-Patterns (CRAP) Index">CRAP</abbr></th>
+        </tr>
+       </thead>
+       <tbody>
+       <tr><td><a href="CardGame.php.html#63"><abbr title="App\Cards\CardGame::processRequest">processRequest</abbr></a></td><td class="text-right">56</td></tr>
+       <tr><td><a href="CardGame.php.html#224"><abbr title="App\Cards\CardGame::renderData">renderData</abbr></a></td><td class="text-right">30</td></tr>
+       <tr><td><a href="Deck.php.html#10"><abbr title="App\Cards\Deck::__construct">__construct</abbr></a></td><td class="text-right">30</td></tr>
+       <tr><td><a href="TwigDeck.php.html#9"><abbr title="App\Cards\TwigDeck::__construct">__construct</abbr></a></td><td class="text-right">30</td></tr>
+       <tr><td><a href="CardGame.php.html#140"><abbr title="App\Cards\CardGame::shouldCPUDraw">shouldCPUDraw</abbr></a></td><td class="text-right">20</td></tr>
+       <tr><td><a href="CardGame.php.html#194"><abbr title="App\Cards\CardGame::processPlayerDraw">processPlayerDraw</abbr></a></td><td class="text-right">20</td></tr>
+       <tr><td><a href="PointSystem.php.html#21"><abbr title="App\Cards\PointSystem::points21">points21</abbr></a></td><td class="text-right">20</td></tr>
+       <tr><td><a href="PointSystem.php.html#46"><abbr title="App\Cards\PointSystem::bestPoint">bestPoint</abbr></a></td><td class="text-right">20</td></tr>
+       <tr><td><a href="CardGame.php.html#117"><abbr title="App\Cards\CardGame::processCPU">processCPU</abbr></a></td><td class="text-right">12</td></tr>
+       <tr><td><a href="Card.php.html#58"><abbr title="App\Cards\Card::toString">toString</abbr></a></td><td class="text-right">6</td></tr>
+       <tr><td><a href="CardGame.php.html#48"><abbr title="App\Cards\CardGame::advanceState">advanceState</abbr></a></td><td class="text-right">6</td></tr>
+       <tr><td><a href="CardGame.php.html#95"><abbr title="App\Cards\CardGame::dealStarterCards">dealStarterCards</abbr></a></td><td class="text-right">6</td></tr>
+       <tr><td><a href="CardGame.php.html#162"><abbr title="App\Cards\CardGame::processPlayerLock">processPlayerLock</abbr></a></td><td class="text-right">6</td></tr>
+       <tr><td><a href="CardGame.php.html#177"><abbr title="App\Cards\CardGame::newRound">newRound</abbr></a></td><td class="text-right">6</td></tr>
+       <tr><td><a href="CardGame.php.html#275"><abbr title="App\Cards\CardGame::buildResultData">buildResultData</abbr></a></td><td class="text-right">6</td></tr>
+       <tr><td><a href="CardGraphic.php.html#19"><abbr title="App\Cards\CardGraphic::toString">toString</abbr></a></td><td class="text-right">6</td></tr>
+       <tr><td><a href="Deck.php.html#24"><abbr title="App\Cards\Deck::fromArray">fromArray</abbr></a></td><td class="text-right">6</td></tr>
+       <tr><td><a href="Deck.php.html#61"><abbr title="App\Cards\Deck::toArray">toArray</abbr></a></td><td class="text-right">6</td></tr>
+       <tr><td><a href="DeckSessionHandler.php.html#13"><abbr title="App\Cards\DeckSessionHandler::loadFromSession">loadFromSession</abbr></a></td><td class="text-right">6</td></tr>
+       <tr><td><a href="Player.php.html#27"><abbr title="App\Cards\Player::toArray">toArray</abbr></a></td><td class="text-right">6</td></tr>
+       <tr><td><a href="TwigDeck.php.html#24"><abbr title="App\Cards\TwigDeck::fromArray">fromArray</abbr></a></td><td class="text-right">6</td></tr>
+       <tr><td><a href="TwigDeck.php.html#33"><abbr title="App\Cards\TwigDeck::twigArray">twigArray</abbr></a></td><td class="text-right">6</td></tr>
+       <tr><td><a href="TwigPlayer.php.html#9"><abbr title="App\Cards\TwigPlayer::twigArray">twigArray</abbr></a></td><td class="text-right">6</td></tr>
+
+       </tbody>
+      </table>
+     </div>
+    </div>
+   </div>
+   <footer>
+    <hr/>
+    <p>
+     <small>Generated by <a href="https://github.com/sebastianbergmann/php-code-coverage" target="_top">php-code-coverage 9.2.15</a> using <a href="https://secure.php.net/" target="_top">PHP 8.0.9</a> and <a href="https://phpunit.de/">PHPUnit 9.5.19</a> at Thu May 5 11:44:50 CEST 2022.</small>
+    </p>
+   </footer>
+  </div>
+  <script src="../_js/jquery.min.js" type="text/javascript"></script>
+  <script src="../_js/d3.min.js" type="text/javascript"></script>
+  <script src="../_js/nv.d3.min.js" type="text/javascript"></script>
+  <script type="text/javascript">
+$(document).ready(function() {
+  nv.addGraph(function() {
+    var chart = nv.models.multiBarChart();
+    chart.tooltips(false)
+      .showControls(false)
+      .showLegend(false)
+      .reduceXTicks(false)
+      .staggerLabels(true)
+      .yAxis.tickFormat(d3.format('d'));
+
+    d3.select('#classCoverageDistribution svg')
+      .datum(getCoverageDistributionData([9,0,0,0,0,0,0,0,0,0,0,0], "Class Coverage"))
+      .transition().duration(500).call(chart);
+
+    nv.utils.windowResize(chart.update);
+
+    return chart;
+  });
+
+  nv.addGraph(function() {
+    var chart = nv.models.multiBarChart();
+    chart.tooltips(false)
+      .showControls(false)
+      .showLegend(false)
+      .reduceXTicks(false)
+      .staggerLabels(true)
+      .yAxis.tickFormat(d3.format('d'));
+
+    d3.select('#methodCoverageDistribution svg')
+      .datum(getCoverageDistributionData([53,0,0,0,0,0,0,0,0,0,0,0], "Method Coverage"))
+      .transition().duration(500).call(chart);
+
+    nv.utils.windowResize(chart.update);
+
+    return chart;
+  });
+
+  function getCoverageDistributionData(data, label) {
+    var labels = [
+      '0%',
+      '0-10%',
+      '10-20%',
+      '20-30%',
+      '30-40%',
+      '40-50%',
+      '50-60%',
+      '60-70%',
+      '70-80%',
+      '80-90%',
+      '90-100%',
+      '100%'
+    ];
+    var values = [];
+    $.each(labels, function(key) {
+      values.push({x: labels[key], y: data[key]});
+    });
+
+    return [
+      {
+        key: label,
+        values: values,
+        color: "#4572A7"
+      }
+    ];
+  }
+  nv.addGraph(function() {
+    var chart = nv.models.scatterChart()
+      .showDistX(true)
+      .showDistY(true)
+      .showLegend(false)
+      .forceX([0, 100]);
+    chart.tooltipContent(function(graph) {
+      return '<p>' + graph.point.class + '</p>';
+    });
+
+    chart.xAxis.axisLabel('Code Coverage (in percent)');
+    chart.yAxis.axisLabel('Cyclomatic Complexity');
+
+    d3.select('#classComplexity svg')
+      .datum(getComplexityData([[0,8,"<a href=\"Card.php.html#8\">App\\Cards\\Card<\/a>"],[0,40,"<a href=\"CardGame.php.html#13\">App\\Cards\\CardGame<\/a>"],[0,4,"<a href=\"CardGraphic.php.html#5\">App\\Cards\\CardGraphic<\/a>"],[0,16,"<a href=\"Deck.php.html#7\">App\\Cards\\Deck<\/a>"],[0,3,"<a href=\"DeckSessionHandler.php.html#10\">App\\Cards\\DeckSessionHandler<\/a>"],[0,9,"<a href=\"Player.php.html#7\">App\\Cards\\Player<\/a>"],[0,8,"<a href=\"PointSystem.php.html#19\">App\\Cards\\PointSystem<\/a>"],[0,9,"<a href=\"TwigDeck.php.html#7\">App\\Cards\\TwigDeck<\/a>"],[0,2,"<a href=\"TwigPlayer.php.html#7\">App\\Cards\\TwigPlayer<\/a>"]], 'Class Complexity'))
+      .transition()
+      .duration(500)
+      .call(chart);
+
+    nv.utils.windowResize(chart.update);
+
+    return chart;
+  });
+
+  nv.addGraph(function() {
+    var chart = nv.models.scatterChart()
+      .showDistX(true)
+      .showDistY(true)
+      .showLegend(false)
+      .forceX([0, 100]);
+    chart.tooltipContent(function(graph) {
+      return '<p>' + graph.point.class + '</p>';
+    });
+
+    chart.xAxis.axisLabel('Code Coverage (in percent)');
+    chart.yAxis.axisLabel('Method Complexity');
+
+    d3.select('#methodComplexity svg')
+      .datum(getComplexityData([[0,1,"<a href=\"Card.php.html#40\">App\\Cards\\Card::setValueArray<\/a>"],[0,1,"<a href=\"Card.php.html#49\">App\\Cards\\Card::__construct<\/a>"],[0,2,"<a href=\"Card.php.html#58\">App\\Cards\\Card::toString<\/a>"],[0,1,"<a href=\"Card.php.html#69\">App\\Cards\\Card::getValue<\/a>"],[0,1,"<a href=\"Card.php.html#77\">App\\Cards\\Card::getSuit<\/a>"],[0,1,"<a href=\"Card.php.html#85\">App\\Cards\\Card::serialize<\/a>"],[0,1,"<a href=\"Card.php.html#98\">App\\Cards\\Card::unserialize<\/a>"],[0,1,"<a href=\"CardGame.php.html#35\">App\\Cards\\CardGame::__construct<\/a>"],[0,2,"<a href=\"CardGame.php.html#48\">App\\Cards\\CardGame::advanceState<\/a>"],[0,7,"<a href=\"CardGame.php.html#63\">App\\Cards\\CardGame::processRequest<\/a>"],[0,2,"<a href=\"CardGame.php.html#95\">App\\Cards\\CardGame::dealStarterCards<\/a>"],[0,3,"<a href=\"CardGame.php.html#117\">App\\Cards\\CardGame::processCPU<\/a>"],[0,4,"<a href=\"CardGame.php.html#140\">App\\Cards\\CardGame::shouldCPUDraw<\/a>"],[0,2,"<a href=\"CardGame.php.html#162\">App\\Cards\\CardGame::processPlayerLock<\/a>"],[0,2,"<a href=\"CardGame.php.html#177\">App\\Cards\\CardGame::newRound<\/a>"],[0,4,"<a href=\"CardGame.php.html#194\">App\\Cards\\CardGame::processPlayerDraw<\/a>"],[0,1,"<a href=\"CardGame.php.html#219\">App\\Cards\\CardGame::renderPath<\/a>"],[0,5,"<a href=\"CardGame.php.html#224\">App\\Cards\\CardGame::renderData<\/a>"],[0,1,"<a href=\"CardGame.php.html#242\">App\\Cards\\CardGame::buildNewGameData<\/a>"],[0,1,"<a href=\"CardGame.php.html#253\">App\\Cards\\CardGame::buildPlayerData<\/a>"],[0,1,"<a href=\"CardGame.php.html#266\">App\\Cards\\CardGame::buildCPUData<\/a>"],[0,2,"<a href=\"CardGame.php.html#275\">App\\Cards\\CardGame::buildResultData<\/a>"],[0,1,"<a href=\"CardGame.php.html#299\">App\\Cards\\CardGame::serialize<\/a>"],[0,1,"<a href=\"CardGame.php.html#315\">App\\Cards\\CardGame::unserialize<\/a>"],[0,1,"<a href=\"CardGraphic.php.html#11\">App\\Cards\\CardGraphic::__construct<\/a>"],[0,2,"<a href=\"CardGraphic.php.html#19\">App\\Cards\\CardGraphic::toString<\/a>"],[0,1,"<a href=\"CardGraphic.php.html#31\">App\\Cards\\CardGraphic::toCSSClass<\/a>"],[0,5,"<a href=\"Deck.php.html#10\">App\\Cards\\Deck::__construct<\/a>"],[0,2,"<a href=\"Deck.php.html#24\">App\\Cards\\Deck::fromArray<\/a>"],[0,1,"<a href=\"Deck.php.html#33\">App\\Cards\\Deck::addCard<\/a>"],[0,1,"<a href=\"Deck.php.html#39\">App\\Cards\\Deck::count<\/a>"],[0,1,"<a href=\"Deck.php.html#44\">App\\Cards\\Deck::addCards<\/a>"],[0,1,"<a href=\"Deck.php.html#50\">App\\Cards\\Deck::shuffleCards<\/a>"],[0,1,"<a href=\"Deck.php.html#55\">App\\Cards\\Deck::draw<\/a>"],[0,2,"<a href=\"Deck.php.html#61\">App\\Cards\\Deck::toArray<\/a>"],[0,1,"<a href=\"Deck.php.html#70\">App\\Cards\\Deck::serialize<\/a>"],[0,1,"<a href=\"Deck.php.html#77\">App\\Cards\\Deck::unserialize<\/a>"],[0,2,"<a href=\"DeckSessionHandler.php.html#13\">App\\Cards\\DeckSessionHandler::loadFromSession<\/a>"],[0,1,"<a href=\"DeckSessionHandler.php.html#22\">App\\Cards\\DeckSessionHandler::saveToSession<\/a>"],[0,1,"<a href=\"Player.php.html#11\">App\\Cards\\Player::__construct<\/a>"],[0,1,"<a href=\"Player.php.html#17\">App\\Cards\\Player::count<\/a>"],[0,1,"<a href=\"Player.php.html#22\">App\\Cards\\Player::hand<\/a>"],[0,2,"<a href=\"Player.php.html#27\">App\\Cards\\Player::toArray<\/a>"],[0,1,"<a href=\"Player.php.html#40\">App\\Cards\\Player::clear<\/a>"],[0,1,"<a href=\"Player.php.html#47\">App\\Cards\\Player::addCards<\/a>"],[0,1,"<a href=\"Player.php.html#52\">App\\Cards\\Player::serialize<\/a>"],[0,1,"<a href=\"Player.php.html#60\">App\\Cards\\Player::unserialize<\/a>"],[0,4,"<a href=\"PointSystem.php.html#21\">App\\Cards\\PointSystem::points21<\/a>"],[0,4,"<a href=\"PointSystem.php.html#46\">App\\Cards\\PointSystem::bestPoint<\/a>"],[0,5,"<a href=\"TwigDeck.php.html#9\">App\\Cards\\TwigDeck::__construct<\/a>"],[0,2,"<a href=\"TwigDeck.php.html#24\">App\\Cards\\TwigDeck::fromArray<\/a>"],[0,2,"<a href=\"TwigDeck.php.html#33\">App\\Cards\\TwigDeck::twigArray<\/a>"],[0,2,"<a href=\"TwigPlayer.php.html#9\">App\\Cards\\TwigPlayer::twigArray<\/a>"]], 'Method Complexity'))
+      .transition()
+      .duration(500)
+      .call(chart);
+
+    nv.utils.windowResize(chart.update);
+
+    return chart;
+  });
+
+  function getComplexityData(data, label) {
+    var values = [];
+    $.each(data, function(key) {
+      var value = Math.round(data[key][0]*100) / 100;
+      values.push({
+        x: value,
+        y: data[key][1],
+        class: data[key][2],
+        size: 0.05,
+        shape: 'diamond'
+      });
+    });
+
+    return [
+      {
+        key: label,
+        values: values,
+        color: "#4572A7"
+      }
+    ];
+  }
+});
+  </script>
+ </body>
+</html>

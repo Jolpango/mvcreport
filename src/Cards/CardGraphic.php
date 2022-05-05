@@ -4,11 +4,18 @@ namespace App\Cards;
 
 class CardGraphic extends Card
 {
-    public function __construct($value, $suit)
+    /**
+     * @param int $value
+     * @param string $suit
+     */
+    public function __construct(int $value, string $suit)
     {
         parent::__construct($value, $suit);
     }
 
+    /**
+     * @return string
+     */
     public function toString(): string
     {
         if ($this->suit === "Joker") {
@@ -18,6 +25,9 @@ class CardGraphic extends Card
         return "{$valueString} of {$this->suit}";
     }
 
+    /**
+     * @return string
+     */
     public function toCSSClass(): string
     {
         $valueClass = strtolower(Card::$valueToString[$this->value]) ?? $this->value;

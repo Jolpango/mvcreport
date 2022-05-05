@@ -7,6 +7,9 @@ use App\Cards\TwigPlayer;
 use App\Cards\PointSystem;
 use Symfony\Component\HttpFoundation\Request;
 
+/**
+ * Card Game 21ish. handles requests and returns proper data for rendering
+ */
 class CardGame implements \Serializable
 {
     public static array $States = [
@@ -26,6 +29,9 @@ class CardGame implements \Serializable
     private TwigPlayer $player;
     private TwigPlayer $cpu;
 
+    /**
+     * @param int $nrOfDecks
+     */
     public function __construct($nrOfDecks = 2)
     {
         $this->player = new TwigPlayer();
@@ -35,6 +41,10 @@ class CardGame implements \Serializable
         $this->deck->shuffleCards();
     }
 
+    /**
+     * Advances the state of the gane by 1
+     * @return void
+     */
     private function advanceState(): void
     {
         if ($this->state < 3) {
@@ -44,6 +54,12 @@ class CardGame implements \Serializable
         }
     }
 
+    /**
+     * Processes the request from the user
+     * @param Request $request
+     *
+     * @return array
+     */
     public function processRequest(Request $request): array
     {
         $type = $request->get("type");
@@ -71,6 +87,11 @@ class CardGame implements \Serializable
         return $messages;
     }
 
+    /**
+     * Deals starter cards
+     * Returns an array of strings documenting what happened
+     * @return array
+     */
     public function dealStarterCards(): array
     {
         if (CardGame::$States[$this->state] !== "NEW") {
@@ -88,6 +109,11 @@ class CardGame implements \Serializable
         return $messages;
     }
 
+    /**
+     * Processes the cpus turn.
+     * Returns an array of strings documenting what happened
+     * @return array
+     */
     public function processCPU(): array
     {
         if (CardGame::$States[$this->state] !== "CPU") {
@@ -107,6 +133,10 @@ class CardGame implements \Serializable
         return $messages;
     }
 
+    /**
+     * Calculates whether or not the cpu should draw a card or settle
+     * @return bool
+     */
     private function shouldCPUDraw(): bool
     {
         $cpuPoints = PointSystem::points21($this->cpu->hand());
@@ -124,6 +154,11 @@ class CardGame implements \Serializable
         return true;
     }
 
+    /**
+     * Locks in the players cards and advances state
+     * Returns an array of strings documenting what happened
+     * @return array
+     */
     public function processPlayerLock(): array
     {
         if (CardGame::$States[$this->state] !== "PLAYER") {
@@ -134,6 +169,11 @@ class CardGame implements \Serializable
         return $messages;
     }
 
+    /**
+     * Clears the board, adds back the cards. Advances the state
+     * Returns an array of strings documenting what happened
+     * @return array
+     */
     public function newRound(): array
     {
         if (CardGame::$States[$this->state] !== "GAMEOVER") {
@@ -146,6 +186,11 @@ class CardGame implements \Serializable
         return $messages;
     }
 
+    /**
+     * Draws a card for the player. Advances if player becomes fat.
+     * Returns an array of strings documenting what happened.
+     * @return array
+     */
     public function processPlayerDraw(): array
     {
         if (CardGame::$States[$this->state] !== "PLAYER") {
@@ -167,6 +212,10 @@ class CardGame implements \Serializable
         return $messages;
     }
 
+    /**
+     * Returns a path to twig template based on the state
+     * @return string
+     */
     public function renderPath(): string
     {
         return CardGame::$StateRenderPaths[$this->state];
@@ -186,6 +235,10 @@ class CardGame implements \Serializable
         return [];
     }
 
+    /**
+     * Not yet implemented. Might not want to
+     * @return array
+     */
     private function buildNewGameData(): array
     {
         $gameData = [];
@@ -193,6 +246,10 @@ class CardGame implements \Serializable
         return $gameData;
     }
 
+    /**
+     * Returns array of information used in rendering
+     * @return array
+     */
     private function buildPlayerData(): array
     {
         $gameData = [
@@ -202,11 +259,19 @@ class CardGame implements \Serializable
         return $gameData;
     }
 
+    /**
+     * Returns array of information used in rendering
+     * @return array
+     */
     private function buildCPUData(): array
     {
         return $this->buildPlayerData();
     }
 
+    /**
+     * Returns array of information used in rendering
+     * @return array
+     */
     private function buildResultData(): array
     {
         $resultMessage = "Bank wins";
@@ -227,7 +292,11 @@ class CardGame implements \Serializable
         return $gameData;
     }
 
-    public function serialize()
+    /**
+     * Serializes this object
+     * @return string
+     */
+    public function serialize(): string
     {
         $data = [
             "player" => serialize($this->player),
@@ -237,7 +306,13 @@ class CardGame implements \Serializable
         ];
         return serialize($data);
     }
-    public function unserialize($data)
+    /**
+     * Unserialize string, creates object
+     * @param string $data
+     *
+     * @return void
+     */
+    public function unserialize(string $data): void
     {
         $data = unserialize($data);
         $this->player = unserialize($data["player"]);
