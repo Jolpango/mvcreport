@@ -4,9 +4,15 @@ namespace App\Cards;
 
 use App\Cards\Card;
 
+/**
+ * Class Deck. Implements IDeck. Is Countable and Serializable
+ */
 class Deck implements IDeck, \Countable, \Serializable
 {
     protected array $cards = [];
+    /**
+     * @param bool $newDeck
+     */
     public function __construct($newDeck = false)
     {
         if ($newDeck) {
@@ -21,6 +27,11 @@ class Deck implements IDeck, \Countable, \Serializable
         }
     }
 
+    /**
+     * @param array $toLoad
+     * 
+     * @return Deck
+     */
     public static function fromArray(array $toLoad): Deck
     {
         $deck = new Deck();
@@ -30,34 +41,61 @@ class Deck implements IDeck, \Countable, \Serializable
         return $deck;
     }
 
-    public function addCard(Card $card)
+    /**
+     * @param Card $card
+     * 
+     * @return void
+     */
+    public function addCard(Card $card): void
     {
         array_push($this->cards, $card);
         // $this->shuffleCards();
     }
 
+    /**
+     * @return int
+     */
     public function count(): int
     {
         return count($this->cards);
     }
 
-    public function addCards(array $cards)
+    /**
+     * @param array $cards
+     * 
+     * @return void
+     */
+    public function addCards(array $cards): void
     {
         $this->cards = array_merge($this->cards, $cards);
         // $this->shuffleCards();
     }
 
+    /**
+     * Shuffles cards. Returns bool representing success or fail
+     * @return bool
+     */
     public function shuffleCards(): bool
     {
         return shuffle($this->cards);
     }
 
-    public function draw($count)
+    /**
+     * Returns $count cards. Removes them from this object
+     * @param int $count
+     * 
+     * @return array
+     */
+    public function draw(int $count): array
     {
         //Removes and return $count nr of cards from the end
         return array_splice($this->cards, count($this->cards) - $count, $count);
     }
 
+    /**
+     * Array representation of this object
+     * @return array
+     */
     public function toArray(): array
     {
         $returnArray = [];
@@ -67,14 +105,22 @@ class Deck implements IDeck, \Countable, \Serializable
         return $returnArray;
     }
 
-    public function serialize()
+    /**
+     * @return string
+     */
+    public function serialize(): string
     {
         $data = [
             "cards" => serialize($this->cards)
         ];
         return serialize($data);
     }
-    public function unserialize($data)
+    /**
+     * @param string $data
+     * 
+     * @return void
+     */
+    public function unserialize(string $data): void
     {
         $data = unserialize($data);
         $this->cards = unserialize($data["cards"]);

@@ -16,8 +16,17 @@ function possibleCombinations($length)
     return $sequences;
 }
 
+/**
+ * Class for calculating points from hands.
+ */
 class PointSystem
 {
+    /**
+     * Calculates possible points from array of cards
+     * @param array $cards
+     * 
+     * @return array
+     */
     public static function points21(array $cards): array
     {
         $possiblePoints = [];
@@ -43,7 +52,13 @@ class PointSystem
         return $possiblePoints;
     }
 
-    public static function bestPoint($points): int
+    /**
+     * Returns the best point. The highest one, but less than or equal 21
+     * @param array $points
+     * 
+     * @return int
+     */
+    public static function bestPoint(array $points): int
     {
         $bestPoint = 0;
         foreach ($points as $point) {

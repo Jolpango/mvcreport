@@ -2,6 +2,9 @@
 
 namespace App\Cards;
 
+/**
+ * CSS Graphic extenstion of Card
+ */
 class CardGraphic extends Card
 {
     /**

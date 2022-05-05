@@ -4,8 +4,15 @@ namespace App\Cards;
 
 use App\Cards\Player;
 
+/**
+ * Class TwigPlayer. Extenstion of Player with functions for use with twig
+ */
 class TwigPlayer extends Player
 {
+    /**
+     * Returns a representation of object for use in twig
+     * @return array
+     */
     public function twigArray(): array
     {
         $returnArray = [];

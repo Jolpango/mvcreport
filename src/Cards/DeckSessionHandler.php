@@ -7,6 +7,9 @@ use App\Cards\TwigPlayer;
 use App\Cards\CardGraphic;
 use Symfony\Component\HttpFoundation\Session\SessionInterface;
 
+/**
+ * [Description DeckSessionHandler]
+ */
 class DeckSessionHandler
 {
     protected $deck;

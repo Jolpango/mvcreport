@@ -183,7 +183,7 @@ Search.appendIndex(
         },                {
             "fqsen": "\\App\\Cards\\CardGraphic",
             "name": "CardGraphic",
-            "summary": "Class\u0020Card,\u0020represents\u0020basic\u0020playing\u0020card",
+            "summary": "CSS\u0020Graphic\u0020extenstion\u0020of\u0020Card",
             "url": "classes/App-Cards-CardGraphic.html"
         },                {
             "fqsen": "\\App\\Cards\\CardGraphic\u003A\u003A__construct\u0028\u0029",
@@ -203,7 +203,7 @@ Search.appendIndex(
         },                {
             "fqsen": "\\App\\Cards\\Deck",
             "name": "Deck",
-            "summary": "",
+            "summary": "Class\u0020Deck.\u0020Implements\u0020IDeck.\u0020Is\u0020Countable\u0020and\u0020Serializable",
             "url": "classes/App-Cards-Deck.html"
         },                {
             "fqsen": "\\App\\Cards\\Deck\u003A\u003A__construct\u0028\u0029",
@@ -233,17 +233,17 @@ Search.appendIndex(
         },                {
             "fqsen": "\\App\\Cards\\Deck\u003A\u003AshuffleCards\u0028\u0029",
             "name": "shuffleCards",
-            "summary": "",
+            "summary": "Shuffles\u0020cards.\u0020Returns\u0020bool\u0020representing\u0020success\u0020or\u0020fail",
             "url": "classes/App-Cards-Deck.html#method_shuffleCards"
         },                {
             "fqsen": "\\App\\Cards\\Deck\u003A\u003Adraw\u0028\u0029",
             "name": "draw",
-            "summary": "",
+            "summary": "Returns\u0020\u0024count\u0020cards.\u0020Removes\u0020them\u0020from\u0020this\u0020object",
             "url": "classes/App-Cards-Deck.html#method_draw"
         },                {
             "fqsen": "\\App\\Cards\\Deck\u003A\u003AtoArray\u0028\u0029",
             "name": "toArray",
-            "summary": "",
+            "summary": "Array\u0020representation\u0020of\u0020this\u0020object",
             "url": "classes/App-Cards-Deck.html#method_toArray"
         },                {
             "fqsen": "\\App\\Cards\\Deck\u003A\u003Aserialize\u0028\u0029",
@@ -263,7 +263,7 @@ Search.appendIndex(
         },                {
             "fqsen": "\\App\\Cards\\DeckSessionHandler",
             "name": "DeckSessionHandler",
-            "summary": "",
+            "summary": "\u005BDescription\u0020DeckSessionHandler\u005D",
             "url": "classes/App-Cards-DeckSessionHandler.html"
         },                {
             "fqsen": "\\App\\Cards\\DeckSessionHandler\u003A\u003AloadFromSession\u0028\u0029",
@@ -283,7 +283,7 @@ Search.appendIndex(
         },                {
             "fqsen": "\\App\\Cards\\IDeck",
             "name": "IDeck",
-            "summary": "",
+            "summary": "Interface\u0020for\u0020Deck",
             "url": "classes/App-Cards-IDeck.html"
         },                {
             "fqsen": "\\App\\Cards\\IDeck\u003A\u003AshuffleCards\u0028\u0029",
@@ -308,7 +308,7 @@ Search.appendIndex(
         },                {
             "fqsen": "\\App\\Cards\\Player",
             "name": "Player",
-            "summary": "",
+            "summary": "Player\u0020that\u0020uses\u0020cards",
             "url": "classes/App-Cards-Player.html"
         },                {
             "fqsen": "\\App\\Cards\\Player\u003A\u003A__construct\u0028\u0029",
@@ -318,7 +318,7 @@ Search.appendIndex(
         },                {
             "fqsen": "\\App\\Cards\\Player\u003A\u003Acount\u0028\u0029",
             "name": "count",
-            "summary": "",
+            "summary": "Size\u0020of\u0020hand",
             "url": "classes/App-Cards-Player.html#method_count"
         },                {
             "fqsen": "\\App\\Cards\\Player\u003A\u003A\u0024hand",
@@ -328,12 +328,12 @@ Search.appendIndex(
         },                {
             "fqsen": "\\App\\Cards\\Player\u003A\u003AtoArray\u0028\u0029",
             "name": "toArray",
-            "summary": "",
+            "summary": "Returns\u0020array\u0020representation\u0020of\u0020object",
             "url": "classes/App-Cards-Player.html#method_toArray"
         },                {
             "fqsen": "\\App\\Cards\\Player\u003A\u003Aclear\u0028\u0029",
             "name": "clear",
-            "summary": "",
+            "summary": "Removes\u0020cards\u0020from\u0020hand\u0020and\u0020returns\u0020them",
             "url": "classes/App-Cards-Player.html#method_clear"
         },                {
             "fqsen": "\\App\\Cards\\Player\u003A\u003AaddCards\u0028\u0029",
@@ -363,22 +363,22 @@ Search.appendIndex(
         },                {
             "fqsen": "\\App\\Cards\\PointSystem",
             "name": "PointSystem",
-            "summary": "",
+            "summary": "Class\u0020for\u0020calculating\u0020points\u0020from\u0020hands.",
             "url": "classes/App-Cards-PointSystem.html"
         },                {
             "fqsen": "\\App\\Cards\\PointSystem\u003A\u003Apoints21\u0028\u0029",
             "name": "points21",
-            "summary": "",
+            "summary": "Calculates\u0020possible\u0020points\u0020from\u0020array\u0020of\u0020cards",
             "url": "classes/App-Cards-PointSystem.html#method_points21"
         },                {
             "fqsen": "\\App\\Cards\\PointSystem\u003A\u003AbestPoint\u0028\u0029",
             "name": "bestPoint",
-            "summary": "",
+            "summary": "Returns\u0020the\u0020best\u0020point.\u0020The\u0020highest\u0020one,\u0020but\u0020less\u0020than\u0020or\u0020equal\u002021",
             "url": "classes/App-Cards-PointSystem.html#method_bestPoint"
         },                {
             "fqsen": "\\App\\Cards\\TwigDeck",
             "name": "TwigDeck",
-            "summary": "",
+            "summary": "Deck\u0020for\u0020use\u0020with\u0020twig.\u0020contains\u0020extra\u0020functions",
             "url": "classes/App-Cards-TwigDeck.html"
         },                {
             "fqsen": "\\App\\Cards\\TwigDeck\u003A\u003A__construct\u0028\u0029",
@@ -393,17 +393,17 @@ Search.appendIndex(
         },                {
             "fqsen": "\\App\\Cards\\TwigDeck\u003A\u003AtwigArray\u0028\u0029",
             "name": "twigArray",
-            "summary": "",
+            "summary": "Returns\u0020array\u0020for\u0020use\u0020in\u0020twig\u0020templates",
             "url": "classes/App-Cards-TwigDeck.html#method_twigArray"
         },                {
             "fqsen": "\\App\\Cards\\TwigPlayer",
             "name": "TwigPlayer",
-            "summary": "",
+            "summary": "Class\u0020TwigPlayer.\u0020Extenstion\u0020of\u0020Player\u0020with\u0020functions\u0020for\u0020use\u0020with\u0020twig",
             "url": "classes/App-Cards-TwigPlayer.html"
         },                {
             "fqsen": "\\App\\Cards\\TwigPlayer\u003A\u003AtwigArray\u0028\u0029",
             "name": "twigArray",
-            "summary": "",
+            "summary": "Returns\u0020a\u0020representation\u0020of\u0020object\u0020for\u0020use\u0020in\u0020twig",
             "url": "classes/App-Cards-TwigPlayer.html#method_twigArray"
         },                {
             "fqsen": "\\App\\Controller\\CardAPIController",

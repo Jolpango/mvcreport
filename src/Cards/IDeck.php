@@ -2,6 +2,9 @@
 
 namespace App\Cards;
 
+/**
+ * Interface for Deck
+ */
 interface IDeck
 {
     public function shuffleCards();
