@@ -55,6 +55,14 @@ class CardGame implements \Serializable
     }
 
     /**
+     * Returns current state of the game
+     * @return string
+     */
+    public function getState(): string {
+        return self::$States[$this->state];
+    }
+
+    /**
      * Processes the request from the user
      * @param Request $request
      *
