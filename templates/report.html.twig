@@ -44,6 +44,15 @@ TIL: Att Serializable är ett trevligt interface att implementera, gjorde det my
 
 Kursmoment 4
 ------------
+Tyckte att det var ett ganska trevligt sätt att skriva tester. Blev lite roligt att få se siffrorna bli högre och högre. Fast även om man når en hög siffra säger det knappt någonting. När jag skrev tester för en funktion och assertade en del av den så kunde jag få 100% kodtäckning på funktionen, men jag testar egentligen bara ett utfall i vissa fall, så blev lite missvisande tills jag skrev fler tester. Hade också lite problem med composer. Gick varken att köra phpunit eller phpdoc via composer så jag har fått köra dom "manuellt" i terminalen(XDEBUG_MODE=coverage vendor/bin/phpunit och tools/phpdoc/phpdoc).
+Tyckte min kod vart helt okej testbar om man tittar på alla mindre klasser som inte har massa beroenden, t.ex Card klassen. Däremot vart det lite värre att testa min CardGame klass. Det är väldigt mycket som är dolt för användaren av klassen, utan man "pratar" med klassen via requests och får bara tillbaka meddelanden, så tyckte det blev lite invecklade tester.  Hade varit lite enklare att testa klassen ifall den vart mer öppen, men det är något jag inte heller vill göra. Så fick nöja mig med att testa den klassen till 90% bara(och halvdant), men klassens beroenden testar enskilt också så tycker att jag uppnåde ganska hög täckining i det stora hela.
+
+Skrev inte om någon kod, la nog till en get funktion men det var nog allt. Tyckte koden kändes tillräckligt komplett.
+
+Tycker att testbar kod är snygg kod. Man vill ju generellt sett att koden ska vara återanvändbar, ha tydliga anvsar och inte låta funktioner bli för långa. Den koden är ju också lättare att testa.
+
+TIL: Att man enkelt kan generera en trevlig sida via phpunit som håller koll på hur ens testning är.
+
 
 Kursmoment 5
 ------------
