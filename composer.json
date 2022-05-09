@@ -91,13 +91,17 @@
     "scripts": {
         "phpunit": "XDEBUG_MODE=coverage vendor/bin/phpunit",
         "phpdoc": "tools/phpdoc/phpdoc",
-        "csfix": "tools/php-cs-fixer/vendor/bin/php-cs-fixer fix src",
+        "csfixsrc": "tools/php-cs-fixer/vendor/bin/php-cs-fixer fix src",
         "csfixtest": "tools/php-cs-fixer/vendor/bin/php-cs-fixer fix tests",
         "phpcs": "tools/php-codesniffer/vendor/bin/phpcs --standard=PSR12 src",
         "phpcbf": "tools/php-codesniffer/vendor/bin/phpcbf --standard=PSR12 src",
         "phpmd": "tools/phpmd/vendor/bin/phpmd src text phpmd.xml || true",
         "phpstan": "tools/phpstan/vendor/bin/phpstan analyse -l 9 src || true",
         "phpcpd": "tools/phpcpd/vendor/bin/phpcpd src || true",
+        "csfix": [
+            "@csfixsrc",
+            "@csfixtest"
+        ],
         "lint": [
             "@phpcpd",
             "@phpmd",
