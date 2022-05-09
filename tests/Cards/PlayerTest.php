@@ -13,7 +13,8 @@ class PlayerTest extends TestCase
      * Test creating player
      * @return void
      */
-    public function testCreationNoArgs(): void {
+    public function testCreationNoArgs(): void
+    {
         $p = new Player();
         $this->assertInstanceOf("\App\Cards\Player", $p);
         $this->assertEquals(["name" => "NoName", "hand" => []], $p->toArray());
@@ -21,7 +22,8 @@ class PlayerTest extends TestCase
     /**
      * @return void
      */
-    public function testClear(): void {
+    public function testClear(): void
+    {
         $p = new Player([1, 2, 3]);
         $p->clear();
         $this->assertEquals([], $p->hand());
@@ -29,7 +31,8 @@ class PlayerTest extends TestCase
     /**
      * @return void
      */
-    public function testSerialization(): void {
+    public function testSerialization(): void
+    {
         $p = new Player([1, 2, 3], "John");
         $pString = serialize($p);
         $p2 = unserialize($pString);
@@ -38,20 +41,23 @@ class PlayerTest extends TestCase
     /**
      * @return void
      */
-    public function testAddCards(): void {
+    public function testAddCards(): void
+    {
         $p = new Player();
         $p->addCards([new Card(1, "Hearts")]);
         $p->addCards([new Card(2, "Hearts")]);
         $this->assertEquals($p->hand(), [new Card(1, "Hearts"), new Card(2, "Hearts")]);
     }
-    public function testCount(): void {
+    public function testCount(): void
+    {
         $p = new Player();
         $p->addCards([1, 2]);
         $this->assertEquals(count($p), 2);
         $p->addCards([2, 3]);
         $this->assertEquals(count($p), 4);
     }
-    public function testToArray(): void {
+    public function testToArray(): void
+    {
         $p = new Player();
         $this->assertInstanceOf("\App\Cards\Player", $p);
         $p->addCards([new Card(1, "Hearts")]);

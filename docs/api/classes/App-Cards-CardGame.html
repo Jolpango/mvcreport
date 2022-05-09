@@ -200,42 +200,11 @@
 <dd></dd>
 
             <dt class="phpdocumentor-table-of-contents__entry -method -public">
-    <a href="classes/App-Cards-CardGame.html#method_dealStarterCards">dealStarterCards()</a>
+    <a href="classes/App-Cards-CardGame.html#method_getState">getState()</a>
     <span>
-                                &nbsp;: array&lt;string|int, mixed&gt;    </span>
+                                &nbsp;: string    </span>
 </dt>
-<dd>Deals starter cards
-Returns an array of strings documenting what happened</dd>
-
-            <dt class="phpdocumentor-table-of-contents__entry -method -public">
-    <a href="classes/App-Cards-CardGame.html#method_newRound">newRound()</a>
-    <span>
-                                &nbsp;: array&lt;string|int, mixed&gt;    </span>
-</dt>
-<dd>Clears the board, adds back the cards. Advances the state
-Returns an array of strings documenting what happened</dd>
-
-            <dt class="phpdocumentor-table-of-contents__entry -method -public">
-    <a href="classes/App-Cards-CardGame.html#method_processCPU">processCPU()</a>
-    <span>
-                                &nbsp;: array&lt;string|int, mixed&gt;    </span>
-</dt>
-<dd>Processes the cpus turn.</dd>
-
-            <dt class="phpdocumentor-table-of-contents__entry -method -public">
-    <a href="classes/App-Cards-CardGame.html#method_processPlayerDraw">processPlayerDraw()</a>
-    <span>
-                                &nbsp;: array&lt;string|int, mixed&gt;    </span>
-</dt>
-<dd>Draws a card for the player. Advances if player becomes fat.</dd>
-
-            <dt class="phpdocumentor-table-of-contents__entry -method -public">
-    <a href="classes/App-Cards-CardGame.html#method_processPlayerLock">processPlayerLock()</a>
-    <span>
-                                &nbsp;: array&lt;string|int, mixed&gt;    </span>
-</dt>
-<dd>Locks in the players cards and advances state
-Returns an array of strings documenting what happened</dd>
+<dd>Returns current state of the game</dd>
 
             <dt class="phpdocumentor-table-of-contents__entry -method -public">
     <a href="classes/App-Cards-CardGame.html#method_processRequest">processRequest()</a>
@@ -306,6 +275,44 @@ Returns an array of strings documenting what happened</dd>
                                 &nbsp;: array&lt;string|int, mixed&gt;    </span>
 </dt>
 <dd>Returns array of information used in rendering</dd>
+
+            <dt class="phpdocumentor-table-of-contents__entry -method -private">
+    <a href="classes/App-Cards-CardGame.html#method_dealStarterCards">dealStarterCards()</a>
+    <span>
+                                &nbsp;: array&lt;string|int, mixed&gt;    </span>
+</dt>
+<dd>Deals starter cards
+Returns an array of strings documenting what happened</dd>
+
+            <dt class="phpdocumentor-table-of-contents__entry -method -private">
+    <a href="classes/App-Cards-CardGame.html#method_newRound">newRound()</a>
+    <span>
+                                &nbsp;: array&lt;string|int, mixed&gt;    </span>
+</dt>
+<dd>Clears the board, adds back the cards. Advances the state
+Returns an array of strings documenting what happened</dd>
+
+            <dt class="phpdocumentor-table-of-contents__entry -method -private">
+    <a href="classes/App-Cards-CardGame.html#method_processCPU">processCPU()</a>
+    <span>
+                                &nbsp;: array&lt;string|int, mixed&gt;    </span>
+</dt>
+<dd>Processes the cpus turn.</dd>
+
+            <dt class="phpdocumentor-table-of-contents__entry -method -private">
+    <a href="classes/App-Cards-CardGame.html#method_processPlayerDraw">processPlayerDraw()</a>
+    <span>
+                                &nbsp;: array&lt;string|int, mixed&gt;    </span>
+</dt>
+<dd>Draws a card for the player. Advances if player becomes fat.</dd>
+
+            <dt class="phpdocumentor-table-of-contents__entry -method -private">
+    <a href="classes/App-Cards-CardGame.html#method_processPlayerLock">processPlayerLock()</a>
+    <span>
+                                &nbsp;: array&lt;string|int, mixed&gt;    </span>
+</dt>
+<dd>Locks in the players cards and advances state
+Returns an array of strings documenting what happened</dd>
 
             <dt class="phpdocumentor-table-of-contents__entry -method -private">
     <a href="classes/App-Cards-CardGame.html#method_shouldCPUDraw">shouldCPUDraw()</a>
@@ -585,168 +592,29 @@ Returns an array of strings documenting what happened</dd>
             -public
                                                         "
 >
-    <h4 class="phpdocumentor-element__name" id="method_dealStarterCards">
-        dealStarterCards()
-        <a href="classes/App-Cards-CardGame.html#method_dealStarterCards" class="headerlink"><i class="fas fa-link"></i></a>
+    <h4 class="phpdocumentor-element__name" id="method_getState">
+        getState()
+        <a href="classes/App-Cards-CardGame.html#method_getState" class="headerlink"><i class="fas fa-link"></i></a>
     </h4>
     <aside class="phpdocumentor-element-found-in">
     <abbr class="phpdocumentor-element-found-in__file" title="src/Cards/CardGame.php"><a href="files/src-cards-cardgame.html"><abbr title="src/Cards/CardGame.php">CardGame.php</abbr></a></abbr>
     :
-    <span class="phpdocumentor-element-found-in__line">95</span>
+    <span class="phpdocumentor-element-found-in__line">61</span>
 
     </aside>
 
-        <p class="phpdocumentor-summary">Deals starter cards
-Returns an array of strings documenting what happened</p>
+        <p class="phpdocumentor-summary">Returns current state of the game</p>
 
     <code class="phpdocumentor-code phpdocumentor-signature ">
     <span class="phpdocumentor-signature__visibility">public</span>
-                    <span class="phpdocumentor-signature__name">dealStarterCards</span><span>(</span><span>)</span><span> : </span><span class="phpdocumentor-signature__response_type">array&lt;string|int, mixed&gt;</span></code>
+                    <span class="phpdocumentor-signature__name">getState</span><span>(</span><span>)</span><span> : </span><span class="phpdocumentor-signature__response_type">string</span></code>
 
     
     
     
 
         <h5 class="phpdocumentor-return-value__heading">Return values</h5>
-    <span class="phpdocumentor-signature__response_type">array&lt;string|int, mixed&gt;</span>
-            &mdash;
-        
-    
-</article>
-                    <article
-        class="phpdocumentor-element
-            -method
-            -public
-                                                        "
->
-    <h4 class="phpdocumentor-element__name" id="method_newRound">
-        newRound()
-        <a href="classes/App-Cards-CardGame.html#method_newRound" class="headerlink"><i class="fas fa-link"></i></a>
-    </h4>
-    <aside class="phpdocumentor-element-found-in">
-    <abbr class="phpdocumentor-element-found-in__file" title="src/Cards/CardGame.php"><a href="files/src-cards-cardgame.html"><abbr title="src/Cards/CardGame.php">CardGame.php</abbr></a></abbr>
-    :
-    <span class="phpdocumentor-element-found-in__line">177</span>
-
-    </aside>
-
-        <p class="phpdocumentor-summary">Clears the board, adds back the cards. Advances the state
-Returns an array of strings documenting what happened</p>
-
-    <code class="phpdocumentor-code phpdocumentor-signature ">
-    <span class="phpdocumentor-signature__visibility">public</span>
-                    <span class="phpdocumentor-signature__name">newRound</span><span>(</span><span>)</span><span> : </span><span class="phpdocumentor-signature__response_type">array&lt;string|int, mixed&gt;</span></code>
-
-    
-    
-    
-
-        <h5 class="phpdocumentor-return-value__heading">Return values</h5>
-    <span class="phpdocumentor-signature__response_type">array&lt;string|int, mixed&gt;</span>
-            &mdash;
-        
-    
-</article>
-                    <article
-        class="phpdocumentor-element
-            -method
-            -public
-                                                        "
->
-    <h4 class="phpdocumentor-element__name" id="method_processCPU">
-        processCPU()
-        <a href="classes/App-Cards-CardGame.html#method_processCPU" class="headerlink"><i class="fas fa-link"></i></a>
-    </h4>
-    <aside class="phpdocumentor-element-found-in">
-    <abbr class="phpdocumentor-element-found-in__file" title="src/Cards/CardGame.php"><a href="files/src-cards-cardgame.html"><abbr title="src/Cards/CardGame.php">CardGame.php</abbr></a></abbr>
-    :
-    <span class="phpdocumentor-element-found-in__line">117</span>
-
-    </aside>
-
-        <p class="phpdocumentor-summary">Processes the cpus turn.</p>
-
-    <code class="phpdocumentor-code phpdocumentor-signature ">
-    <span class="phpdocumentor-signature__visibility">public</span>
-                    <span class="phpdocumentor-signature__name">processCPU</span><span>(</span><span>)</span><span> : </span><span class="phpdocumentor-signature__response_type">array&lt;string|int, mixed&gt;</span></code>
-
-        <section class="phpdocumentor-description"><p>Returns an array of strings documenting what happened</p>
-</section>
-
-    
-    
-
-        <h5 class="phpdocumentor-return-value__heading">Return values</h5>
-    <span class="phpdocumentor-signature__response_type">array&lt;string|int, mixed&gt;</span>
-            &mdash;
-        
-    
-</article>
-                    <article
-        class="phpdocumentor-element
-            -method
-            -public
-                                                        "
->
-    <h4 class="phpdocumentor-element__name" id="method_processPlayerDraw">
-        processPlayerDraw()
-        <a href="classes/App-Cards-CardGame.html#method_processPlayerDraw" class="headerlink"><i class="fas fa-link"></i></a>
-    </h4>
-    <aside class="phpdocumentor-element-found-in">
-    <abbr class="phpdocumentor-element-found-in__file" title="src/Cards/CardGame.php"><a href="files/src-cards-cardgame.html"><abbr title="src/Cards/CardGame.php">CardGame.php</abbr></a></abbr>
-    :
-    <span class="phpdocumentor-element-found-in__line">194</span>
-
-    </aside>
-
-        <p class="phpdocumentor-summary">Draws a card for the player. Advances if player becomes fat.</p>
-
-    <code class="phpdocumentor-code phpdocumentor-signature ">
-    <span class="phpdocumentor-signature__visibility">public</span>
-                    <span class="phpdocumentor-signature__name">processPlayerDraw</span><span>(</span><span>)</span><span> : </span><span class="phpdocumentor-signature__response_type">array&lt;string|int, mixed&gt;</span></code>
-
-        <section class="phpdocumentor-description"><p>Returns an array of strings documenting what happened.</p>
-</section>
-
-    
-    
-
-        <h5 class="phpdocumentor-return-value__heading">Return values</h5>
-    <span class="phpdocumentor-signature__response_type">array&lt;string|int, mixed&gt;</span>
-            &mdash;
-        
-    
-</article>
-                    <article
-        class="phpdocumentor-element
-            -method
-            -public
-                                                        "
->
-    <h4 class="phpdocumentor-element__name" id="method_processPlayerLock">
-        processPlayerLock()
-        <a href="classes/App-Cards-CardGame.html#method_processPlayerLock" class="headerlink"><i class="fas fa-link"></i></a>
-    </h4>
-    <aside class="phpdocumentor-element-found-in">
-    <abbr class="phpdocumentor-element-found-in__file" title="src/Cards/CardGame.php"><a href="files/src-cards-cardgame.html"><abbr title="src/Cards/CardGame.php">CardGame.php</abbr></a></abbr>
-    :
-    <span class="phpdocumentor-element-found-in__line">162</span>
-
-    </aside>
-
-        <p class="phpdocumentor-summary">Locks in the players cards and advances state
-Returns an array of strings documenting what happened</p>
-
-    <code class="phpdocumentor-code phpdocumentor-signature ">
-    <span class="phpdocumentor-signature__visibility">public</span>
-                    <span class="phpdocumentor-signature__name">processPlayerLock</span><span>(</span><span>)</span><span> : </span><span class="phpdocumentor-signature__response_type">array&lt;string|int, mixed&gt;</span></code>
-
-    
-    
-    
-
-        <h5 class="phpdocumentor-return-value__heading">Return values</h5>
-    <span class="phpdocumentor-signature__response_type">array&lt;string|int, mixed&gt;</span>
+    <span class="phpdocumentor-signature__response_type">string</span>
             &mdash;
         
     
@@ -764,7 +632,7 @@ Returns an array of strings documenting what happened</p>
     <aside class="phpdocumentor-element-found-in">
     <abbr class="phpdocumentor-element-found-in__file" title="src/Cards/CardGame.php"><a href="files/src-cards-cardgame.html"><abbr title="src/Cards/CardGame.php">CardGame.php</abbr></a></abbr>
     :
-    <span class="phpdocumentor-element-found-in__line">63</span>
+    <span class="phpdocumentor-element-found-in__line">72</span>
 
     </aside>
 
@@ -807,7 +675,7 @@ Returns an array of strings documenting what happened</p>
     <aside class="phpdocumentor-element-found-in">
     <abbr class="phpdocumentor-element-found-in__file" title="src/Cards/CardGame.php"><a href="files/src-cards-cardgame.html"><abbr title="src/Cards/CardGame.php">CardGame.php</abbr></a></abbr>
     :
-    <span class="phpdocumentor-element-found-in__line">224</span>
+    <span class="phpdocumentor-element-found-in__line">233</span>
 
     </aside>
 
@@ -840,7 +708,7 @@ Returns an array of strings documenting what happened</p>
     <aside class="phpdocumentor-element-found-in">
     <abbr class="phpdocumentor-element-found-in__file" title="src/Cards/CardGame.php"><a href="files/src-cards-cardgame.html"><abbr title="src/Cards/CardGame.php">CardGame.php</abbr></a></abbr>
     :
-    <span class="phpdocumentor-element-found-in__line">219</span>
+    <span class="phpdocumentor-element-found-in__line">228</span>
 
     </aside>
 
@@ -873,7 +741,7 @@ Returns an array of strings documenting what happened</p>
     <aside class="phpdocumentor-element-found-in">
     <abbr class="phpdocumentor-element-found-in__file" title="src/Cards/CardGame.php"><a href="files/src-cards-cardgame.html"><abbr title="src/Cards/CardGame.php">CardGame.php</abbr></a></abbr>
     :
-    <span class="phpdocumentor-element-found-in__line">299</span>
+    <span class="phpdocumentor-element-found-in__line">308</span>
 
     </aside>
 
@@ -906,7 +774,7 @@ Returns an array of strings documenting what happened</p>
     <aside class="phpdocumentor-element-found-in">
     <abbr class="phpdocumentor-element-found-in__file" title="src/Cards/CardGame.php"><a href="files/src-cards-cardgame.html"><abbr title="src/Cards/CardGame.php">CardGame.php</abbr></a></abbr>
     :
-    <span class="phpdocumentor-element-found-in__line">315</span>
+    <span class="phpdocumentor-element-found-in__line">324</span>
 
     </aside>
 
@@ -982,7 +850,7 @@ Returns an array of strings documenting what happened</p>
     <aside class="phpdocumentor-element-found-in">
     <abbr class="phpdocumentor-element-found-in__file" title="src/Cards/CardGame.php"><a href="files/src-cards-cardgame.html"><abbr title="src/Cards/CardGame.php">CardGame.php</abbr></a></abbr>
     :
-    <span class="phpdocumentor-element-found-in__line">266</span>
+    <span class="phpdocumentor-element-found-in__line">275</span>
 
     </aside>
 
@@ -1015,7 +883,7 @@ Returns an array of strings documenting what happened</p>
     <aside class="phpdocumentor-element-found-in">
     <abbr class="phpdocumentor-element-found-in__file" title="src/Cards/CardGame.php"><a href="files/src-cards-cardgame.html"><abbr title="src/Cards/CardGame.php">CardGame.php</abbr></a></abbr>
     :
-    <span class="phpdocumentor-element-found-in__line">242</span>
+    <span class="phpdocumentor-element-found-in__line">251</span>
 
     </aside>
 
@@ -1048,7 +916,7 @@ Returns an array of strings documenting what happened</p>
     <aside class="phpdocumentor-element-found-in">
     <abbr class="phpdocumentor-element-found-in__file" title="src/Cards/CardGame.php"><a href="files/src-cards-cardgame.html"><abbr title="src/Cards/CardGame.php">CardGame.php</abbr></a></abbr>
     :
-    <span class="phpdocumentor-element-found-in__line">253</span>
+    <span class="phpdocumentor-element-found-in__line">262</span>
 
     </aside>
 
@@ -1081,7 +949,7 @@ Returns an array of strings documenting what happened</p>
     <aside class="phpdocumentor-element-found-in">
     <abbr class="phpdocumentor-element-found-in__file" title="src/Cards/CardGame.php"><a href="files/src-cards-cardgame.html"><abbr title="src/Cards/CardGame.php">CardGame.php</abbr></a></abbr>
     :
-    <span class="phpdocumentor-element-found-in__line">275</span>
+    <span class="phpdocumentor-element-found-in__line">284</span>
 
     </aside>
 
@@ -1107,6 +975,178 @@ Returns an array of strings documenting what happened</p>
             -private
                                                         "
 >
+    <h4 class="phpdocumentor-element__name" id="method_dealStarterCards">
+        dealStarterCards()
+        <a href="classes/App-Cards-CardGame.html#method_dealStarterCards" class="headerlink"><i class="fas fa-link"></i></a>
+    </h4>
+    <aside class="phpdocumentor-element-found-in">
+    <abbr class="phpdocumentor-element-found-in__file" title="src/Cards/CardGame.php"><a href="files/src-cards-cardgame.html"><abbr title="src/Cards/CardGame.php">CardGame.php</abbr></a></abbr>
+    :
+    <span class="phpdocumentor-element-found-in__line">104</span>
+
+    </aside>
+
+        <p class="phpdocumentor-summary">Deals starter cards
+Returns an array of strings documenting what happened</p>
+
+    <code class="phpdocumentor-code phpdocumentor-signature ">
+    <span class="phpdocumentor-signature__visibility">private</span>
+                    <span class="phpdocumentor-signature__name">dealStarterCards</span><span>(</span><span>)</span><span> : </span><span class="phpdocumentor-signature__response_type">array&lt;string|int, mixed&gt;</span></code>
+
+    
+    
+    
+
+        <h5 class="phpdocumentor-return-value__heading">Return values</h5>
+    <span class="phpdocumentor-signature__response_type">array&lt;string|int, mixed&gt;</span>
+            &mdash;
+        
+    
+</article>
+                    <article
+        class="phpdocumentor-element
+            -method
+            -private
+                                                        "
+>
+    <h4 class="phpdocumentor-element__name" id="method_newRound">
+        newRound()
+        <a href="classes/App-Cards-CardGame.html#method_newRound" class="headerlink"><i class="fas fa-link"></i></a>
+    </h4>
+    <aside class="phpdocumentor-element-found-in">
+    <abbr class="phpdocumentor-element-found-in__file" title="src/Cards/CardGame.php"><a href="files/src-cards-cardgame.html"><abbr title="src/Cards/CardGame.php">CardGame.php</abbr></a></abbr>
+    :
+    <span class="phpdocumentor-element-found-in__line">186</span>
+
+    </aside>
+
+        <p class="phpdocumentor-summary">Clears the board, adds back the cards. Advances the state
+Returns an array of strings documenting what happened</p>
+
+    <code class="phpdocumentor-code phpdocumentor-signature ">
+    <span class="phpdocumentor-signature__visibility">private</span>
+                    <span class="phpdocumentor-signature__name">newRound</span><span>(</span><span>)</span><span> : </span><span class="phpdocumentor-signature__response_type">array&lt;string|int, mixed&gt;</span></code>
+
+    
+    
+    
+
+        <h5 class="phpdocumentor-return-value__heading">Return values</h5>
+    <span class="phpdocumentor-signature__response_type">array&lt;string|int, mixed&gt;</span>
+            &mdash;
+        
+    
+</article>
+                    <article
+        class="phpdocumentor-element
+            -method
+            -private
+                                                        "
+>
+    <h4 class="phpdocumentor-element__name" id="method_processCPU">
+        processCPU()
+        <a href="classes/App-Cards-CardGame.html#method_processCPU" class="headerlink"><i class="fas fa-link"></i></a>
+    </h4>
+    <aside class="phpdocumentor-element-found-in">
+    <abbr class="phpdocumentor-element-found-in__file" title="src/Cards/CardGame.php"><a href="files/src-cards-cardgame.html"><abbr title="src/Cards/CardGame.php">CardGame.php</abbr></a></abbr>
+    :
+    <span class="phpdocumentor-element-found-in__line">126</span>
+
+    </aside>
+
+        <p class="phpdocumentor-summary">Processes the cpus turn.</p>
+
+    <code class="phpdocumentor-code phpdocumentor-signature ">
+    <span class="phpdocumentor-signature__visibility">private</span>
+                    <span class="phpdocumentor-signature__name">processCPU</span><span>(</span><span>)</span><span> : </span><span class="phpdocumentor-signature__response_type">array&lt;string|int, mixed&gt;</span></code>
+
+        <section class="phpdocumentor-description"><p>Returns an array of strings documenting what happened</p>
+</section>
+
+    
+    
+
+        <h5 class="phpdocumentor-return-value__heading">Return values</h5>
+    <span class="phpdocumentor-signature__response_type">array&lt;string|int, mixed&gt;</span>
+            &mdash;
+        
+    
+</article>
+                    <article
+        class="phpdocumentor-element
+            -method
+            -private
+                                                        "
+>
+    <h4 class="phpdocumentor-element__name" id="method_processPlayerDraw">
+        processPlayerDraw()
+        <a href="classes/App-Cards-CardGame.html#method_processPlayerDraw" class="headerlink"><i class="fas fa-link"></i></a>
+    </h4>
+    <aside class="phpdocumentor-element-found-in">
+    <abbr class="phpdocumentor-element-found-in__file" title="src/Cards/CardGame.php"><a href="files/src-cards-cardgame.html"><abbr title="src/Cards/CardGame.php">CardGame.php</abbr></a></abbr>
+    :
+    <span class="phpdocumentor-element-found-in__line">203</span>
+
+    </aside>
+
+        <p class="phpdocumentor-summary">Draws a card for the player. Advances if player becomes fat.</p>
+
+    <code class="phpdocumentor-code phpdocumentor-signature ">
+    <span class="phpdocumentor-signature__visibility">private</span>
+                    <span class="phpdocumentor-signature__name">processPlayerDraw</span><span>(</span><span>)</span><span> : </span><span class="phpdocumentor-signature__response_type">array&lt;string|int, mixed&gt;</span></code>
+
+        <section class="phpdocumentor-description"><p>Returns an array of strings documenting what happened.</p>
+</section>
+
+    
+    
+
+        <h5 class="phpdocumentor-return-value__heading">Return values</h5>
+    <span class="phpdocumentor-signature__response_type">array&lt;string|int, mixed&gt;</span>
+            &mdash;
+        
+    
+</article>
+                    <article
+        class="phpdocumentor-element
+            -method
+            -private
+                                                        "
+>
+    <h4 class="phpdocumentor-element__name" id="method_processPlayerLock">
+        processPlayerLock()
+        <a href="classes/App-Cards-CardGame.html#method_processPlayerLock" class="headerlink"><i class="fas fa-link"></i></a>
+    </h4>
+    <aside class="phpdocumentor-element-found-in">
+    <abbr class="phpdocumentor-element-found-in__file" title="src/Cards/CardGame.php"><a href="files/src-cards-cardgame.html"><abbr title="src/Cards/CardGame.php">CardGame.php</abbr></a></abbr>
+    :
+    <span class="phpdocumentor-element-found-in__line">171</span>
+
+    </aside>
+
+        <p class="phpdocumentor-summary">Locks in the players cards and advances state
+Returns an array of strings documenting what happened</p>
+
+    <code class="phpdocumentor-code phpdocumentor-signature ">
+    <span class="phpdocumentor-signature__visibility">private</span>
+                    <span class="phpdocumentor-signature__name">processPlayerLock</span><span>(</span><span>)</span><span> : </span><span class="phpdocumentor-signature__response_type">array&lt;string|int, mixed&gt;</span></code>
+
+    
+    
+    
+
+        <h5 class="phpdocumentor-return-value__heading">Return values</h5>
+    <span class="phpdocumentor-signature__response_type">array&lt;string|int, mixed&gt;</span>
+            &mdash;
+        
+    
+</article>
+                    <article
+        class="phpdocumentor-element
+            -method
+            -private
+                                                        "
+>
     <h4 class="phpdocumentor-element__name" id="method_shouldCPUDraw">
         shouldCPUDraw()
         <a href="classes/App-Cards-CardGame.html#method_shouldCPUDraw" class="headerlink"><i class="fas fa-link"></i></a>
@@ -1114,7 +1154,7 @@ Returns an array of strings documenting what happened</p>
     <aside class="phpdocumentor-element-found-in">
     <abbr class="phpdocumentor-element-found-in__file" title="src/Cards/CardGame.php"><a href="files/src-cards-cardgame.html"><abbr title="src/Cards/CardGame.php">CardGame.php</abbr></a></abbr>
     :
-    <span class="phpdocumentor-element-found-in__line">140</span>
+    <span class="phpdocumentor-element-found-in__line">149</span>
 
     </aside>
 

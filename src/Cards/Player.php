@@ -69,7 +69,7 @@ class Player implements \Countable, \Serializable
 
     /**
      * @param array $cards
-     * 
+     *
      * @return void
      */
     public function addCards(array $cards): void
@@ -90,7 +90,7 @@ class Player implements \Countable, \Serializable
     }
     /**
      * @param string $data
-     * 
+     *
      * @return void
      */
     public function unserialize(string $data): void

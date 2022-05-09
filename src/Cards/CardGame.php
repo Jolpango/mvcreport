@@ -58,7 +58,8 @@ class CardGame implements \Serializable
      * Returns current state of the game
      * @return string
      */
-    public function getState(): string {
+    public function getState(): string
+    {
         return self::$States[$this->state];
     }
 
@@ -128,13 +129,13 @@ class CardGame implements \Serializable
             return ["It is not the banks turn, you cannot do this"];
         }
         $messages = ["Computer/Developer is thinking..."];
-        $pointsArray = PointSystem::Points21($this->cpu->hand());
-        $playerPoints = PointSystem::Points21($this->player->hand());
+        $pointsArray = PointSystem::points21($this->cpu->hand());
+        $playerPoints = PointSystem::points21($this->player->hand());
         while ($this->shouldCPUDraw()) {
             $card = $this->deck->draw(1);
             array_push($messages, "Computer drew " . $card[0]->toString());
             $this->cpu->addCards($card);
-            $pointsArray = PointSystem::Points21($this->cpu->hand());
+            $pointsArray = PointSystem::points21($this->cpu->hand());
         }
         array_push($messages, "Computer has finished thinking");
         $this->advanceState();
@@ -209,7 +210,7 @@ class CardGame implements \Serializable
         $card = $this->deck->draw(1);
         array_push($messages, "You drew " . $card[0]->toString());
         $this->player->addCards($card);
-        $bestPoint = PointSystem::BestPoint(PointSystem::Points21($this->player->hand()));
+        $bestPoint = PointSystem::bestPoint(PointSystem::points21($this->player->hand()));
         if (!$bestPoint) {
             array_push($messages, "You got fat");
             $this->state = 3;
@@ -283,8 +284,8 @@ class CardGame implements \Serializable
     private function buildResultData(): array
     {
         $resultMessage = "Bank wins";
-        $cpuBestPoint = PointSystem::bestPoint(PointSystem::Points21($this->cpu->hand()));
-        $playerBestPoint = PointSystem::bestPoint(PointSystem::Points21($this->player->hand()));
+        $cpuBestPoint = PointSystem::bestPoint(PointSystem::points21($this->cpu->hand()));
+        $playerBestPoint = PointSystem::bestPoint(PointSystem::points21($this->player->hand()));
         if ($playerBestPoint > $cpuBestPoint) {
             $resultMessage = "Player wins";
         }

@@ -76,6 +76,11 @@ Search.appendIndex(
             "summary": "Advances\u0020the\u0020state\u0020of\u0020the\u0020gane\u0020by\u00201",
             "url": "classes/App-Cards-CardGame.html#method_advanceState"
         },                {
+            "fqsen": "\\App\\Cards\\CardGame\u003A\u003AgetState\u0028\u0029",
+            "name": "getState",
+            "summary": "Returns\u0020current\u0020state\u0020of\u0020the\u0020game",
+            "url": "classes/App-Cards-CardGame.html#method_getState"
+        },                {
             "fqsen": "\\App\\Cards\\CardGame\u003A\u003AprocessRequest\u0028\u0029",
             "name": "processRequest",
             "summary": "Processes\u0020the\u0020request\u0020from\u0020the\u0020user",
@@ -261,26 +266,6 @@ Search.appendIndex(
             "summary": "",
             "url": "classes/App-Cards-Deck.html#property_cards"
         },                {
-            "fqsen": "\\App\\Cards\\DeckSessionHandler",
-            "name": "DeckSessionHandler",
-            "summary": "\u005BDescription\u0020DeckSessionHandler\u005D",
-            "url": "classes/App-Cards-DeckSessionHandler.html"
-        },                {
-            "fqsen": "\\App\\Cards\\DeckSessionHandler\u003A\u003AloadFromSession\u0028\u0029",
-            "name": "loadFromSession",
-            "summary": "",
-            "url": "classes/App-Cards-DeckSessionHandler.html#method_loadFromSession"
-        },                {
-            "fqsen": "\\App\\Cards\\DeckSessionHandler\u003A\u003AsaveToSession\u0028\u0029",
-            "name": "saveToSession",
-            "summary": "",
-            "url": "classes/App-Cards-DeckSessionHandler.html#method_saveToSession"
-        },                {
-            "fqsen": "\\App\\Cards\\DeckSessionHandler\u003A\u003A\u0024deck",
-            "name": "deck",
-            "summary": "",
-            "url": "classes/App-Cards-DeckSessionHandler.html#property_deck"
-        },                {
             "fqsen": "\\App\\Cards\\IDeck",
             "name": "IDeck",
             "summary": "Interface\u0020for\u0020Deck",
@@ -355,11 +340,6 @@ Search.appendIndex(
             "name": "name",
             "summary": "",
             "url": "classes/App-Cards-Player.html#property_name"
-        },                {
-            "fqsen": "\\App\\Cards\\possibleCombinations\u0028\u0029",
-            "name": "possibleCombinations",
-            "summary": "",
-            "url": "namespaces/app-cards.html#function_possibleCombinations"
         },                {
             "fqsen": "\\App\\Cards\\PointSystem",
             "name": "PointSystem",

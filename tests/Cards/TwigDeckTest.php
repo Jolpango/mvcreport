@@ -9,7 +9,8 @@ use PHPUnit\Framework\TestCase;
  */
 class TwigDeckTest extends TestCase
 {
-    public function testCreateEmpty(): void {
+    public function testCreateEmpty(): void
+    {
         $deck = new TwigDeck();
         $this->assertEquals(0, count($deck));
         $this->assertEquals([], $deck->toArray());
@@ -18,7 +19,8 @@ class TwigDeckTest extends TestCase
      * Duplicates object with from and to array
      * @return void
      */
-    public function testToFromArray(): void {
+    public function testToFromArray(): void
+    {
         $deck = new TwigDeck();
         $deck->addCards([
             new CardGraphic(1, "h"),

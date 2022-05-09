@@ -12,7 +12,7 @@ class PointSystem
     /**
      * Calculates possible points from array of cards
      * @param array $cards
-     * 
+     *
      * @return array
      */
     public static function points21(array $cards): array
@@ -43,7 +43,7 @@ class PointSystem
     /**
      * Returns the best point. The highest one, but less than or equal 21
      * @param array $points
-     * 
+     *
      * @return int
      */
     public static function bestPoint(array $points): int

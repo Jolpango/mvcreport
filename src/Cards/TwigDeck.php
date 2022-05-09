@@ -3,6 +3,7 @@
 namespace App\Cards;
 
 use App\Cards\CardGraphic;
+
 /**
  * Deck for use with twig. contains extra functions
  */
@@ -28,7 +29,7 @@ class TwigDeck extends Deck
 
     /**
      * @param array $toLoad
-     * 
+     *
      * @return Deck
      */
     public static function fromArray(array $toLoad): Deck

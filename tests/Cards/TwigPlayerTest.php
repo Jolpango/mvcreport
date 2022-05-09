@@ -9,7 +9,8 @@ use PHPUnit\Framework\TestCase;
  */
 class TwigPlayerTest extends TestCase
 {
-    public function testTwigArray(): void {
+    public function testTwigArray(): void
+    {
         $player = new TwigPlayer();
         $player->addCards([new CardGraphic(1, "h"), new CardGraphic(1, "h"), new CardGraphic(1, "h")]);
         $twigArrayHand = [

@@ -29,7 +29,7 @@ class Deck implements IDeck, \Countable, \Serializable
 
     /**
      * @param array $toLoad
-     * 
+     *
      * @return Deck
      */
     public static function fromArray(array $toLoad): Deck
@@ -43,7 +43,7 @@ class Deck implements IDeck, \Countable, \Serializable
 
     /**
      * @param Card $card
-     * 
+     *
      * @return void
      */
     public function addCard(Card $card): void
@@ -62,7 +62,7 @@ class Deck implements IDeck, \Countable, \Serializable
 
     /**
      * @param array $cards
-     * 
+     *
      * @return void
      */
     public function addCards(array $cards): void
@@ -83,7 +83,7 @@ class Deck implements IDeck, \Countable, \Serializable
     /**
      * Returns $count cards. Removes them from this object
      * @param int $count
-     * 
+     *
      * @return array
      */
     public function draw(int $count): array
@@ -117,7 +117,7 @@ class Deck implements IDeck, \Countable, \Serializable
     }
     /**
      * @param string $data
-     * 
+     *
      * @return void
      */
     public function unserialize(string $data): void
