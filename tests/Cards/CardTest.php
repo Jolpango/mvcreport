@@ -41,8 +41,10 @@ class CardTest extends TestCase
         $this->assertEquals($card->getSuit(), "Hearts");
     }
     public function testSetValueArray(): void {
+        $org = Card::$valueToString;
         $a = [0 => "test"];
         Card::setValueArray($a);
         $this->assertEquals($a, Card::$valueToString);
+        Card::setValueArray($org);
     }
 }

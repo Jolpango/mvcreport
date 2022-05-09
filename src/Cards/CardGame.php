@@ -100,7 +100,7 @@ class CardGame implements \Serializable
      * Returns an array of strings documenting what happened
      * @return array
      */
-    public function dealStarterCards(): array
+    private function dealStarterCards(): array
     {
         if (CardGame::$States[$this->state] !== "NEW") {
             return ["It is not the start of the game, you cannot do this"];
@@ -122,7 +122,7 @@ class CardGame implements \Serializable
      * Returns an array of strings documenting what happened
      * @return array
      */
-    public function processCPU(): array
+    private function processCPU(): array
     {
         if (CardGame::$States[$this->state] !== "CPU") {
             return ["It is not the banks turn, you cannot do this"];
@@ -167,7 +167,7 @@ class CardGame implements \Serializable
      * Returns an array of strings documenting what happened
      * @return array
      */
-    public function processPlayerLock(): array
+    private function processPlayerLock(): array
     {
         if (CardGame::$States[$this->state] !== "PLAYER") {
             return ["It is not the players turn, you cannot do this"];
@@ -182,7 +182,7 @@ class CardGame implements \Serializable
      * Returns an array of strings documenting what happened
      * @return array
      */
-    public function newRound(): array
+    private function newRound(): array
     {
         if (CardGame::$States[$this->state] !== "GAMEOVER") {
             return ["It is not the end, you cannot do this"];
@@ -199,7 +199,7 @@ class CardGame implements \Serializable
      * Returns an array of strings documenting what happened.
      * @return array
      */
-    public function processPlayerDraw(): array
+    private function processPlayerDraw(): array
     {
         if (CardGame::$States[$this->state] !== "PLAYER") {
             return ["It is not the players turn, you cannot do this"];

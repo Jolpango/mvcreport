@@ -3,7 +3,6 @@
 namespace App\Cards;
 
 use App\Cards\CardGraphic;
-
 /**
  * Deck for use with twig. contains extra functions
  */

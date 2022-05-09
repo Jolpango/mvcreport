@@ -33,7 +33,7 @@ class CardGraphic extends Card
      */
     public function toCSSClass(): string
     {
-        $valueClass = strtolower(Card::$valueToString[$this->value]) ?? $this->value;
+        $valueClass = strtolower(self::$valueToString[$this->value]) ?? $this->value;
         $suitClass = strtolower($this->suit);
         return "{$valueClass} {$suitClass}";
     }

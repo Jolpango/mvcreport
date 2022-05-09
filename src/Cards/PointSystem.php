@@ -4,18 +4,6 @@ namespace App\Cards;
 
 use App\Cards\Player;
 
-function possibleCombinations($length)
-{
-    $totalCombos = pow(2, $length);
-
-    $sequences = array();
-
-    for ($x = 0; $x < $totalCombos; $x++) {
-        $sequences[$x] = str_split(str_pad(decbin($x), $length, 0, STR_PAD_LEFT));
-    }
-    return $sequences;
-}
-
 /**
  * Class for calculating points from hands.
  */
