@@ -1,15 +1,26 @@
 {% extends "base.html.twig" %}
 {% block content %}
     <h1>Alla böcker</h1>
+    {% include("views/flash.html.twig") %}
     <h2 class="text-center">Här hittar du alla böcker som finns att låna.</h2>
     <table>
         <thead>
-            <th>Titel</th>
-            <th>ISBN</th>
-            <th>Författare</th>
+            <tr>
+                <th>Titel</th>
+                <th>ISBN</th>
+                <th>Författare</th>
+                <th>Visa</th>
+            </tr>
         </thead>
         <tbody>
-            <!-- Loop through all dem books -->
+            {% for book in books %}
+                <tr>
+                    <td class="text-center">{{ book.title }}</td>
+                    <td class="text-center">{{ book.isbn }}</td>
+                    <td class="text-center">{{ book.author }}</td>
+                    <td class="text-center"><a href={{path("book-view", {id:book.id})}}>&#9998;</a></td>
+                <tr>
+            {% endfor %}
         </tbody>
     </table>
 {% endblock %}

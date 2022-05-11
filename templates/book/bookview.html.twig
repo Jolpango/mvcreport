@@ -1,0 +1,9 @@
+{% extends "base.html.twig" %}
+{% block content %}
+    <h1>{{book.title}}</h1>
+    <h2 class="text-center">{{book.author}}</h2>
+    <img src="{{book.image}}" width="250" class="self-center">
+    <p>{{book.description}}</p>
+    <p class="text-center">IBSN: {{book.isbn}}</p>
+    <a href={{path("book-edit", {id:book.id})}}>Redigera</a>
+{% endblock %}

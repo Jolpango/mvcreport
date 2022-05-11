@@ -1,14 +1,31 @@
 {% extends "base.html.twig" %}
 {% block content %}
-    <h1>Lägg till en ny bok</h1>
-    <form method="post" class="flex flex-row">
-        <div class="flex flex-row">
-            <label for="author">Författare</label>
-            <input type="text" name="author" id="author">
+    <h1>Redigera bok</h1>
+    {% include("views/flash.html.twig") %}
+    <form action={{url("book-add-process")}} method="post" class="flex flex-col book-form">
+        <div class="flex flex-col">
+            <label for="title" class="text-center">Titel</label>
+            <input type="text" name="title" id="title" required>
         </div>
-        <div class="flex flex-row">
-            <label for="isbn">ISBN</label>
-            <input type="text" name="isbn" id="isbn">
+        <div class="flex flex-col">
+            <label for="author" class="text-center">Författare</label>
+            <input type="text" name="author" id="author" required>
+        </div>
+        <div class="flex flex-col">
+            <label for="isbn" class="text-center">ISBN</label>
+            <input type="text" name="isbn" id="isbn" required>
+        </div>
+        <div class="flex flex-col">
+            <label for="description" class="text-center">Beskrivning</label>
+            <textarea name="description" id="description" required></textarea>
+        </div>
+        <div class="flex flex-col">
+            <label for="image" class="text-center">Bildlänk</label>
+            <input type="text" name="image" id="image" required>
+        </div>
+        <div class="flex flex-row space-evenly">
+            <button type="submit" class="half-width">Lägg till</button>
+            <button type="reset" class="half-width">Återställ</button>
         </div>
     </form>
 {% endblock %}

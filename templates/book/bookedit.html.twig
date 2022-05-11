@@ -1,0 +1,36 @@
+{% extends "base.html.twig" %}
+{% block content %}
+    <h1>Redigera bok</h1>
+    {% include("views/flash.html.twig") %}
+    <form action={{url("book-edit-process")}} method="post" class="flex flex-col book-form">
+        <input name="id" id="id" type="numeric" value={{book.id}} hidden>
+        <div class="flex flex-col">
+            <label for="title" class="text-center">Titel</label>
+            <input type="text" name="title" id="title" value={{book.title}} required>
+        </div>
+        <div class="flex flex-col">
+            <label for="author" class="text-center">Författare</label>
+            <input type="text" name="author" id="author" value={{book.author}} required>
+        </div>
+        <div class="flex flex-col">
+            <label for="isbn" class="text-center">ISBN</label>
+            <input type="text" name="isbn" id="isbn" value={{book.isbn}} required>
+        </div>
+        <div class="flex flex-col">
+            <label for="description" class="text-center">Beskrivning</label>
+            <textarea name="description" id="description" required>{{book.description}}</textarea>
+        </div>
+        <div class="flex flex-col">
+            <label for="image" class="text-center">Bildlänk</label>
+            <input type="text" name="image" id="image" value={{book.image}} required>
+        </div>
+        <div class="flex flex-row space-evenly">
+            <button type="submit" class="half-width">Spara</button>
+            <button type="reset" class="half-width">Återställ</button>
+        </div>
+    </form>
+    <form method="post" class="book-form flex space-evenly" action={{url("book-remove")}}>
+        <input name="id" id="id" type="numeric" value={{book.id}} hidden>
+        <button type="submit" class="full-width">Ta bort</button>
+    </form>
+{% endblock %}
