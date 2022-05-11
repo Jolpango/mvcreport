@@ -1,9 +1,15 @@
 {% extends "base.html.twig" %}
 {% block content %}
-    <h1>Kort navigations centralen</h1>
-    <ul>
-        <!-- <li><a href={{url("game-play")}}>Visa alla böcker</a></li>
-        <li><a href={{url("game-reset")}}>Lägg till en ny bok</a></li> -->
-    </ul>
-{{dump(game)}}
+    <h1>Alla böcker</h1>
+    <h2 class="text-center">Här hittar du alla böcker som finns att låna.</h2>
+    <table>
+        <thead>
+            <th>Titel</th>
+            <th>ISBN</th>
+            <th>Författare</th>
+        </thead>
+        <tbody>
+            <!-- Loop through all dem books -->
+        </tbody>
+    </table>
 {% endblock %}

@@ -1,0 +1,14 @@
+{% extends "base.html.twig" %}
+{% block content %}
+    <h1>Lägg till en ny bok</h1>
+    <form method="post" class="flex flex-row">
+        <div class="flex flex-row">
+            <label for="author">Författare</label>
+            <input type="text" name="author" id="author">
+        </div>
+        <div class="flex flex-row">
+            <label for="isbn">ISBN</label>
+            <input type="text" name="isbn" id="isbn">
+        </div>
+    </form>
+{% endblock %}
