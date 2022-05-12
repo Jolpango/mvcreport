@@ -3,7 +3,7 @@ imports:
 
 filter:
     paths: [src/]
-    # excluded_paths: [vendor/*, test/*]
+    excluded_paths: [vendor/*, tests/*]
 
 build:
     nodes:
@@ -15,9 +15,11 @@ build:
             tests:
                 override:
                     - php-scrutinizer-run
-        tests:
-            override:
-                - command: "XDEBUG_MODE=coverage vendor/bin/phpunit"
-                    coverage:
-                        file: "build/coverage.clover"
-                        format: "php-clover"
+    tests:
+        override:
+            -
+                # command: "composer phpunit"
+                command: "XDEBUG_MODE=coverage vendor/bin/phpunit"
+                coverage:
+                    file: "build/coverage.clover"
+                    format: "php-clover"
