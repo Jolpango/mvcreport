@@ -26,7 +26,7 @@ interface IDeck
     /**
      * @param array<Card> $card
      * 
-     * @return void
+     * @return bool
      */
     public function addCards(array $card);
 }
