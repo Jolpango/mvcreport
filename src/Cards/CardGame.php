@@ -152,7 +152,6 @@ class CardGame implements \Serializable
         $playerPoints = PointSystem::points21($this->player->hand());
         $playerBestPoint = PointSystem::bestPoint($playerPoints);
         $cpuBestPoint = PointSystem::bestPoint($cpuPoints);
-        $cutOffPoint = 17;
         // cpu is fat
         if (!$cpuBestPoint || !$playerBestPoint) {
             return false;
