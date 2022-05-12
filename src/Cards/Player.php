@@ -9,10 +9,16 @@ use App\Cards\Deck;
  */
 class Player implements \Countable, \Serializable
 {
+    /**
+     * @var array<Card>
+     */
     protected $hand = [];
+    /**
+     * @var string
+     */
     protected $name = "";
     /**
-     * @param array $cards
+     * @param array<Card> $cards
      * @param string $name
      */
     public function __construct(array $cards = [], string $name = "NoName")
@@ -32,7 +38,7 @@ class Player implements \Countable, \Serializable
 
     /**
      * Returns hand
-     * @return array
+     * @return array<Card>
      */
     public function hand(): array
     {
@@ -41,7 +47,7 @@ class Player implements \Countable, \Serializable
 
     /**
      * Returns array representation of object
-     * @return array
+     * @return array<string, array<int, array<string, int|string>>|string>
      */
     public function toArray(): array
     {
@@ -58,7 +64,7 @@ class Player implements \Countable, \Serializable
 
     /**
      * Removes cards from hand and returns them
-     * @return array
+     * @return array<Card>
      */
     public function clear(): array
     {
@@ -68,7 +74,7 @@ class Player implements \Countable, \Serializable
     }
 
     /**
-     * @param array $cards
+     * @param array<Card> $cards
      *
      * @return void
      */

@@ -28,7 +28,7 @@ class TwigDeck extends Deck
     }
 
     /**
-     * @param array $toLoad
+     * @param array<string, string|int> $toLoad
      *
      * @return Deck
      */
@@ -43,7 +43,7 @@ class TwigDeck extends Deck
 
     /**
      * Returns array for use in twig templates
-     * @return array
+     * @return array<int, array<string, mixed>>
      */
     public function twigArray(): array
     {

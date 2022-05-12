@@ -9,6 +9,9 @@ use App\Cards\Card;
  */
 class Deck implements IDeck, \Countable, \Serializable
 {
+    /**
+     * @var array<Card>
+     */
     protected array $cards = [];
     /**
      * @param bool $newDeck
@@ -28,7 +31,7 @@ class Deck implements IDeck, \Countable, \Serializable
     }
 
     /**
-     * @param array $toLoad
+     * @param array<string, string|int> $toLoad
      *
      * @return Deck
      */
@@ -61,7 +64,7 @@ class Deck implements IDeck, \Countable, \Serializable
     }
 
     /**
-     * @param array $cards
+     * @param array<Card> $cards
      *
      * @return void
      */
@@ -84,7 +87,7 @@ class Deck implements IDeck, \Countable, \Serializable
      * Returns $count cards. Removes them from this object
      * @param int $count
      *
-     * @return array
+     * @return array<Card>
      */
     public function draw(int $count): array
     {
@@ -94,7 +97,7 @@ class Deck implements IDeck, \Countable, \Serializable
 
     /**
      * Array representation of this object
-     * @return array
+     * @return array<int, array<string, int|string>>
      */
     public function toArray(): array
     {

@@ -11,9 +11,9 @@ class PointSystem
 {
     /**
      * Calculates possible points from array of cards
-     * @param array $cards
+     * @param array<Card> $cards
      *
-     * @return array
+     * @return array<int>
      */
     public static function points21(array $cards): array
     {
@@ -42,7 +42,7 @@ class PointSystem
 
     /**
      * Returns the best point. The highest one, but less than or equal 21
-     * @param array $points
+     * @param array<int> $points
      *
      * @return int
      */

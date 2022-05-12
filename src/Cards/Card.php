@@ -7,12 +7,18 @@ namespace App\Cards;
  */
 class Card implements \Serializable
 {
+    /**
+     * @var array<string>
+     */
     public static array $suits = [
         "Hearts",
         "Diamonds",
         "Spades",
         "Cloves"
         ];
+    /**
+     * @var array<int, string>
+     */
     public static array $valueToString = [
         1 => "Ace",
         2 => "Two",
@@ -33,7 +39,7 @@ class Card implements \Serializable
     protected string $suit;
 
     /**
-     * @param array $newValues
+     * @param array<int, string> $newValues
      *
      * @return void
      */
@@ -43,10 +49,10 @@ class Card implements \Serializable
     }
 
     /**
-     * @param mixed $value
-     * @param mixed $suit
+     * @param int $value
+     * @param string $suit
      */
-    public function __construct($value, $suit)
+    public function __construct(int $value, string $suit)
     {
         $this->value = $value;
         $this->suit = $suit;

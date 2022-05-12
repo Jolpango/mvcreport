@@ -12,12 +12,18 @@ use Symfony\Component\HttpFoundation\Request;
  */
 class CardGame implements \Serializable
 {
+    /**
+     * @var array<int, string>
+     */
     public static array $States = [
         0 => "NEW",
         1 => "PLAYER",
         2 => "CPU",
         3 => "GAMEOVER"
     ];
+    /**
+     * @var array<int, string>
+     */
     public static array $StateRenderPaths = [
         0 => "game/newgame.html.twig",
         1 => "game/player.html.twig",
@@ -29,10 +35,7 @@ class CardGame implements \Serializable
     private TwigPlayer $player;
     private TwigPlayer $cpu;
 
-    /**
-     * @param int $nrOfDecks
-     */
-    public function __construct($nrOfDecks = 2)
+    public function __construct()
     {
         $this->player = new TwigPlayer();
         $this->cpu = new TwigPlayer();
@@ -42,7 +45,7 @@ class CardGame implements \Serializable
     }
 
     /**
-     * Advances the state of the gane by 1
+     * Advances the state of the game by 1
      * @return void
      */
     private function advanceState(): void
@@ -67,7 +70,7 @@ class CardGame implements \Serializable
      * Processes the request from the user
      * @param Request $request
      *
-     * @return array
+     * @return array<string>
      */
     public function processRequest(Request $request): array
     {
@@ -99,7 +102,7 @@ class CardGame implements \Serializable
     /**
      * Deals starter cards
      * Returns an array of strings documenting what happened
-     * @return array
+     * @return array<string>
      */
     private function dealStarterCards(): array
     {
@@ -121,7 +124,7 @@ class CardGame implements \Serializable
     /**
      * Processes the cpus turn.
      * Returns an array of strings documenting what happened
-     * @return array
+     * @return array<string>
      */
     private function processCPU(): array
     {
@@ -166,7 +169,7 @@ class CardGame implements \Serializable
     /**
      * Locks in the players cards and advances state
      * Returns an array of strings documenting what happened
-     * @return array
+     * @return array<string>
      */
     private function processPlayerLock(): array
     {
@@ -181,7 +184,7 @@ class CardGame implements \Serializable
     /**
      * Clears the board, adds back the cards. Advances the state
      * Returns an array of strings documenting what happened
-     * @return array
+     * @return array<string>
      */
     private function newRound(): array
     {
@@ -198,7 +201,7 @@ class CardGame implements \Serializable
     /**
      * Draws a card for the player. Advances if player becomes fat.
      * Returns an array of strings documenting what happened.
-     * @return array
+     * @return array<string>
      */
     private function processPlayerDraw(): array
     {
@@ -230,6 +233,9 @@ class CardGame implements \Serializable
         return CardGame::$StateRenderPaths[$this->state];
     }
 
+    /**
+     * @return array<string, mixed>
+     */
     public function renderData(): array
     {
         if (CardGame::$States[$this->state] === "NEW") {
@@ -246,7 +252,7 @@ class CardGame implements \Serializable
 
     /**
      * Not yet implemented. Might not want to
-     * @return array
+     * @return array<string>
      */
     private function buildNewGameData(): array
     {
@@ -257,7 +263,7 @@ class CardGame implements \Serializable
 
     /**
      * Returns array of information used in rendering
-     * @return array
+     * @return array<string, mixed>
      */
     private function buildPlayerData(): array
     {
@@ -270,7 +276,7 @@ class CardGame implements \Serializable
 
     /**
      * Returns array of information used in rendering
-     * @return array
+     * @return array<string, mixed>
      */
     private function buildCPUData(): array
     {
@@ -279,7 +285,7 @@ class CardGame implements \Serializable
 
     /**
      * Returns array of information used in rendering
-     * @return array
+     * @return array<string, mixed>
      */
     private function buildResultData(): array
     {
