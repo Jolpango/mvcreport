@@ -15,10 +15,11 @@ build:
             tests:
                 override:
                     - php-scrutinizer-run
-        tests:
-            override:
-                -
-                    command: "XDEBUG_MODE=coverage vendor/bin/phpunit"
-                    coverage:
-                        file: "build/coverage.clover"
-                        format: "php-clover"
+        coverage:
+            tests:
+                override:
+                    -
+                        command: "XDEBUG_MODE=coverage vendor/bin/phpunit"
+                        coverage:
+                            file: "build/coverage.clover"
+                            format: "php-clover"
