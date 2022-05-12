@@ -132,13 +132,10 @@ class CardGame implements \Serializable
             return ["It is not the banks turn, you cannot do this"];
         }
         $messages = ["Computer/Developer is thinking..."];
-        $pointsArray = PointSystem::points21($this->cpu->hand());
-        $playerPoints = PointSystem::points21($this->player->hand());
         while ($this->shouldCPUDraw()) {
             $card = $this->deck->draw(1);
             array_push($messages, "Computer drew " . $card[0]->toString());
             $this->cpu->addCards($card);
-            $pointsArray = PointSystem::points21($this->cpu->hand());
         }
         array_push($messages, "Computer has finished thinking");
         $this->advanceState();
