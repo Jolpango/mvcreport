@@ -18,7 +18,6 @@ class PointSystem
     public static function points21(array $cards): array
     {
         $possiblePoints = [];
-        $arrayOfValues = [];
         $handWithoutAces = array_filter($cards, function ($card) {
             return $card->getValue() !== 1;
         });
@@ -29,10 +28,11 @@ class PointSystem
         foreach ($handWithoutAces as $card) {
             $sumWithoutAces += $card->getValue();
         }
-        if (count($aces) === 0) {
+        $nrOfAces = count($aces);
+        if ($nrOfAces === 0) {
             array_push($possiblePoints, $sumWithoutAces);
         } else {
-            for ($i = 0; $i <= count($aces); $i++) {
+            for ($i = 0; $i <= $nrOfAces; $i++) {
                 array_push($possiblePoints, $sumWithoutAces + $i * 1 + (count($aces) - $i) * 14);
             }
         }
