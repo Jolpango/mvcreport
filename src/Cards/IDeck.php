@@ -8,7 +8,7 @@ namespace App\Cards;
 interface IDeck
 {
     /**
-     * @return void
+     * @return bool
      */
     public function shuffleCards();
     /**
@@ -26,7 +26,7 @@ interface IDeck
     /**
      * @param array<Card> $card
      * 
-     * @return bool
+     * @return void
      */
     public function addCards(array $card);
 }
