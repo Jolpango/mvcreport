@@ -75,28 +75,26 @@ class CardGame implements \Serializable
     public function processRequest(Request $request): array
     {
         $type = $request->get("type");
-        $messages = [];
         switch ($type) {
             case "DEAL_START":
-                $messages = $this->dealStarterCards();
+                return $this->dealStarterCards();
                 break;
             case "PROCESS_CPU":
-                $messages = $this->processCPU();
+                return $this->processCPU();
                 break;
             case "PLAYER_LOCK":
-                $messages = $this->processPlayerLock();
+                return $this->processPlayerLock();
                 break;
             case "PLAYER_DRAW":
-                $messages = $this->processPlayerDraw();
+                return $this->processPlayerDraw();
                 break;
             case "NEW_ROUND":
-                $messages = $this->newRound();
+                return $this->newRound();
                 break;
             default:
-                $messages = ["An unexpected error occurred"];
+                return ["An unexpected error occurred"];
                 break;
         }
-        return $messages;
     }
 
     /**

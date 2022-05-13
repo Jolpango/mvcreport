@@ -17,18 +17,42 @@ Om mna har hög coverage kan det betyda att koden är väl testad. Men det är i
 Ju högre värde, desto mer komplex är koden. Om den är mycket komplex så kan det innebära att koden blir jobbigare och mer tidskrävande att underhålla och vidareutveckla.
 
 ### Cohesion
-
+Cohesion handlar om hur metoder hör till sina klasser. Har man lägre värde så betyder det att man har hög cohesion, vilket innebär att metoden och klassen är skrivet för ett ansvarsområde och att metoden verkligen bör tillhöra klassen. Har man ett högt värde så innebär det att klassen har många ansvarsområden som kanske bör delas upp i flera klasser.
 
 ### Coupling
+Coupling beskriver hur klasser används av andra klasser. Det finns två värden inom detta område. Ett som beskriver hur klassen används av andra klasser och ett som beskriver hur denna klassen använder andra klassen. Inkommande och utgående kopplingar.
 
+### Exempel
+<img width=30% src={{asset("assets/maintainability_metrics_before.png")}}>
+I bilden ovan ser vi en "karta" över mina klasser och dess komplexitet. Den stora röda är min CardGame klass och har ett Cyclomatic Complexity värde på 23. Om man jämför detta med mitt medelvärde 4.28 så kan vi se att denna klassen är flera gånger mer komplex än alla andra.
+
+<img width=100% src={{asset("assets/code_coverage.png")}}>
+Här är ett exempel på min kodtäckning av App\Cards namespacet. Täcker nästan alla funktioner, klasser och rader. Med tanke på att CardGame är den mest komplexa klassen, så var den också svårare att testa. Testerna må täcka det mesta där, men dom är inte lika bra som testerna i mina andra klasser.
+
+<img width=100% src={{asset("assets/cohesion.png")}}>
+Här ser vi en lista över mina klassers LCOM(Lack of Cohesion Methods) värden. Det är ett sätt att mäta antalet ansvarsområden som en klass har. Helst vill man ju ha ett ansvar per klass, så det värdet vi helst vill ha är 1. Om man bortser från dom autogenererade klasserna så har 5st klasser ett värde på 2 och 7 klasser har 1.
+
+<img width=100% src={{asset("assets/coupling.png")}}>
+Här är en lista på mina klasser om hur dom har kopplingar. Min klass CardGame har 1 AC och 5 EC. Om man går efter det som står skrivet i github:
+<img width=100% src={{asset("assets/coupling_def.png")}}>
+Så betyder det att CardGame använder sig av en klass och blir använd av 5 klasser. Om inte jag har missuppfattat vad det innebär att använda en klass så stämmer inte den definitionen. För min GameClass används i en klass, "CardGameController" och själva CardGame använder flera klasser som t.ex TwigDeck, TwigPlayer och PointSystem. Så antingen är mätvärdena fel, min uppfattning fel, eller så är den definitionen fel.
 
 PHPMetrics
 ----------------------
 <img width=30% src={{asset("assets/maintainability_metrics_before.png")}}>
+Den stora röda cirkeln är CardGame. Den har högre komplexitet än dom andra klasserna. Det är den längsta klassen jag har. Tycker personligen inte den är särskilt komplex i själva funktionaliteten. Men om jag skulle försöka hitta något sätt att förenkla den så hade det nog varit att dela upp koden lite mer. Ett alternativ är att flytta ut bankens logik till en egen klass.
 
 Scrutinizer
 ----------------------
-
+<img width=30% src={{asset("assets/scrutinizer_first.png")}}>
+Fick bra resultat i Scrutinizer från början. Det enda som dom har klagat på där har varit små fixar. Exempelvis:
+<img width=30% src={{asset("assets/scrut_issues1.png")}}>
+<img width=30% src={{asset("assets/scrut_issues2.png")}}>
+Allt det där är enkelt att fixa och tar inte mer än 5 minuter. Den mesta komplexa klassen enligt Scrutinizer är återigen CardGame. Komplexiteten där tror jag kommer från storleken(320 rader). Så återigen tror jag att det jag kan fixa här är att bryta ut logiken för cpu och dess beslut.
+<img width=30% src={{asset("assets/scrut_grades.png")}}>
+Såhär ser beygen ut för alla klasser. Dom klasserna som jag har skapat och som inte är kontrollers har hög täckning och bra betyg. Så jag har svårt att se andra förändringar jag kan göra.
+<img width=100% src={{asset("assets/scrut_function.png")}}>
+Det här är den mest komplexa funktionen enligt scrut, även sämst CRAP score. Det enda funktionen gör är en switch case på en sträng, beroende på vad som är i strängen så anropar den en utav 5 olika funktioner som har hand om varsin state av spelet. Kan korta ner funktionen med 2 rader om jag gör returns i min switch/case.
 
 Förbättringar
 ----------------------
