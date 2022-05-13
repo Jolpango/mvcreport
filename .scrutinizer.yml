@@ -14,7 +14,7 @@ build:
             tests:
                 override:
                     -
-                    command: "XDEBUG_MODE=coverage vendor/bin/phpunit"
+                    command: "XDEBUG_MODE=coverage vendor/bin/phpunit --coverage-clover=build/coverage.clover"
                     coverage:
                         file: "build/coverage.clover"
                         format: "php-clover"
