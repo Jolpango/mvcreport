@@ -7,17 +7,6 @@ filter:
 
 build:
     nodes:
-        my-tests-with-coverage:
-            environment:
-                php:
-                    version: 8.0.9
-            tests:
-                override:
-                    -
-                    command: "XDEBUG_MODE=coverage vendor/bin/phpunit --coverage-clover=build/coverage.clover"
-                    coverage:
-                        file: "build/coverage.clover"
-                        format: "php-clover"
         my-tests:
             environment:
                 php:
@@ -29,7 +18,7 @@ build:
     tests:
         override:
             -
-                command: "XDEBUG_MODE=coverage vendor/bin/phpunit"
+                command: "XDEBUG_MODE=coverage vendor/bin/phpunit --coverage-clover=build/coverage.clover"
                 coverage:
                     file: "build/coverage.clover"
                     format: "php-clover"
