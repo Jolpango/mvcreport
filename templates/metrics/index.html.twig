@@ -1,0 +1,29 @@
+{% extends "base.html.twig" %}
+{% block title %}Report{% endblock %}
+{% block content %}
+{% apply markdown_to_html %}
+Metrics
+========
+
+Introduktion
+----------------------
+
+
+PHPMetrics
+----------------------
+<img width=30% src={{asset("assets/maintainability_metrics_before.png")}}>
+
+Scrutinizer
+----------------------
+
+
+Förbättringar
+----------------------
+
+
+Diskussion
+----------------------
+
+
+{% endapply %}
+{% endblock %}
