@@ -10,7 +10,7 @@ build:
         my-tests:
             environment:
                 php:
-                    version: 8.0
+                    version: 8.0.9
         analysis:
             tests:
                 override:
@@ -21,4 +21,4 @@ build:
                 command: "XDEBUG_MODE=coverage vendor/bin/phpunit"
                 coverage:
                     file: "build/coverage.clover"
-                    format: "clover"
+                    format: "php-clover"
