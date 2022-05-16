@@ -68,6 +68,14 @@ TIL: Litegrann om hur man använder Doctrine ORM. Mycket trevligt.
 
 Kursmoment 6
 ------------
+Tyckte phpmetrics var helt okej att arbeta med. Den var svårare att tyda än scrutinizer, för du fick inte direkt förslag eller liknande, men man fick sig en bra överblick. Gillade bilden med cirklar som visade ens komplexitet och maintainability, var en bra överblick.
+60% av scrutizer gick jättesmidigt att komma igång med. config filen funkade inte riktigt för mig. Tog mig ca många timmar och svordomar innan jag fick en coverage badge. Det som gjorde mig förvirrad var att testerna alltid kördes men att jag aldrig fick någon badge trots att jag körde samma kommando som generar det lokalt. Lösningen var att lägga till ett option i kommandot. När jag väl fick det att funka så gick det utmärkt att jobba med det. Det var bara att pusha så skötte scrutinizer resten. Första resultatet på kodkvalitet jag fick var 9.91 och när jag väl fick igång testerna så fick jag 57%. Jag fick lite issues som handlade mest om unused code och best practices. CardGame klassen hade lite högre komplexitet men fortfarande ett A i betyg.
+
+Min syn på kodkvalitet: funktioner och metoder tycker jag ska vara såpass enkla att det funktionen gör ska vara så tydligt att namnet räcker som beskrivning av vad den gör och vad man förväntas få för resultat. Samma sak med klasser. Klasser tycker jag också ska ha ett bra publikt interface som är lätt att använda. Klassen kan var lite större, sålänge interfacet utåt är simpelt och stabilt så att vemsomhelst kan använda klassen. Man ska inte heller behöva veta något om det private i klassen för att använda det.CardGame klassen tycker jag är ett bra exempel på det. Finns mycket funktionalitet inuti men för att kommunicera med klassen behöver man bara anropa ca 3 funktioner.
+
+Badges är ett bra sätt för andra människor att snabbt få en uppfattning om hur välskriven projektets kod är.
+
+TIL: Att det är trevligt att jobba med scrutinizer. Skönt att få sina tester körda automatiskt och enkelt att se hur det man skriver påverkar koden och dess kvalitet.
 
 Kursmoment 7-10
 ------------
