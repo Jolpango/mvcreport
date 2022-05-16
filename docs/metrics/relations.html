@@ -49,7 +49,7 @@
 <div class="page">
     <div class="content content-first">
         <div class="report-details">
-            Created at 2022-05-12 11:01:44        , with PHPMetrics v2.8.1 (<a href="https://twitter.com/Halleck45">Jean-François Lépine</a>).
+            Created at 2022-05-16 12:45:25        , with PHPMetrics v2.8.1 (<a href="https://twitter.com/Halleck45">Jean-François Lépine</a>).
         </div>
 
         
@@ -253,6 +253,31 @@
 
     var relations = [
     {
+        "name": "\\App\\Cards\\Bank",
+        "size": 3000,
+        "relations": []
+    },
+    {
+        "name": "\\App\\Cards\\TwigPlayer",
+        "size": 3000,
+        "relations": []
+    },
+    {
+        "name": "\\App\\Cards\\Player",
+        "size": 3000,
+        "relations": []
+    },
+    {
+        "name": "\\App\\Cards\\Deck",
+        "size": 3000,
+        "relations": []
+    },
+    {
+        "name": "\\App\\Cards\\PointSystem",
+        "size": 3000,
+        "relations": []
+    },
+    {
         "name": "\\App\\Cards\\Card",
         "size": 3000,
         "relations": []
@@ -268,14 +293,16 @@
         "relations": []
     },
     {
-        "name": "\\App\\Cards\\TwigPlayer",
+        "name": "\\App\\Cards\\TwigDeck",
         "size": 3000,
         "relations": []
     },
     {
-        "name": "\\App\\Cards\\TwigDeck",
+        "name": "\\App\\Cards\\CardGameState",
         "size": 3000,
-        "relations": []
+        "relations": [
+            "\\App\\Cards\\State"
+        ]
     },
     {
         "name": "\\Symfony\\Component\\HttpFoundation\\Request",
@@ -283,17 +310,15 @@
         "relations": []
     },
     {
-        "name": "\\App\\Cards\\PointSystem",
+        "name": "\\App\\Cards\\State",
         "size": 3000,
-        "relations": []
+        "relations": [
+            "\\Serializable",
+            "\\Exception"
+        ]
     },
     {
         "name": "\\App\\Cards\\CardGraphic",
-        "size": 3000,
-        "relations": []
-    },
-    {
-        "name": "\\App\\Cards\\Deck",
         "size": 3000,
         "relations": []
     },
@@ -308,7 +333,7 @@
         "relations": []
     },
     {
-        "name": "\\App\\Cards\\Player",
+        "name": "\\Exception",
         "size": 3000,
         "relations": []
     },

@@ -73,10 +73,30 @@ Bank Klassen kommer att innehålla en player/eller ärva av player. Kommer att l
 ### Best Practice/Bug fix
 Jag kommer att följa alla Scrutinizers råd och fixa alla småsaker som dom klagade på.
 
+### Scrutinizer resultat
 
+Efter att jag utfört allt jag sa att jag skulle göra så har jag nu fått 10.0 i Scrutinizer och inga issues från min egen kod(förutom en..). Alla operationer har ett A, inklusive processRequest som hade B innan. Komplexiteten har gått från 42 ner till 33, så inte helt perfekt men en bra bit på väg. Har också såklart tittat så att man fortfarande kan spela spelet, samt att alla tester fortfarange går igenom.
+
+[![Scrutinizer Code Quality](https://scrutinizer-ci.com/g/Jolpango/mvcreport/badges/quality-score.png?b=main)](https://scrutinizer-ci.com/g/Jolpango/mvcreport/?branch=main)
+[![Code Coverage](https://scrutinizer-ci.com/g/Jolpango/mvcreport/badges/coverage.png?b=main)](https://scrutinizer-ci.com/g/Jolpango/mvcreport/?branch=main)
+[![Build Status](https://scrutinizer-ci.com/g/Jolpango/mvcreport/badges/build.png?b=main)](https://scrutinizer-ci.com/g/Jolpango/mvcreport/build-status/main)
+[![Code Intelligence Status](https://scrutinizer-ci.com/g/Jolpango/mvcreport/badges/code-intelligence.svg?b=main)](https://scrutinizer-ci.com/code-intelligence)
+
+### PHPMetrics resultat
+Efter att jag gjort min förbättringar så ser jag att CardGame fortfarande är stor och röd. Men maintainability har gått upp med 6, komplexiteten har gått från 23 till 18. Det har gjort att hela min kods komplexitet har gått ner till 3.81(0.47 mindre). Det mesta har blivit bättre och mer underhållbart. Medelvärde för antal buggar har gått ner, dock är det nog inte för att dom tror jag har mindre buggar, utan att jag har fler klasser och dom nya jag la till har väldigt lågt värde.
+<img width=30% src={{asset("assets/maintain_after.png")}}>
+<img width=100% src={{asset("assets/complexity_metrics_after.png")}}>
+
+LCOM har gått upp med 0.01 för den tycker att CardGameState inte är värd att ha en 1a. Troligtvis pågrund utav att jag la till funcktionaliteten som håller koll på vilken renderpath som ska användas.
+<img width=100% src={{asset("assets/lcom_after.png")}}>
 
 Diskussion
 ----------------------
+Det har varit kul och lite jobbigt att jobba med kodkvalitet på detta sättet. 
+Fördelarna med att jobba såhär är att man tvingas att tänka på ett sätt som kan hjälp en att skriva kod av högre kvalitet. Hade absolut varit enklare ifall vi hade börjat med att använda dessa verktyg. Men man får ganska tydlig vägledning om hur man ska ta sig an problemen man har skapat.
+Det kostar ganska mycket tid att jobba såhär och jag tror det är lätt att istället för att jobba på funktionalitet och ta sitt projekt vidare så fastnar man på småsaker för man är lite av en perfektionist och har svårigheter att nöja sig med det man gjort.
+
+Tycker Scrutinizer har varit bra att jobba med, det är väldigt tydligt och super nice att när man pushar sin kod så körs alla tester och liknande automatiskt. Blir ett trevligt workflow. Var dock ett j*vla h*lvete att få igång testerna så att jag fick en coverage badge. Har nog 50 pushar med olika config filer. Efter det så flöt det på bra.
 
 
 {% endapply %}
