@@ -78,22 +78,16 @@ class CardGame implements \Serializable
         switch ($type) {
             case "DEAL_START":
                 return $this->dealStarterCards();
-                break;
             case "PROCESS_CPU":
                 return $this->processCPU();
-                break;
             case "PLAYER_LOCK":
                 return $this->processPlayerLock();
-                break;
             case "PLAYER_DRAW":
                 return $this->processPlayerDraw();
-                break;
             case "NEW_ROUND":
                 return $this->newRound();
-                break;
             default:
                 return ["An unexpected error occurred"];
-                break;
         }
     }
 
@@ -250,9 +244,7 @@ class CardGame implements \Serializable
      */
     private function buildNewGameData(): array
     {
-        $gameData = [];
-
-        return $gameData;
+        return [];
     }
 
     /**
@@ -261,11 +253,10 @@ class CardGame implements \Serializable
      */
     private function buildPlayerData(): array
     {
-        $gameData = [
+        return [
             "player" => array_merge($this->player->twigArray(), ["points" => PointSystem::points21($this->player->hand())]),
             "cpu" => array_merge($this->cpu->twigArray(), ["points" => PointSystem::points21($this->cpu->hand())])
         ];
-        return $gameData;
     }
 
     /**
@@ -289,7 +280,7 @@ class CardGame implements \Serializable
         if ($playerBestPoint > $cpuBestPoint) {
             $resultMessage = "Player wins";
         }
-        $gameData = [
+        return [
             "player" => array_merge($this->player->twigArray(), [
                     "points" => $playerBestPoint,
             ]),
@@ -298,7 +289,6 @@ class CardGame implements \Serializable
             ]),
             "resultMessage" => $resultMessage
         ];
-        return $gameData;
     }
 
     /**
