@@ -14,10 +14,11 @@ class Bank extends TwigPlayer
     /**
      * @param Player $opponent
      * @param Deck $deck
-     * 
+     *
      * @return array
      */
-    public function processTurn(Player $opponent, Deck $deck): array {
+    public function processTurn(Player $opponent, Deck $deck): array
+    {
         $messages = ["Computer/Developer is thinking..."];
         while ($this->shouldDraw($opponent)) {
             $card = $deck->draw(1);
@@ -31,7 +32,8 @@ class Bank extends TwigPlayer
      * Calculates whether or not the cpu should draw a card or settle
      * @return bool
      */
-    private function shouldDraw(Player $opponent): bool {
+    private function shouldDraw(Player $opponent): bool
+    {
         $cpuPoints = PointSystem::points21($this->hand);
         $playerPoints = PointSystem::points21($opponent->hand());
         $playerBestPoint = PointSystem::bestPoint($playerPoints);

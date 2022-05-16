@@ -15,7 +15,8 @@ class CardGameState extends State
         "game/cpu.html.twig",
         "game/result.html.twig"
     ];
-    public function __construct() {
+    public function __construct()
+    {
         parent::__construct(
             ["NEW", "PLAYER", "CPU", "GAMEOVER"]
         );
@@ -23,13 +24,15 @@ class CardGameState extends State
     /**
      * @return string
      */
-    public function renderPath(): string {
+    public function renderPath(): string
+    {
         return $this->renderPaths[$this->currentState];
     }
-        /**
+    /**
      * @return string
      */
-    public function serialize(): string {
+    public function serialize(): string
+    {
         return serialize([
             "current" => serialize($this->currentState),
             "states" => serialize($this->states),
@@ -38,10 +41,11 @@ class CardGameState extends State
     }
     /**
      * @param string $data
-     * 
+     *
      * @return void
      */
-    public function unserialize(string $data): void {
+    public function unserialize(string $data): void
+    {
         $data = unserialize($data);
         $this->currentState = unserialize($data["current"]);
         $this->states = unserialize($data["states"]);

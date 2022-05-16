@@ -13,19 +13,19 @@ interface IDeck
     public function shuffleCards();
     /**
      * @param int $count
-     * 
+     *
      * @return array<Card>
      */
     public function draw(int $count);
     /**
      * @param Card $card
-     * 
+     *
      * @return void
      */
     public function addCard(Card $card);
     /**
      * @param array<Card> $card
-     * 
+     *
      * @return void
      */
     public function addCards(array $card);
