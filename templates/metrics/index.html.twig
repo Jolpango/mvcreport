@@ -41,21 +41,38 @@ PHPMetrics
 ----------------------
 <img width=30% src={{asset("assets/maintainability_metrics_before.png")}}>
 Den stora röda cirkeln är CardGame. Den har högre komplexitet än dom andra klasserna. Det är den längsta klassen jag har. Tycker personligen inte den är särskilt komplex i själva funktionaliteten. Men om jag skulle försöka hitta något sätt att förenkla den så hade det nog varit att dela upp koden lite mer. Ett alternativ är att flytta ut bankens logik till en egen klass.
+<img width=100% src={{asset("assets/complexity_metrics.png")}}>
+Tycker att alla mina klasser har bra komplexitet. Förutom CardGame som är lite på den höga sidan, speciellt om man tänker relativt till dom andra klasserna.
+
+
+För att få ner komplexitet/maintainability kommer jag att dela upp CardGame klassen i totalt 3 klasser. En ny State klass(Kanske fler, en generell State, och en specifik för CardGame), en Bank klass för att utföra alla bankens uträkningar. Det är väl tekniskt sett 2 förbättringar, så jag kommer också att försöka få ner raderna kod utan att förstöra läsbarheten.
 
 Scrutinizer
 ----------------------
-<img width=30% src={{asset("assets/scrutinizer_first.png")}}>
+
+<img width=100% src={{asset("assets/scrutinizer_first.png")}}>
 Fick bra resultat i Scrutinizer från början. Det enda som dom har klagat på där har varit små fixar. Exempelvis:
-<img width=30% src={{asset("assets/scrut_issues1.png")}}>
-<img width=30% src={{asset("assets/scrut_issues2.png")}}>
-Allt det där är enkelt att fixa och tar inte mer än 5 minuter. Den mesta komplexa klassen enligt Scrutinizer är återigen CardGame. Komplexiteten där tror jag kommer från storleken(320 rader). Så återigen tror jag att det jag kan fixa här är att bryta ut logiken för cpu och dess beslut.
-<img width=30% src={{asset("assets/scrut_grades.png")}}>
-Såhär ser beygen ut för alla klasser. Dom klasserna som jag har skapat och som inte är kontrollers har hög täckning och bra betyg. Så jag har svårt att se andra förändringar jag kan göra.
+<img width=100% src={{asset("assets/scrut_issues1.png")}}>
+<img width=100% src={{asset("assets/scrut_issues2.png")}}>
+Allt det där är enkelt att fixa och tar inte mer än 5 minuter. Den mesta komplexa klassen enligt Scrutinizer är återigen CardGame. Komplexiteten där tror jag kommer från storleken(320 rader). Så återigen tror jag att det jag kan fixa här är att bryta ut logiken för cpu och dess beslut. Kan även skapa en klass för att hålla reda på vilket state spelet är i.
+<img width=100% src={{asset("assets/scrut_grades.png")}}>
+Såhär ser beygen ut för alla klasser. Dom klasserna som jag har skapat och som inte är kontrollers har hög täckning och bra betyg. Så jag har svårt att se andra förändringar jag kan göra. Om jag däremot gör förändringar i andra delar så kan ju det leda till att jag behöver fler tester.
 <img width=100% src={{asset("assets/scrut_function.png")}}>
-Det här är den mest komplexa funktionen enligt scrut, även sämst CRAP score. Det enda funktionen gör är en switch case på en sträng, beroende på vad som är i strängen så anropar den en utav 5 olika funktioner som har hand om varsin state av spelet. Kan korta ner funktionen med 2 rader om jag gör returns i min switch/case.
+Det här är den mest komplexa funktionen enligt Scrutinizer, även sämst CRAP score. Det enda funktionen gör är en switch case på en sträng, beroende på vad som är i strängen så anropar den en utav 5 olika funktioner som har hand om varsin state av spelet. Kan korta ner funktionen med minst 2 rader om jag gör returns i min switch/case.
+
+Om jag delar upp min CardGame klass i 3 delar tror jag att jag kommer att få lägre komplexitet, storlek såklart, bättre cohesion scores och också högre maintainability.
+Jag kommer att göra en State klass, en Bank klass och göra alla Best Practice förbättringar som scrutinizer ger förslag på. Så målet blir att få 10.0 i score(Om vi räknar bort App\Kernel). Kommer får sämre test coverage, men i teorin så kommer det att bli lättare att skriva tester för dom nya klasserna om man vill.
 
 Förbättringar
 ----------------------
+### Bryta ut funktionalitet från CardGame
+Jag kommer att skapa två nya klasser. En State klass och en Bank klass.
+State klassen kommer att ta över all hantering av statet spelet är i, den kommer innehålla funktioner som avancerar statet, sätta statet etc.
+Bank Klassen kommer att innehålla en player/eller ärva av player. Kommer att lägga till funktionerna shouldCpuDraw och processCPU som för tillfället finns i CardGame.
+
+### Best Practice/Bug fix
+Jag kommer att följa alla Scrutinizers råd och fixa alla småsaker som dom klagade på.
+
 
 
 Diskussion
