@@ -1,0 +1,19 @@
+<h1>Userlist</h1>
+<div class="user-container">
+    {% for user in allUsers %}
+    <div class="flex flex-row">
+        <form method="post" action="{{url("proj-edit-user")}}">
+            <input type="text" name="username" id="username" value="{{user.name}}" readonly>
+            <input type="text" name="image" id="image" value="{{user.image}}">
+            <input type="number" name="balance" id="balance" value="{{user.balance}}">
+            <input type="checkbox" name="admin" id="admin" {% if user.admin %}checked{% endif %}
+            >
+            <button type="submit">Apply changes</button>
+        </form>
+        <form method="post" action="{{url("proj-remove-user")}}">
+            <input type="text" name="username" value="{{user.name}}"hidden>
+            <button type="submit">Remove</button>
+        </form>
+    </div>
+    {% endfor %}
+</div>

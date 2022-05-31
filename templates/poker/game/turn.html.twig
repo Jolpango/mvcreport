@@ -1,0 +1,8 @@
+{% extends "poker/game/base.html.twig" %}
+{% block controls %}
+<form method="post" action="{{url("proj-play-process")}}">
+    <input type="number" name="amount" id="amount">
+    <button type="submit" name="type" value="BET">Bet</button>
+    <button type="submit" name="type" value="CHECK">Check</button>
+</form>
+{% endblock %}

@@ -14,9 +14,9 @@
             <link rel="stylesheet" href="/javascript/base.js"/>
         {% endblock %}
     </head>
-    <body class="flex flex-col">
+    <body class="flex flex-col green-background">
         {% block header %}
-            {% include "poker/header.html.twig" %}
+            {% include "poker/view/nav.html.twig" %}
         {% endblock %}
         <div id="content" class="poker-table flex flex-col">{% block content %}{% endblock %}</div>
         {% block footer %}

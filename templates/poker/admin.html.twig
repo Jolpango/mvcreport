@@ -1,0 +1,13 @@
+{% extends "poker/base.html.twig" %}
+{% block content %}
+{% include "views/flash.html.twig" %}
+<div class="flex flex-row space-evenly">
+    <div>
+        {% include "poker/view/currentuser.html.twig" %}
+    </div>
+    <div>
+        {% include "poker/view/userlist.html.twig" %}
+        {% include "poker/view/registerform.html.twig" %}
+    </div>
+</div>
+{% endblock %}

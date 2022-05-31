@@ -9,10 +9,6 @@ use Doctrine\ORM\Mapping as ORM;
 class User
 {
     #[ORM\Id]
-    #[ORM\GeneratedValue]
-    #[ORM\Column(type: 'integer')]
-    private $id;
-
     #[ORM\Column(type: 'string', length: 255)]
     private $name;
 
@@ -21,6 +17,12 @@ class User
 
     #[ORM\Column(type: 'integer')]
     private $balance;
+
+    #[ORM\Column(type: 'boolean')]
+    private $admin;
+
+    #[ORM\Column(type: 'string', length: 255)]
+    private $image;
 
     public function getId(): ?int
     {
@@ -59,6 +61,30 @@ class User
     public function setBalance(int $balance): self
     {
         $this->balance = $balance;
+
+        return $this;
+    }
+
+    public function getAdmin(): ?bool
+    {
+        return $this->admin;
+    }
+
+    public function setAdmin(bool $admin): self
+    {
+        $this->admin = $admin;
+
+        return $this;
+    }
+
+    public function getImage(): ?string
+    {
+        return $this->image;
+    }
+
+    public function setImage(string $image): self
+    {
+        $this->image = $image;
 
         return $this;
     }

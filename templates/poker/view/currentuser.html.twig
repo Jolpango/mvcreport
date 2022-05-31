@@ -1,0 +1,17 @@
+<h1>Profile page</h1>
+<img src="{{currentUser.image}}" width="100px" height="100px">
+<form method="post" action="{{url("proj-change-image")}}">
+    <label for="image">Change image</label>
+    <input type="text" name="image" id="image">
+    <button type="submit">Submit</button>
+</form>
+<h2>Username: {{currentUser.name}}</h2>
+<p>Balance: ${{currentUser.balance}}</p>
+<form method="post" action="{{url("proj-add-balance")}}">
+    <label for="balance">Insert coins</label>
+    <input type="number" name="balance" id="balance" value="0">
+    <button type="submit">Add balance</button>
+</form>
+<form method="POST" action="{{url("proj-logout")}}">
+    <button type="submit">Logout</button>
+</form>

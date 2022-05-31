@@ -1,0 +1,7 @@
+{% extends "poker/base.html.twig" %}
+{% block content %}
+{% include "views/flash.html.twig" %}
+<h1>Welcome to "poker the game" {{user.name}}</h1>
+<a href="{{url("proj-play")}}">Hit the link to play</a>
+<a href="{{url("proj-user")}}">Profile page</a>
+{% endblock %}

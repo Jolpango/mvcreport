@@ -169,12 +169,34 @@ textarea {
     height: 5rem;
 }
 
+.user-container {
+    height: 50%;
+    overflow: scroll;
+    display: flex;
+    flex-direction: column;
+    gap: 1em;
+}
+
+.user-container > div {
+    border-bottom: 1px solid black;
+    padding: 1em;
+}
+
 .poker-table {
-    background-color: var(--green-0);
+    background-color: var(--green-5);
     min-height: 80vh;
-    border-color: var(--green-4);
-    border-width: 1em;
-    border-radius: 50%;
+    margin-top: 12vh;
+    border-color: var(--green-8);
+    border-width: 50px;
+    padding: 100px;
+    border-style: solid;
+    border-radius: 5px;
+    width: 90%;
+    align-self: center;
+}
+
+.green-background {
+    background-color: var(--green-3);
 }
 
 /* width */
