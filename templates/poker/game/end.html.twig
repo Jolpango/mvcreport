@@ -1,4 +1,28 @@
-{% extends "poker/game/base.html.twig" %}
-{% block controls %}
-<p>Someone won, count yourself</p>
+{% extends "poker/base.html.twig" %}
+{% block content %}
+{% include "views/flash.html.twig" %}
+{{dump(game)}}
+<form method="post" action="{{url("proj-reset-game")}}">
+    <button type="submit">Reset</button>
+</form>
+<h2>bank</h2>
+<div class="card-container flex">
+    {% for card in game.bank.hand %}
+    <div class="card flex align-center space-evenly {{card.toCSSClass}}">{{card.toString}}</div>
+    {% endfor %}
+</div>
+<h2>table</h2>
+<div class="card-container flex">
+    {% for card in game.table.hand %}
+        <div class="card flex align-center space-evenly {{card.toCSSClass}}">{{card.toString}}</div>
+    {% endfor %}
+    <h2>Pot: ${{game.pot}}</h2>
+</div>
+<h2>you</h2>
+<div class="card-container flex">
+    {% for card in game.player.hand %}
+        <div class="card flex align-center space-evenly {{card.toCSSClass}}">{{card.toString}}</div>
+    {% endfor %}
+</div>
+<p>You have ${{user.balance}} coins</p>
 {% endblock %}
