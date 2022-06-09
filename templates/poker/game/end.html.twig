@@ -25,4 +25,8 @@
     {% endfor %}
 </div>
 <p>You have ${{user.balance}} coins</p>
+<form method="post" action="{{url("proj-play-process")}}">
+    <button type="submit" name="type" value="RESET">New game</button>
+</form>
 {% endblock %}
+

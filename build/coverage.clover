@@ -1,19 +1,19 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<coverage generated="1654507526">
-  <project timestamp="1654507526">
+<coverage generated="1654514003">
+  <project timestamp="1654514003">
     <file name="C:\Users\Joel\dbwebb-kurser\mvc\me\report\src\Cards\Bank.php">
       <class name="App\Cards\Bank" namespace="global">
-        <metrics complexity="6" methods="2" coveredmethods="1" conditionals="0" coveredconditionals="0" statements="16" coveredstatements="15" elements="18" coveredelements="16"/>
+        <metrics complexity="6" methods="2" coveredmethods="0" conditionals="0" coveredconditionals="0" statements="16" coveredstatements="11" elements="18" coveredelements="11"/>
       </class>
-      <line num="20" type="method" name="processTurn" visibility="public" complexity="2" crap="2" count="3"/>
+      <line num="20" type="method" name="processTurn" visibility="public" complexity="2" crap="2.31" count="3"/>
       <line num="22" type="stmt" count="3"/>
       <line num="23" type="stmt" count="3"/>
-      <line num="24" type="stmt" count="2"/>
-      <line num="25" type="stmt" count="2"/>
-      <line num="26" type="stmt" count="2"/>
+      <line num="24" type="stmt" count="0"/>
+      <line num="25" type="stmt" count="0"/>
+      <line num="26" type="stmt" count="0"/>
       <line num="28" type="stmt" count="3"/>
       <line num="29" type="stmt" count="3"/>
-      <line num="35" type="method" name="shouldDraw" visibility="private" complexity="4" crap="4.02" count="3"/>
+      <line num="35" type="method" name="shouldDraw" visibility="private" complexity="4" crap="4.18" count="3"/>
       <line num="37" type="stmt" count="3"/>
       <line num="38" type="stmt" count="3"/>
       <line num="39" type="stmt" count="3"/>
@@ -22,8 +22,8 @@
       <line num="43" type="stmt" count="0"/>
       <line num="45" type="stmt" count="3"/>
       <line num="46" type="stmt" count="3"/>
-      <line num="48" type="stmt" count="2"/>
-      <metrics loc="51" ncloc="37" classes="1" methods="2" coveredmethods="1" conditionals="0" coveredconditionals="0" statements="16" coveredstatements="15" elements="18" coveredelements="16"/>
+      <line num="48" type="stmt" count="0"/>
+      <metrics loc="51" ncloc="37" classes="1" methods="2" coveredmethods="0" conditionals="0" coveredconditionals="0" statements="16" coveredstatements="11" elements="18" coveredelements="11"/>
     </file>
     <file name="C:\Users\Joel\dbwebb-kurser\mvc\me\report\src\Cards\Card.php">
       <class name="App\Cards\Card" namespace="global">
@@ -195,11 +195,11 @@
       </class>
       <line num="14" type="method" name="__construct" visibility="public" complexity="1" crap="1" count="14"/>
       <line num="16" type="stmt" count="14"/>
-      <line num="22" type="method" name="toString" visibility="public" complexity="2" crap="2" count="7"/>
-      <line num="24" type="stmt" count="7"/>
+      <line num="22" type="method" name="toString" visibility="public" complexity="2" crap="2" count="6"/>
+      <line num="24" type="stmt" count="6"/>
       <line num="25" type="stmt" count="1"/>
-      <line num="27" type="stmt" count="6"/>
-      <line num="28" type="stmt" count="6"/>
+      <line num="27" type="stmt" count="5"/>
+      <line num="28" type="stmt" count="5"/>
       <line num="34" type="method" name="toCSSClass" visibility="public" complexity="1" crap="1" count="4"/>
       <line num="36" type="stmt" count="4"/>
       <line num="37" type="stmt" count="4"/>
@@ -299,8 +299,8 @@
       <line num="31" type="stmt" count="6"/>
       <line num="32" type="stmt" count="6"/>
       <line num="33" type="stmt" count="5"/>
-      <line num="35" type="stmt" count="1"/>
-      <line num="36" type="stmt" count="1"/>
+      <line num="35" type="stmt" count="3"/>
+      <line num="36" type="stmt" count="3"/>
       <line num="39" type="stmt" count="6"/>
       <line num="40" type="stmt" count="6"/>
       <line num="49" type="method" name="bestPoint" visibility="public" complexity="4" crap="4" count="5"/>
@@ -471,6 +471,6 @@
       <line num="188" type="stmt" count="0"/>
       <metrics loc="191" ncloc="139" classes="1" methods="15" coveredmethods="0" conditionals="0" coveredconditionals="0" statements="60" coveredstatements="0" elements="75" coveredelements="0"/>
     </file>
-    <metrics files="14" loc="1246" ncloc="855" classes="12" methods="78" coveredmethods="55" conditionals="0" coveredconditionals="0" statements="311" coveredstatements="238" elements="389" coveredelements="293"/>
+    <metrics files="14" loc="1246" ncloc="855" classes="12" methods="78" coveredmethods="54" conditionals="0" coveredconditionals="0" statements="311" coveredstatements="234" elements="389" coveredelements="288"/>
   </project>
 </coverage>

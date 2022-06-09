@@ -2,7 +2,7 @@ imports:
     - php
 
 filter:
-    paths: [src/Cards, src/Poker]
+    paths: [src/]
     excluded_paths: [vendor/*, tests/*]
 
 build:

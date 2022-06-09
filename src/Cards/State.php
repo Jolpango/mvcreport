@@ -44,7 +44,7 @@ class State implements \Serializable
     public function set(string $newState): void
     {
         $index = array_search($newState, $this->states);
-        if (!$index) {
+        if ($index === false) {
             throw new \Exception("State not found", 1);
         }
         $this->currentState = $index;
