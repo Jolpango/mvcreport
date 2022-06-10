@@ -1,29 +1,29 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<coverage generated="1654514003">
-  <project timestamp="1654514003">
+<coverage generated="1654860810">
+  <project timestamp="1654860810">
     <file name="C:\Users\Joel\dbwebb-kurser\mvc\me\report\src\Cards\Bank.php">
       <class name="App\Cards\Bank" namespace="global">
-        <metrics complexity="6" methods="2" coveredmethods="0" conditionals="0" coveredconditionals="0" statements="16" coveredstatements="11" elements="18" coveredelements="11"/>
+        <metrics complexity="6" methods="2" coveredmethods="2" conditionals="0" coveredconditionals="0" statements="16" coveredstatements="16" elements="18" coveredelements="18"/>
       </class>
-      <line num="20" type="method" name="processTurn" visibility="public" complexity="2" crap="2.31" count="3"/>
+      <line num="20" type="method" name="processTurn" visibility="public" complexity="2" crap="2" count="3"/>
       <line num="22" type="stmt" count="3"/>
       <line num="23" type="stmt" count="3"/>
-      <line num="24" type="stmt" count="0"/>
-      <line num="25" type="stmt" count="0"/>
-      <line num="26" type="stmt" count="0"/>
+      <line num="24" type="stmt" count="3"/>
+      <line num="25" type="stmt" count="3"/>
+      <line num="26" type="stmt" count="3"/>
       <line num="28" type="stmt" count="3"/>
       <line num="29" type="stmt" count="3"/>
-      <line num="35" type="method" name="shouldDraw" visibility="private" complexity="4" crap="4.18" count="3"/>
+      <line num="35" type="method" name="shouldDraw" visibility="private" complexity="4" crap="4" count="3"/>
       <line num="37" type="stmt" count="3"/>
       <line num="38" type="stmt" count="3"/>
       <line num="39" type="stmt" count="3"/>
       <line num="40" type="stmt" count="3"/>
       <line num="42" type="stmt" count="3"/>
-      <line num="43" type="stmt" count="0"/>
+      <line num="43" type="stmt" count="1"/>
       <line num="45" type="stmt" count="3"/>
-      <line num="46" type="stmt" count="3"/>
-      <line num="48" type="stmt" count="0"/>
-      <metrics loc="51" ncloc="37" classes="1" methods="2" coveredmethods="0" conditionals="0" coveredconditionals="0" statements="16" coveredstatements="11" elements="18" coveredelements="11"/>
+      <line num="46" type="stmt" count="2"/>
+      <line num="48" type="stmt" count="3"/>
+      <metrics loc="51" ncloc="37" classes="1" methods="2" coveredmethods="2" conditionals="0" coveredconditionals="0" statements="16" coveredstatements="16" elements="18" coveredelements="18"/>
     </file>
     <file name="C:\Users\Joel\dbwebb-kurser\mvc\me\report\src\Cards\Card.php">
       <class name="App\Cards\Card" namespace="global">
@@ -195,11 +195,11 @@
       </class>
       <line num="14" type="method" name="__construct" visibility="public" complexity="1" crap="1" count="14"/>
       <line num="16" type="stmt" count="14"/>
-      <line num="22" type="method" name="toString" visibility="public" complexity="2" crap="2" count="6"/>
-      <line num="24" type="stmt" count="6"/>
+      <line num="22" type="method" name="toString" visibility="public" complexity="2" crap="2" count="8"/>
+      <line num="24" type="stmt" count="8"/>
       <line num="25" type="stmt" count="1"/>
-      <line num="27" type="stmt" count="5"/>
-      <line num="28" type="stmt" count="5"/>
+      <line num="27" type="stmt" count="7"/>
+      <line num="28" type="stmt" count="7"/>
       <line num="34" type="method" name="toCSSClass" visibility="public" complexity="1" crap="1" count="4"/>
       <line num="36" type="stmt" count="4"/>
       <line num="37" type="stmt" count="4"/>
@@ -250,38 +250,46 @@
     </file>
     <file name="C:\Users\Joel\dbwebb-kurser\mvc\me\report\src\Cards\Player.php">
       <class name="App\Cards\Player" namespace="global">
-        <metrics complexity="9" methods="8" coveredmethods="8" conditionals="0" coveredconditionals="0" statements="21" coveredstatements="21" elements="29" coveredelements="29"/>
+        <metrics complexity="11" methods="10" coveredmethods="8" conditionals="0" coveredconditionals="0" statements="27" coveredstatements="25" elements="37" coveredelements="33"/>
       </class>
-      <line num="24" type="method" name="__construct" visibility="public" complexity="1" crap="1" count="16"/>
-      <line num="26" type="stmt" count="16"/>
-      <line num="27" type="stmt" count="16"/>
-      <line num="34" type="method" name="count" visibility="public" complexity="1" crap="1" count="1"/>
-      <line num="36" type="stmt" count="1"/>
-      <line num="43" type="method" name="hand" visibility="public" complexity="1" crap="1" count="6"/>
-      <line num="45" type="stmt" count="6"/>
-      <line num="52" type="method" name="toArray" visibility="public" complexity="2" crap="2" count="2"/>
-      <line num="54" type="stmt" count="2"/>
-      <line num="55" type="stmt" count="2"/>
-      <line num="56" type="stmt" count="1"/>
-      <line num="58" type="stmt" count="2"/>
-      <line num="59" type="stmt" count="2"/>
-      <line num="62" type="stmt" count="2"/>
-      <line num="69" type="method" name="clear" visibility="public" complexity="1" crap="1" count="3"/>
-      <line num="71" type="stmt" count="3"/>
-      <line num="72" type="stmt" count="3"/>
-      <line num="73" type="stmt" count="3"/>
-      <line num="81" type="method" name="addCards" visibility="public" complexity="1" crap="1" count="16"/>
-      <line num="83" type="stmt" count="16"/>
-      <line num="89" type="method" name="serialize" visibility="public" complexity="1" crap="1" count="2"/>
-      <line num="91" type="stmt" count="2"/>
-      <line num="92" type="stmt" count="2"/>
-      <line num="93" type="stmt" count="2"/>
-      <line num="95" type="stmt" count="2"/>
-      <line num="102" type="method" name="unserialize" visibility="public" complexity="1" crap="1" count="2"/>
-      <line num="104" type="stmt" count="2"/>
-      <line num="105" type="stmt" count="2"/>
-      <line num="106" type="stmt" count="2"/>
-      <metrics loc="109" ncloc="67" classes="1" methods="8" coveredmethods="8" conditionals="0" coveredconditionals="0" statements="21" coveredstatements="21" elements="29" coveredelements="29"/>
+      <line num="28" type="method" name="__construct" visibility="public" complexity="1" crap="1" count="16"/>
+      <line num="30" type="stmt" count="16"/>
+      <line num="31" type="stmt" count="16"/>
+      <line num="32" type="stmt" count="16"/>
+      <line num="38" type="method" name="fold" visibility="public" complexity="1" crap="2" count="0"/>
+      <line num="40" type="stmt" count="0"/>
+      <line num="46" type="method" name="getFolded" visibility="public" complexity="1" crap="2" count="0"/>
+      <line num="48" type="stmt" count="0"/>
+      <line num="55" type="method" name="count" visibility="public" complexity="1" crap="1" count="1"/>
+      <line num="57" type="stmt" count="1"/>
+      <line num="64" type="method" name="hand" visibility="public" complexity="1" crap="1" count="6"/>
+      <line num="66" type="stmt" count="6"/>
+      <line num="73" type="method" name="toArray" visibility="public" complexity="2" crap="2" count="2"/>
+      <line num="75" type="stmt" count="2"/>
+      <line num="76" type="stmt" count="2"/>
+      <line num="77" type="stmt" count="1"/>
+      <line num="79" type="stmt" count="2"/>
+      <line num="80" type="stmt" count="2"/>
+      <line num="83" type="stmt" count="2"/>
+      <line num="90" type="method" name="clear" visibility="public" complexity="1" crap="1" count="3"/>
+      <line num="92" type="stmt" count="3"/>
+      <line num="93" type="stmt" count="3"/>
+      <line num="94" type="stmt" count="3"/>
+      <line num="95" type="stmt" count="3"/>
+      <line num="103" type="method" name="addCards" visibility="public" complexity="1" crap="1" count="16"/>
+      <line num="105" type="stmt" count="16"/>
+      <line num="111" type="method" name="serialize" visibility="public" complexity="1" crap="1" count="2"/>
+      <line num="113" type="stmt" count="2"/>
+      <line num="114" type="stmt" count="2"/>
+      <line num="115" type="stmt" count="2"/>
+      <line num="116" type="stmt" count="2"/>
+      <line num="118" type="stmt" count="2"/>
+      <line num="125" type="method" name="unserialize" visibility="public" complexity="1" crap="1" count="2"/>
+      <line num="127" type="stmt" count="2"/>
+      <line num="128" type="stmt" count="2"/>
+      <line num="129" type="stmt" count="2"/>
+      <line num="130" type="stmt" count="2"/>
+      <metrics loc="133" ncloc="82" classes="1" methods="10" coveredmethods="8" conditionals="0" coveredconditionals="0" statements="27" coveredstatements="25" elements="37" coveredelements="33"/>
     </file>
     <file name="C:\Users\Joel\dbwebb-kurser\mvc\me\report\src\Cards\PointSystem.php">
       <class name="App\Cards\PointSystem" namespace="global">
@@ -299,8 +307,8 @@
       <line num="31" type="stmt" count="6"/>
       <line num="32" type="stmt" count="6"/>
       <line num="33" type="stmt" count="5"/>
-      <line num="35" type="stmt" count="3"/>
-      <line num="36" type="stmt" count="3"/>
+      <line num="35" type="stmt" count="1"/>
+      <line num="36" type="stmt" count="1"/>
       <line num="39" type="stmt" count="6"/>
       <line num="40" type="stmt" count="6"/>
       <line num="49" type="method" name="bestPoint" visibility="public" complexity="4" crap="4" count="5"/>
@@ -388,89 +396,471 @@
       <class name="App\Poker\Bank" namespace="global">
         <metrics complexity="0" methods="0" coveredmethods="0" conditionals="0" coveredconditionals="0" statements="0" coveredstatements="0" elements="0" coveredelements="0"/>
       </class>
-      <metrics loc="16" ncloc="13" classes="0" methods="0" coveredmethods="0" conditionals="0" coveredconditionals="0" statements="0" coveredstatements="0" elements="0" coveredelements="0"/>
+      <metrics loc="15" ncloc="12" classes="0" methods="0" coveredmethods="0" conditionals="0" coveredconditionals="0" statements="0" coveredstatements="0" elements="0" coveredelements="0"/>
     </file>
     <file name="C:\Users\Joel\dbwebb-kurser\mvc\me\report\src\Poker\PokerGame.php">
       <class name="App\Poker\PokerGame" namespace="global">
-        <metrics complexity="24" methods="15" coveredmethods="0" conditionals="0" coveredconditionals="0" statements="60" coveredstatements="0" elements="75" coveredelements="0"/>
+        <metrics complexity="63" methods="24" coveredmethods="0" conditionals="0" coveredconditionals="0" statements="182" coveredstatements="0" elements="206" coveredelements="0"/>
       </class>
-      <line num="26" type="method" name="__construct" visibility="public" complexity="1" crap="2" count="0"/>
+      <line num="40" type="method" name="__construct" visibility="public" complexity="1" crap="2" count="0"/>
+      <line num="42" type="stmt" count="0"/>
+      <line num="43" type="stmt" count="0"/>
+      <line num="44" type="stmt" count="0"/>
+      <line num="45" type="stmt" count="0"/>
+      <line num="46" type="stmt" count="0"/>
+      <line num="47" type="stmt" count="0"/>
+      <line num="48" type="stmt" count="0"/>
+      <line num="49" type="stmt" count="0"/>
+      <line num="50" type="stmt" count="0"/>
+      <line num="51" type="stmt" count="0"/>
+      <line num="52" type="stmt" count="0"/>
+      <line num="59" type="method" name="setupStates" visibility="private" complexity="1" crap="2" count="0"/>
+      <line num="61" type="stmt" count="0"/>
+      <line num="80" type="method" name="setupRules" visibility="private" complexity="1" crap="2" count="0"/>
+      <line num="82" type="stmt" count="0"/>
+      <line num="83" type="stmt" count="0"/>
+      <line num="84" type="stmt" count="0"/>
+      <line num="85" type="stmt" count="0"/>
+      <line num="86" type="stmt" count="0"/>
+      <line num="87" type="stmt" count="0"/>
+      <line num="88" type="stmt" count="0"/>
+      <line num="89" type="stmt" count="0"/>
+      <line num="90" type="stmt" count="0"/>
+      <line num="91" type="stmt" count="0"/>
+      <line num="92" type="stmt" count="0"/>
+      <line num="99" type="method" name="getSmallBlind" visibility="public" complexity="1" crap="2" count="0"/>
+      <line num="101" type="stmt" count="0"/>
+      <line num="106" type="method" name="getBankRaise" visibility="public" complexity="1" crap="2" count="0"/>
+      <line num="108" type="stmt" count="0"/>
+      <line num="113" type="method" name="getBigBlind" visibility="public" complexity="1" crap="2" count="0"/>
+      <line num="115" type="stmt" count="0"/>
+      <line num="120" type="method" name="getBank" visibility="public" complexity="1" crap="2" count="0"/>
+      <line num="122" type="stmt" count="0"/>
+      <line num="127" type="method" name="getPlayer" visibility="public" complexity="1" crap="2" count="0"/>
+      <line num="129" type="stmt" count="0"/>
+      <line num="134" type="method" name="getTable" visibility="public" complexity="1" crap="2" count="0"/>
+      <line num="136" type="stmt" count="0"/>
+      <line num="138" type="method" name="getPot" visibility="public" complexity="1" crap="2" count="0"/>
+      <line num="140" type="stmt" count="0"/>
+      <line num="146" type="method" name="getState" visibility="public" complexity="1" crap="2" count="0"/>
+      <line num="148" type="stmt" count="0"/>
+      <line num="157" type="method" name="processRequest" visibility="public" complexity="9" crap="90" count="0"/>
+      <line num="159" type="stmt" count="0"/>
+      <line num="160" type="stmt" count="0"/>
+      <line num="161" type="stmt" count="0"/>
+      <line num="162" type="stmt" count="0"/>
+      <line num="163" type="stmt" count="0"/>
+      <line num="164" type="stmt" count="0"/>
+      <line num="165" type="stmt" count="0"/>
+      <line num="166" type="stmt" count="0"/>
+      <line num="167" type="stmt" count="0"/>
+      <line num="168" type="stmt" count="0"/>
+      <line num="169" type="stmt" count="0"/>
+      <line num="170" type="stmt" count="0"/>
+      <line num="171" type="stmt" count="0"/>
+      <line num="172" type="stmt" count="0"/>
+      <line num="173" type="stmt" count="0"/>
+      <line num="174" type="stmt" count="0"/>
+      <line num="176" type="stmt" count="0"/>
+      <line num="185" type="method" name="blind" visibility="private" complexity="1" crap="2" count="0"/>
+      <line num="187" type="stmt" count="0"/>
+      <line num="188" type="stmt" count="0"/>
+      <line num="189" type="stmt" count="0"/>
+      <line num="190" type="stmt" count="0"/>
+      <line num="191" type="stmt" count="0"/>
+      <line num="197" type="method" name="flop" visibility="private" complexity="1" crap="2" count="0"/>
+      <line num="199" type="stmt" count="0"/>
+      <line num="200" type="stmt" count="0"/>
+      <line num="201" type="stmt" count="0"/>
+      <line num="202" type="stmt" count="0"/>
+      <line num="203" type="stmt" count="0"/>
+      <line num="204" type="stmt" count="0"/>
+      <line num="213" type="method" name="bet" visibility="private" complexity="2" crap="6" count="0"/>
+      <line num="215" type="stmt" count="0"/>
+      <line num="216" type="stmt" count="0"/>
+      <line num="218" type="stmt" count="0"/>
+      <line num="219" type="stmt" count="0"/>
+      <line num="220" type="stmt" count="0"/>
+      <line num="222" type="stmt" count="0"/>
+      <line num="223" type="stmt" count="0"/>
+      <line num="227" type="method" name="handWorth" visibility="private" complexity="4" crap="20" count="0"/>
+      <line num="229" type="stmt" count="0"/>
+      <line num="230" type="stmt" count="0"/>
+      <line num="231" type="stmt" count="0"/>
+      <line num="232" type="stmt" count="0"/>
+      <line num="233" type="stmt" count="0"/>
+      <line num="235" type="stmt" count="0"/>
+      <line num="236" type="stmt" count="0"/>
+      <line num="237" type="stmt" count="0"/>
+      <line num="239" type="stmt" count="0"/>
+      <line num="248" type="method" name="bank" visibility="private" complexity="13" crap="182" count="0"/>
+      <line num="250" type="stmt" count="0"/>
+      <line num="251" type="stmt" count="0"/>
+      <line num="252" type="stmt" count="0"/>
+      <line num="253" type="stmt" count="0"/>
+      <line num="254" type="stmt" count="0"/>
+      <line num="255" type="stmt" count="0"/>
+      <line num="256" type="stmt" count="0"/>
+      <line num="257" type="stmt" count="0"/>
+      <line num="258" type="stmt" count="0"/>
+      <line num="259" type="stmt" count="0"/>
+      <line num="260" type="stmt" count="0"/>
+      <line num="261" type="stmt" count="0"/>
+      <line num="262" type="stmt" count="0"/>
+      <line num="263" type="stmt" count="0"/>
+      <line num="265" type="stmt" count="0"/>
+      <line num="266" type="stmt" count="0"/>
+      <line num="267" type="stmt" count="0"/>
+      <line num="268" type="stmt" count="0"/>
+      <line num="269" type="stmt" count="0"/>
+      <line num="270" type="stmt" count="0"/>
+      <line num="271" type="stmt" count="0"/>
+      <line num="275" type="stmt" count="0"/>
+      <line num="276" type="stmt" count="0"/>
+      <line num="277" type="stmt" count="0"/>
+      <line num="278" type="stmt" count="0"/>
+      <line num="279" type="stmt" count="0"/>
+      <line num="280" type="stmt" count="0"/>
+      <line num="281" type="stmt" count="0"/>
+      <line num="282" type="stmt" count="0"/>
+      <line num="283" type="stmt" count="0"/>
+      <line num="284" type="stmt" count="0"/>
+      <line num="285" type="stmt" count="0"/>
+      <line num="286" type="stmt" count="0"/>
+      <line num="287" type="stmt" count="0"/>
+      <line num="288" type="stmt" count="0"/>
+      <line num="289" type="stmt" count="0"/>
+      <line num="292" type="stmt" count="0"/>
+      <line num="293" type="stmt" count="0"/>
+      <line num="294" type="stmt" count="0"/>
+      <line num="295" type="stmt" count="0"/>
+      <line num="298" type="stmt" count="0"/>
+      <line num="305" type="method" name="call" visibility="private" complexity="3" crap="12" count="0"/>
+      <line num="307" type="stmt" count="0"/>
+      <line num="308" type="stmt" count="0"/>
+      <line num="309" type="stmt" count="0"/>
+      <line num="310" type="stmt" count="0"/>
+      <line num="311" type="stmt" count="0"/>
+      <line num="312" type="stmt" count="0"/>
+      <line num="313" type="stmt" count="0"/>
+      <line num="314" type="stmt" count="0"/>
+      <line num="315" type="stmt" count="0"/>
+      <line num="317" type="stmt" count="0"/>
+      <line num="325" type="method" name="check" visibility="private" complexity="1" crap="2" count="0"/>
+      <line num="327" type="stmt" count="0"/>
+      <line num="328" type="stmt" count="0"/>
+      <line num="329" type="stmt" count="0"/>
+      <line num="336" type="method" name="fold" visibility="private" complexity="1" crap="2" count="0"/>
+      <line num="338" type="stmt" count="0"/>
+      <line num="339" type="stmt" count="0"/>
+      <line num="340" type="stmt" count="0"/>
+      <line num="341" type="stmt" count="0"/>
+      <line num="350" type="method" name="end" visibility="private" complexity="14" crap="210" count="0"/>
+      <line num="352" type="stmt" count="0"/>
+      <line num="353" type="stmt" count="0"/>
+      <line num="355" type="stmt" count="0"/>
+      <line num="356" type="stmt" count="0"/>
+      <line num="357" type="stmt" count="0"/>
+      <line num="359" type="stmt" count="0"/>
+      <line num="360" type="stmt" count="0"/>
+      <line num="361" type="stmt" count="0"/>
+      <line num="362" type="stmt" count="0"/>
+      <line num="363" type="stmt" count="0"/>
+      <line num="364" type="stmt" count="0"/>
+      <line num="365" type="stmt" count="0"/>
+      <line num="367" type="stmt" count="0"/>
+      <line num="368" type="stmt" count="0"/>
+      <line num="372" type="stmt" count="0"/>
+      <line num="373" type="stmt" count="0"/>
+      <line num="374" type="stmt" count="0"/>
+      <line num="375" type="stmt" count="0"/>
+      <line num="376" type="stmt" count="0"/>
+      <line num="378" type="stmt" count="0"/>
+      <line num="379" type="stmt" count="0"/>
+      <line num="380" type="stmt" count="0"/>
+      <line num="381" type="stmt" count="0"/>
+      <line num="382" type="stmt" count="0"/>
+      <line num="384" type="stmt" count="0"/>
+      <line num="385" type="stmt" count="0"/>
+      <line num="386" type="stmt" count="0"/>
+      <line num="387" type="stmt" count="0"/>
+      <line num="388" type="stmt" count="0"/>
+      <line num="389" type="stmt" count="0"/>
+      <line num="390" type="stmt" count="0"/>
+      <line num="391" type="stmt" count="0"/>
+      <line num="393" type="stmt" count="0"/>
+      <line num="394" type="stmt" count="0"/>
+      <line num="398" type="stmt" count="0"/>
+      <line num="405" type="method" name="reset" visibility="private" complexity="1" crap="2" count="0"/>
+      <line num="407" type="stmt" count="0"/>
+      <line num="408" type="stmt" count="0"/>
+      <line num="409" type="stmt" count="0"/>
+      <line num="410" type="stmt" count="0"/>
+      <line num="411" type="stmt" count="0"/>
+      <line num="412" type="stmt" count="0"/>
+      <line num="413" type="stmt" count="0"/>
+      <line num="414" type="stmt" count="0"/>
+      <line num="415" type="stmt" count="0"/>
+      <line num="421" type="method" name="river" visibility="private" complexity="1" crap="2" count="0"/>
+      <line num="423" type="stmt" count="0"/>
+      <line num="424" type="stmt" count="0"/>
+      <line num="425" type="stmt" count="0"/>
+      <line num="426" type="stmt" count="0"/>
+      <line num="429" type="method" name="renderPath" visibility="public" complexity="1" crap="2" count="0"/>
+      <line num="431" type="stmt" count="0"/>
+      <metrics loc="434" ncloc="346" classes="1" methods="24" coveredmethods="0" conditionals="0" coveredconditionals="0" statements="182" coveredstatements="0" elements="206" coveredelements="0"/>
+    </file>
+    <file name="C:\Users\Joel\dbwebb-kurser\mvc\me\report\src\Poker\Rules\Flush.php">
+      <class name="App\Poker\Rules\Flush" namespace="global">
+        <metrics complexity="6" methods="2" coveredmethods="0" conditionals="0" coveredconditionals="0" statements="12" coveredstatements="0" elements="14" coveredelements="0"/>
+      </class>
+      <line num="12" type="method" name="__construct" visibility="public" complexity="1" crap="2" count="0"/>
+      <line num="14" type="stmt" count="0"/>
+      <line num="22" type="method" name="calculate" visibility="public" complexity="5" crap="30" count="0"/>
+      <line num="24" type="stmt" count="0"/>
+      <line num="25" type="stmt" count="0"/>
+      <line num="27" type="stmt" count="0"/>
       <line num="28" type="stmt" count="0"/>
-      <line num="38" type="stmt" count="0"/>
+      <line num="29" type="stmt" count="0"/>
+      <line num="30" type="stmt" count="0"/>
+      <line num="31" type="stmt" count="0"/>
+      <line num="33" type="stmt" count="0"/>
+      <line num="36" type="stmt" count="0"/>
+      <line num="37" type="stmt" count="0"/>
       <line num="39" type="stmt" count="0"/>
-      <line num="40" type="stmt" count="0"/>
+      <metrics loc="42" ncloc="33" classes="1" methods="2" coveredmethods="0" conditionals="0" coveredconditionals="0" statements="12" coveredstatements="0" elements="14" coveredelements="0"/>
+    </file>
+    <file name="C:\Users\Joel\dbwebb-kurser\mvc\me\report\src\Poker\Rules\FourOfAKind.php">
+      <class name="App\Poker\Rules\FourOfAKind" namespace="global">
+        <metrics complexity="7" methods="2" coveredmethods="0" conditionals="0" coveredconditionals="0" statements="14" coveredstatements="0" elements="16" coveredelements="0"/>
+      </class>
+      <line num="12" type="method" name="__construct" visibility="public" complexity="1" crap="2" count="0"/>
+      <line num="14" type="stmt" count="0"/>
+      <line num="22" type="method" name="calculate" visibility="public" complexity="6" crap="42" count="0"/>
+      <line num="24" type="stmt" count="0"/>
+      <line num="25" type="stmt" count="0"/>
+      <line num="26" type="stmt" count="0"/>
+      <line num="27" type="stmt" count="0"/>
+      <line num="28" type="stmt" count="0"/>
+      <line num="29" type="stmt" count="0"/>
+      <line num="30" type="stmt" count="0"/>
+      <line num="31" type="stmt" count="0"/>
+      <line num="32" type="stmt" count="0"/>
+      <line num="33" type="stmt" count="0"/>
+      <line num="36" type="stmt" count="0"/>
+      <line num="37" type="stmt" count="0"/>
+      <line num="39" type="stmt" count="0"/>
+      <metrics loc="42" ncloc="33" classes="1" methods="2" coveredmethods="0" conditionals="0" coveredconditionals="0" statements="14" coveredstatements="0" elements="16" coveredelements="0"/>
+    </file>
+    <file name="C:\Users\Joel\dbwebb-kurser\mvc\me\report\src\Poker\Rules\FullHouse.php">
+      <class name="App\Poker\Rules\FullHouse" namespace="global">
+        <metrics complexity="12" methods="2" coveredmethods="0" conditionals="0" coveredconditionals="0" statements="25" coveredstatements="0" elements="27" coveredelements="0"/>
+      </class>
+      <line num="12" type="method" name="__construct" visibility="public" complexity="1" crap="2" count="0"/>
+      <line num="14" type="stmt" count="0"/>
+      <line num="22" type="method" name="calculate" visibility="public" complexity="11" crap="132" count="0"/>
+      <line num="24" type="stmt" count="0"/>
+      <line num="25" type="stmt" count="0"/>
+      <line num="26" type="stmt" count="0"/>
+      <line num="27" type="stmt" count="0"/>
+      <line num="28" type="stmt" count="0"/>
+      <line num="29" type="stmt" count="0"/>
+      <line num="30" type="stmt" count="0"/>
+      <line num="31" type="stmt" count="0"/>
+      <line num="32" type="stmt" count="0"/>
+      <line num="33" type="stmt" count="0"/>
+      <line num="35" type="stmt" count="0"/>
+      <line num="36" type="stmt" count="0"/>
+      <line num="37" type="stmt" count="0"/>
+      <line num="38" type="stmt" count="0"/>
       <line num="41" type="stmt" count="0"/>
       <line num="42" type="stmt" count="0"/>
       <line num="43" type="stmt" count="0"/>
       <line num="44" type="stmt" count="0"/>
       <line num="45" type="stmt" count="0"/>
-      <line num="51" type="method" name="getSmallBlind" visibility="public" complexity="1" crap="2" count="0"/>
+      <line num="46" type="stmt" count="0"/>
+      <line num="47" type="stmt" count="0"/>
       <line num="52" type="stmt" count="0"/>
-      <line num="57" type="method" name="getBigBlind" visibility="public" complexity="1" crap="2" count="0"/>
-      <line num="58" type="stmt" count="0"/>
-      <line num="63" type="method" name="getBank" visibility="public" complexity="1" crap="2" count="0"/>
-      <line num="64" type="stmt" count="0"/>
-      <line num="69" type="method" name="getPlayer" visibility="public" complexity="1" crap="2" count="0"/>
-      <line num="70" type="stmt" count="0"/>
-      <line num="75" type="method" name="getTable" visibility="public" complexity="1" crap="2" count="0"/>
-      <line num="76" type="stmt" count="0"/>
-      <line num="78" type="method" name="getPot" visibility="public" complexity="1" crap="2" count="0"/>
-      <line num="79" type="stmt" count="0"/>
-      <line num="85" type="method" name="getState" visibility="public" complexity="1" crap="2" count="0"/>
-      <line num="87" type="stmt" count="0"/>
-      <line num="96" type="method" name="processRequest" visibility="public" complexity="6" crap="42" count="0"/>
-      <line num="98" type="stmt" count="0"/>
-      <line num="99" type="stmt" count="0"/>
-      <line num="100" type="stmt" count="0"/>
-      <line num="101" type="stmt" count="0"/>
-      <line num="102" type="stmt" count="0"/>
-      <line num="103" type="stmt" count="0"/>
-      <line num="104" type="stmt" count="0"/>
-      <line num="105" type="stmt" count="0"/>
-      <line num="106" type="stmt" count="0"/>
-      <line num="107" type="stmt" count="0"/>
-      <line num="109" type="stmt" count="0"/>
-      <line num="118" type="method" name="blind" visibility="private" complexity="1" crap="2" count="0"/>
-      <line num="119" type="stmt" count="0"/>
-      <line num="120" type="stmt" count="0"/>
-      <line num="121" type="stmt" count="0"/>
-      <line num="122" type="stmt" count="0"/>
-      <line num="123" type="stmt" count="0"/>
-      <line num="129" type="method" name="flop" visibility="private" complexity="1" crap="2" count="0"/>
-      <line num="130" type="stmt" count="0"/>
-      <line num="131" type="stmt" count="0"/>
-      <line num="132" type="stmt" count="0"/>
-      <line num="133" type="stmt" count="0"/>
-      <line num="134" type="stmt" count="0"/>
-      <line num="135" type="stmt" count="0"/>
-      <line num="144" type="method" name="bet" visibility="private" complexity="4" crap="20" count="0"/>
-      <line num="145" type="stmt" count="0"/>
-      <line num="146" type="stmt" count="0"/>
-      <line num="148" type="stmt" count="0"/>
-      <line num="149" type="stmt" count="0"/>
-      <line num="150" type="stmt" count="0"/>
-      <line num="152" type="stmt" count="0"/>
-      <line num="153" type="stmt" count="0"/>
-      <line num="154" type="stmt" count="0"/>
-      <line num="155" type="stmt" count="0"/>
-      <line num="156" type="stmt" count="0"/>
-      <line num="157" type="stmt" count="0"/>
-      <line num="160" type="stmt" count="0"/>
-      <line num="167" type="method" name="check" visibility="private" complexity="2" crap="6" count="0"/>
-      <line num="168" type="stmt" count="0"/>
-      <line num="169" type="stmt" count="0"/>
-      <line num="171" type="stmt" count="0"/>
-      <line num="172" type="stmt" count="0"/>
-      <line num="174" type="stmt" count="0"/>
-      <line num="180" type="method" name="river" visibility="private" complexity="1" crap="2" count="0"/>
-      <line num="181" type="stmt" count="0"/>
-      <line num="182" type="stmt" count="0"/>
-      <line num="183" type="stmt" count="0"/>
-      <line num="184" type="stmt" count="0"/>
-      <line num="187" type="method" name="renderPath" visibility="public" complexity="1" crap="2" count="0"/>
-      <line num="188" type="stmt" count="0"/>
-      <metrics loc="191" ncloc="139" classes="1" methods="15" coveredmethods="0" conditionals="0" coveredconditionals="0" statements="60" coveredstatements="0" elements="75" coveredelements="0"/>
+      <line num="53" type="stmt" count="0"/>
+      <line num="55" type="stmt" count="0"/>
+      <metrics loc="58" ncloc="49" classes="1" methods="2" coveredmethods="0" conditionals="0" coveredconditionals="0" statements="25" coveredstatements="0" elements="27" coveredelements="0"/>
     </file>
-    <metrics files="14" loc="1246" ncloc="855" classes="12" methods="78" coveredmethods="54" conditionals="0" coveredconditionals="0" statements="311" coveredstatements="234" elements="389" coveredelements="288"/>
+    <file name="C:\Users\Joel\dbwebb-kurser\mvc\me\report\src\Poker\Rules\HighHand.php">
+      <class name="App\Poker\Rules\HighHand" namespace="global">
+        <metrics complexity="2" methods="2" coveredmethods="0" conditionals="0" coveredconditionals="0" statements="3" coveredstatements="0" elements="5" coveredelements="0"/>
+      </class>
+      <line num="12" type="method" name="__construct" visibility="public" complexity="1" crap="2" count="0"/>
+      <line num="14" type="stmt" count="0"/>
+      <line num="22" type="method" name="calculate" visibility="public" complexity="1" crap="2" count="0"/>
+      <line num="24" type="stmt" count="0"/>
+      <line num="25" type="stmt" count="0"/>
+      <metrics loc="28" ncloc="19" classes="1" methods="2" coveredmethods="0" conditionals="0" coveredconditionals="0" statements="3" coveredstatements="0" elements="5" coveredelements="0"/>
+    </file>
+    <file name="C:\Users\Joel\dbwebb-kurser\mvc\me\report\src\Poker\Rules\Pair.php">
+      <class name="App\Poker\Rules\Pair" namespace="global">
+        <metrics complexity="6" methods="2" coveredmethods="0" conditionals="0" coveredconditionals="0" statements="10" coveredstatements="0" elements="12" coveredelements="0"/>
+      </class>
+      <line num="12" type="method" name="__construct" visibility="public" complexity="1" crap="2" count="0"/>
+      <line num="14" type="stmt" count="0"/>
+      <line num="22" type="method" name="calculate" visibility="public" complexity="5" crap="30" count="0"/>
+      <line num="24" type="stmt" count="0"/>
+      <line num="25" type="stmt" count="0"/>
+      <line num="26" type="stmt" count="0"/>
+      <line num="27" type="stmt" count="0"/>
+      <line num="28" type="stmt" count="0"/>
+      <line num="29" type="stmt" count="0"/>
+      <line num="32" type="stmt" count="0"/>
+      <line num="33" type="stmt" count="0"/>
+      <line num="35" type="stmt" count="0"/>
+      <metrics loc="38" ncloc="29" classes="1" methods="2" coveredmethods="0" conditionals="0" coveredconditionals="0" statements="10" coveredstatements="0" elements="12" coveredelements="0"/>
+    </file>
+    <file name="C:\Users\Joel\dbwebb-kurser\mvc\me\report\src\Poker\Rules\Point.php">
+      <class name="App\Poker\Rules\Point" namespace="global">
+        <metrics complexity="4" methods="4" coveredmethods="0" conditionals="0" coveredconditionals="0" statements="6" coveredstatements="0" elements="10" coveredelements="0"/>
+      </class>
+      <line num="21" type="method" name="__construct" visibility="public" complexity="1" crap="2" count="0"/>
+      <line num="23" type="stmt" count="0"/>
+      <line num="24" type="stmt" count="0"/>
+      <line num="25" type="stmt" count="0"/>
+      <line num="30" type="method" name="getPoint" visibility="public" complexity="1" crap="2" count="0"/>
+      <line num="32" type="stmt" count="0"/>
+      <line num="37" type="method" name="getTieBreakerPoint" visibility="public" complexity="1" crap="2" count="0"/>
+      <line num="39" type="stmt" count="0"/>
+      <line num="44" type="method" name="getMessage" visibility="public" complexity="1" crap="2" count="0"/>
+      <line num="46" type="stmt" count="0"/>
+      <metrics loc="49" ncloc="31" classes="1" methods="4" coveredmethods="0" conditionals="0" coveredconditionals="0" statements="6" coveredstatements="0" elements="10" coveredelements="0"/>
+    </file>
+    <file name="C:\Users\Joel\dbwebb-kurser\mvc\me\report\src\Poker\Rules\RoyalFlush.php">
+      <class name="App\Poker\Rules\RoyalFlush" namespace="global">
+        <metrics complexity="9" methods="2" coveredmethods="0" conditionals="0" coveredconditionals="0" statements="15" coveredstatements="0" elements="17" coveredelements="0"/>
+      </class>
+      <line num="12" type="method" name="__construct" visibility="public" complexity="1" crap="2" count="0"/>
+      <line num="14" type="stmt" count="0"/>
+      <line num="22" type="method" name="calculate" visibility="public" complexity="8" crap="72" count="0"/>
+      <line num="24" type="stmt" count="0"/>
+      <line num="25" type="stmt" count="0"/>
+      <line num="26" type="stmt" count="0"/>
+      <line num="27" type="stmt" count="0"/>
+      <line num="28" type="stmt" count="0"/>
+      <line num="29" type="stmt" count="0"/>
+      <line num="30" type="stmt" count="0"/>
+      <line num="31" type="stmt" count="0"/>
+      <line num="33" type="stmt" count="0"/>
+      <line num="34" type="stmt" count="0"/>
+      <line num="35" type="stmt" count="0"/>
+      <line num="38" type="stmt" count="0"/>
+      <line num="39" type="stmt" count="0"/>
+      <line num="41" type="stmt" count="0"/>
+      <metrics loc="44" ncloc="35" classes="1" methods="2" coveredmethods="0" conditionals="0" coveredconditionals="0" statements="15" coveredstatements="0" elements="17" coveredelements="0"/>
+    </file>
+    <file name="C:\Users\Joel\dbwebb-kurser\mvc\me\report\src\Poker\Rules\Rule.php">
+      <class name="App\Poker\Rules\Rule" namespace="global">
+        <metrics complexity="5" methods="3" coveredmethods="0" conditionals="0" coveredconditionals="0" statements="7" coveredstatements="0" elements="10" coveredelements="0"/>
+      </class>
+      <line num="16" type="method" name="__construct" visibility="public" complexity="1" crap="2" count="0"/>
+      <line num="18" type="stmt" count="0"/>
+      <line num="26" type="method" name="calculate" visibility="public" complexity="1" crap="2" count="0"/>
+      <line num="28" type="stmt" count="0"/>
+      <line num="36" type="method" name="sortCardsDescending" visibility="protected" complexity="3" crap="12" count="0"/>
+      <line num="38" type="stmt" count="0"/>
+      <line num="39" type="stmt" count="0"/>
+      <line num="40" type="stmt" count="0"/>
+      <line num="42" type="stmt" count="0"/>
+      <line num="44" type="stmt" count="0"/>
+      <metrics loc="47" ncloc="30" classes="1" methods="3" coveredmethods="0" conditionals="0" coveredconditionals="0" statements="7" coveredstatements="0" elements="10" coveredelements="0"/>
+    </file>
+    <file name="C:\Users\Joel\dbwebb-kurser\mvc\me\report\src\Poker\Rules\Straight.php">
+      <class name="App\Poker\Rules\Straight" namespace="global">
+        <metrics complexity="9" methods="2" coveredmethods="0" conditionals="0" coveredconditionals="0" statements="18" coveredstatements="0" elements="20" coveredelements="0"/>
+      </class>
+      <line num="12" type="method" name="__construct" visibility="public" complexity="1" crap="2" count="0"/>
+      <line num="14" type="stmt" count="0"/>
+      <line num="22" type="method" name="calculate" visibility="public" complexity="8" crap="72" count="0"/>
+      <line num="24" type="stmt" count="0"/>
+      <line num="25" type="stmt" count="0"/>
+      <line num="26" type="stmt" count="0"/>
+      <line num="27" type="stmt" count="0"/>
+      <line num="30" type="stmt" count="0"/>
+      <line num="31" type="stmt" count="0"/>
+      <line num="32" type="stmt" count="0"/>
+      <line num="33" type="stmt" count="0"/>
+      <line num="34" type="stmt" count="0"/>
+      <line num="35" type="stmt" count="0"/>
+      <line num="36" type="stmt" count="0"/>
+      <line num="37" type="stmt" count="0"/>
+      <line num="38" type="stmt" count="0"/>
+      <line num="39" type="stmt" count="0"/>
+      <line num="42" type="stmt" count="0"/>
+      <line num="43" type="stmt" count="0"/>
+      <line num="45" type="stmt" count="0"/>
+      <metrics loc="48" ncloc="39" classes="1" methods="2" coveredmethods="0" conditionals="0" coveredconditionals="0" statements="18" coveredstatements="0" elements="20" coveredelements="0"/>
+    </file>
+    <file name="C:\Users\Joel\dbwebb-kurser\mvc\me\report\src\Poker\Rules\StraightFlush.php">
+      <class name="App\Poker\Rules\StraightFlush" namespace="global">
+        <metrics complexity="8" methods="2" coveredmethods="0" conditionals="0" coveredconditionals="0" statements="15" coveredstatements="0" elements="17" coveredelements="0"/>
+      </class>
+      <line num="12" type="method" name="__construct" visibility="public" complexity="1" crap="2" count="0"/>
+      <line num="14" type="stmt" count="0"/>
+      <line num="22" type="method" name="calculate" visibility="public" complexity="7" crap="56" count="0"/>
+      <line num="24" type="stmt" count="0"/>
+      <line num="25" type="stmt" count="0"/>
+      <line num="26" type="stmt" count="0"/>
+      <line num="27" type="stmt" count="0"/>
+      <line num="28" type="stmt" count="0"/>
+      <line num="29" type="stmt" count="0"/>
+      <line num="30" type="stmt" count="0"/>
+      <line num="31" type="stmt" count="0"/>
+      <line num="33" type="stmt" count="0"/>
+      <line num="34" type="stmt" count="0"/>
+      <line num="35" type="stmt" count="0"/>
+      <line num="38" type="stmt" count="0"/>
+      <line num="39" type="stmt" count="0"/>
+      <line num="41" type="stmt" count="0"/>
+      <metrics loc="44" ncloc="35" classes="1" methods="2" coveredmethods="0" conditionals="0" coveredconditionals="0" statements="15" coveredstatements="0" elements="17" coveredelements="0"/>
+    </file>
+    <file name="C:\Users\Joel\dbwebb-kurser\mvc\me\report\src\Poker\Rules\ThreeOfAKind.php">
+      <class name="App\Poker\Rules\ThreeOfAKind" namespace="global">
+        <metrics complexity="7" methods="2" coveredmethods="0" conditionals="0" coveredconditionals="0" statements="14" coveredstatements="0" elements="16" coveredelements="0"/>
+      </class>
+      <line num="12" type="method" name="__construct" visibility="public" complexity="1" crap="2" count="0"/>
+      <line num="14" type="stmt" count="0"/>
+      <line num="22" type="method" name="calculate" visibility="public" complexity="6" crap="42" count="0"/>
+      <line num="24" type="stmt" count="0"/>
+      <line num="25" type="stmt" count="0"/>
+      <line num="26" type="stmt" count="0"/>
+      <line num="27" type="stmt" count="0"/>
+      <line num="28" type="stmt" count="0"/>
+      <line num="29" type="stmt" count="0"/>
+      <line num="30" type="stmt" count="0"/>
+      <line num="31" type="stmt" count="0"/>
+      <line num="32" type="stmt" count="0"/>
+      <line num="33" type="stmt" count="0"/>
+      <line num="36" type="stmt" count="0"/>
+      <line num="37" type="stmt" count="0"/>
+      <line num="39" type="stmt" count="0"/>
+      <metrics loc="42" ncloc="33" classes="1" methods="2" coveredmethods="0" conditionals="0" coveredconditionals="0" statements="14" coveredstatements="0" elements="16" coveredelements="0"/>
+    </file>
+    <file name="C:\Users\Joel\dbwebb-kurser\mvc\me\report\src\Poker\Rules\TwoPairs.php">
+      <class name="App\Poker\Rules\TwoPair" namespace="global">
+        <metrics complexity="7" methods="2" coveredmethods="0" conditionals="0" coveredconditionals="0" statements="13" coveredstatements="0" elements="15" coveredelements="0"/>
+      </class>
+      <line num="12" type="method" name="__construct" visibility="public" complexity="1" crap="2" count="0"/>
+      <line num="14" type="stmt" count="0"/>
+      <line num="22" type="method" name="calculate" visibility="public" complexity="6" crap="42" count="0"/>
+      <line num="24" type="stmt" count="0"/>
+      <line num="25" type="stmt" count="0"/>
+      <line num="26" type="stmt" count="0"/>
+      <line num="27" type="stmt" count="0"/>
+      <line num="28" type="stmt" count="0"/>
+      <line num="29" type="stmt" count="0"/>
+      <line num="30" type="stmt" count="0"/>
+      <line num="31" type="stmt" count="0"/>
+      <line num="32" type="stmt" count="0"/>
+      <line num="35" type="stmt" count="0"/>
+      <line num="36" type="stmt" count="0"/>
+      <line num="38" type="stmt" count="0"/>
+      <metrics loc="41" ncloc="32" classes="1" methods="2" coveredmethods="0" conditionals="0" coveredconditionals="0" statements="13" coveredstatements="0" elements="15" coveredelements="0"/>
+    </file>
+    <metrics files="26" loc="2035" ncloc="1474" classes="24" methods="116" coveredmethods="56" conditionals="0" coveredconditionals="0" statements="591" coveredstatements="243" elements="707" coveredelements="299"/>
   </project>
 </coverage>

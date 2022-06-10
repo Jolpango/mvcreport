@@ -20,7 +20,7 @@ class Card implements \Serializable
      * @var array<int, string>
      */
     public static array $valueToString = [
-        1 => "Ace",
+        14 => "Ace",
         2 => "Two",
         3 => "Three",
         4 => "Four",

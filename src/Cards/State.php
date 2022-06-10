@@ -13,7 +13,7 @@ class State implements \Serializable
      * @param array $states
      * @param int $start=0
      */
-    public function __construct(array $states, int $start=0)
+    public function __construct(array $states, int $start = 0)
     {
         $this->states = $states;
         $this->currentState = $start;

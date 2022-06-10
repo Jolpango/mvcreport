@@ -11,5 +11,4 @@ use App\Cards\Deck;
  */
 class Bank extends TwigPlayer
 {
-    
 }

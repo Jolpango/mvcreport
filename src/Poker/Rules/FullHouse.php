@@ -9,26 +9,19 @@ use App\Cards\Card;
  */
 class FullHouse extends Rule
 {
-    public function __construct(int $rank=7)
+    public function __construct(int $rank = 7)
     {
         parent::__construct($rank);
     }
     /**
      * Returns the point of a hand
      * @param array<Card> $cards
-     * 
+     *
      * @return Point|bool
      */
-    public function calculate(array $cards): Point|bool {
-        usort($cards, function(Card $a,Card $b) {
-            if ($a->getValue() < $b->getValue()) {
-                return -1;
-            }
-            if ($a->getValue() === $b->getValue()) {
-                return 0;
-            }
-            return 1;
-        });
+    public function calculate(array $cards): Point|bool
+    {
+        $cards = $this->sortCardsDescending($cards);
         $counter = 0;
         $pairs = [];
         $threes = [];
@@ -36,12 +29,12 @@ class FullHouse extends Rule
         for ($i = 1; $i < $size; $i++) {
             if ($cards[$i]->getValue() === $cards[$i - 1]->getValue()) {
                 $counter++;
-            } else if ($cards[$i]->getValue() !== $cards[$i - 1]->getValue()) {
+            } elseif ($cards[$i]->getValue() !== $cards[$i - 1]->getValue()) {
                 $counter = 0;
             }
             if ($counter === 2) {
                 array_push($pairs, $cards[$i]->getValue());
-            } else if ($counter === 3) {
+            } elseif ($counter === 3) {
                 array_push($threes, $cards[$i]->getValue());
             }
         }
@@ -57,7 +50,7 @@ class FullHouse extends Rule
             }
         }
         if ($fullHouseTotal) {
-            return new Point($this->rank, $fullHouseTotal);
+            return new Point($this->rank, $fullHouseTotal, "Full house");
         }
         return false;
     }

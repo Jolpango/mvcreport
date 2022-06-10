@@ -15,7 +15,7 @@ class CardGraphicTest extends TestCase
      */
     public function testCSSClass(): void
     {
-        $card = new CardGraphic(1, "Hearts");
+        $card = new CardGraphic(14, "Hearts");
         $exp = "ace hearts";
         $this->assertEquals($exp, $card->toCSSClass());
     }
@@ -25,13 +25,13 @@ class CardGraphicTest extends TestCase
      */
     public function testToString(): void
     {
-        $card = new CardGraphic(1, "Hearts");
+        $card = new CardGraphic(14, "Hearts");
         $exp = "Ace of Hearts";
         $this->assertEquals($exp, $card->toString());
     }
     public function testToStringJoker(): void
     {
-        $card = new CardGraphic(1, "Joker");
+        $card = new CardGraphic(14, "Joker");
         $exp = "Joker";
         $this->assertEquals($exp, $card->toString());
     }

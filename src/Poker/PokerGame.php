@@ -35,6 +35,7 @@ class PokerGame
     private TwigDeck $deck;
     private int $smallBlind;
     private int $bigBlind;
+    private int $bankRaise;
 
     public function __construct()
     {
@@ -48,21 +49,26 @@ class PokerGame
         $this->smallBlind = 100;
         $this->bigBlind = 200;
         $this->pot = 0;
+        $this->bankRaise = 0;
     }
 
     /**
      * Sets up the states
      * @return void
      */
-    private function setupStates(): void {
+    private function setupStates(): void
+    {
         $this->state = new State([
             "BLIND",
             "FLOP",
             "TURN",
+            "RESPONSE",
             "RIVER",
             "TURN",
+            "RESPONSE",
             "RIVER",
             "TURN",
+            "RESPONSE",
             "END"
         ]);
     }
@@ -71,7 +77,8 @@ class PokerGame
      * Sets up the rules
      * @return void
      */
-    private function setupRules(): void {
+    private function setupRules(): void
+    {
         $this->rules = [
             new RoyalFlush(),
             new StraightFlush(),
@@ -89,34 +96,47 @@ class PokerGame
     /**
      * @return int
      */
-    public function getSmallBlind(): int {
+    public function getSmallBlind(): int
+    {
         return $this->smallBlind;
     }
     /**
      * @return int
      */
-    public function getBigBlind(): int {
+    public function getBankRaise(): int
+    {
+        return $this->bankRaise;
+    }
+    /**
+     * @return int
+     */
+    public function getBigBlind(): int
+    {
         return $this->bigBlind;
     }
     /**
      * @return TwigPlayer
      */
-    public function getBank(): TwigPlayer {
+    public function getBank(): TwigPlayer
+    {
         return $this->bank;
     }
     /**
      * @return TwigPlayer
      */
-    public function getPlayer(): TwigPlayer {
+    public function getPlayer(): TwigPlayer
+    {
         return $this->player;
     }
     /**
      * @return TwigPlayer
      */
-    public function getTable(): TwigPlayer {
+    public function getTable(): TwigPlayer
+    {
         return $this->table;
     }
-    public function getPot(): int {
+    public function getPot(): int
+    {
         return $this->pot;
     }
     /**
@@ -148,6 +168,8 @@ class PokerGame
                 return $this->check($user);
             case "FOLD":
                 return $this->fold();
+            case "CALL":
+                return $this->call($user);
             case "RESET":
                 return $this->reset();
             default:
@@ -157,10 +179,11 @@ class PokerGame
 
     /**
      * @param User $user
-     * 
+     *
      * @return array<string>
      */
-    private function blind(User $user): array {
+    private function blind(User $user): array
+    {
         $messages = ["Adding blinds"];
         $user->setBalance($user->getBalance() - $this->smallBlind);
         $this->pot += $this->smallBlind * 2;
@@ -171,7 +194,8 @@ class PokerGame
     /**
      * @return array<string>
      */
-    private function flop(): array {
+    private function flop(): array
+    {
         $messages = ["Dealing flop"];
         $this->player->addCards($this->deck->draw(2));
         $this->table->addCards($this->deck->draw(3));
@@ -183,24 +207,91 @@ class PokerGame
     /**
      * @param Request $request
      * @param User $user
-     * 
+     *
      * @return array<string>
      */
-    private function bet(Request $request, User $user): array {
+    private function bet(Request $request, User $user): array
+    {
         if ($request->get("amount") > $user->getBalance()) {
-            return ["You dont have enough coinds"];
+            return ["You dont have enough coins"];
         }
         $messages = ["Processing bet"];
         $this->pot += $request->get("amount");
         $user->setBalance($user->getBalance() - $request->get("amount"));
         // Determine if call of not
-        if ($request->get("amount") < 1000000000) {
-            array_push($messages, "The bank calls");
-            $this->pot += $request->get("amount");
-            $this->state->advance();
-            if ($this->state->is("RIVER")) {
-                $messages = array_merge($messages, $this->river());
-            } elseif ($this->state->is("END")) {
+        $messages = array_merge($messages, $this->bank($user, $request->get("amount")));
+        return $messages;
+    }
+
+
+    private function handWorth($cards, $opponentTotal, $opponentRaise): int
+    {
+        $cardsLeft = 7 - count($cards);
+        $confidenceCoefficient = 2;
+        $points = false;
+        for ($i = 0; $i < count($this->rules) && !$points; $i++) {
+            $points = $this->rules[$i]->calculate($cards);
+        }
+        $potential = ($points->getPoint() * ($opponentTotal / 10) - ($opponentRaise / 2)) * $confidenceCoefficient;
+        if ($potential > $opponentTotal) {
+            return $opponentTotal;
+        }
+        return $potential;
+    }
+
+    /**
+     * @param User $user
+     * @param int $amount
+     *
+     * @return array<string>
+     */
+    private function bank(User $user, int $amount): array
+    {
+        $messages = ["Processing..."];
+        $callCoefficient = 0.75;
+        $raiseCoefficient = 2;
+        $recklessCoefficient = 20;
+        $bluffCallCoefficient = 50;
+        $reckless = rand(1, 100) < $recklessCoefficient;
+        $callBluff = rand(1, 100) < $bluffCallCoefficient;
+        if ($amount === 0) {
+            $worth = $this->handWorth(array_merge($this->bank->hand(), $this->table->hand()), $user->getBalance(), $amount);
+            if (($worth >= $raiseCoefficient * $user->getBalance() / 10 || $reckless) && $user->getBalance() !== 0) {
+                $this->bankRaise = $worth;
+                array_push($messages, "The bank raises by " . $this->bankRaise);
+                $this->pot += $this->bankRaise;
+                $this->state->advance();
+            } else {
+                array_push($messages, "The bank checks");
+                $this->state->advance();
+                $this->state->advance();
+                if ($this->state->is("RIVER")) {
+                    $messages = array_merge($messages, $this->river());
+                } elseif ($this->state->is("END")) {
+                    $messages = array_merge($messages, $this->end($user));
+                }
+            }
+        } else {
+            $worth = $this->handWorth(array_merge($this->bank->hand(), $this->table->hand()), $user->getBalance(), $amount);
+            if ($worth > $amount * $raiseCoefficient && $user->getBalance() !== 0) {
+                $this->bankRaise = $worth - $amount;
+                array_push($messages, "The bank raises by " . $this->bankRaise);
+                $this->pot += $amount + $this->bankRaise;
+                $this->state->advance();
+            } elseif ($worth >= $amount * $callCoefficient || $callBluff) {
+                array_push($messages, "The bank calls");
+                $this->pot += $amount;
+                $this->state->advance();
+                $this->state->advance();
+                if ($this->state->is("RIVER")) {
+                    $messages = array_merge($messages, $this->river());
+                } elseif ($this->state->is("END")) {
+                    $messages = array_merge($messages, $this->end($user));
+                }
+            } else {
+                array_push($messages, "The bank folds");
+                $this->bank->fold();
+                $this->state->set("END");
                 $messages = array_merge($messages, $this->end($user));
             }
         }
@@ -208,13 +299,16 @@ class PokerGame
     }
     /**
      * @param User $user
-     * 
+     *
      * @return array<string>
      */
-    private function check(User $user): array {
-        $messages = ["Checking"];
+    private function call(User $user): array
+    {
+        $messages = ["Calling"];
         $this->state->advance();
-        // Can bank bet?
+        $user->setBalance($user->getBalance() - $this->bankRaise);
+        $this->pot += $this->bankRaise;
+        $this->bankRaise = 0;
         if ($this->state->is("RIVER")) {
             $messages = array_merge($messages, $this->river());
         } elseif ($this->state->is("END")) {
@@ -224,11 +318,25 @@ class PokerGame
     }
 
     /**
-     * 
+     * @param User $user
+     *
      * @return array<string>
      */
-    private function fold(): array {
+    private function check(User $user): array
+    {
+        $messages = ["Checking"];
+        $messages = array_merge($messages, $this->bank($user, 0));
+        return $messages;
+    }
+
+    /**
+     *
+     * @return array<string>
+     */
+    private function fold(): array
+    {
         $messages = ["You fold"];
+        $this->player->fold();
         $this->state->set("END");
         return $messages;
     }
@@ -236,15 +344,23 @@ class PokerGame
     /**
      * Performs end calculation
      * @param User $user
-     * 
+     *
      * @return array<string>
      */
-    private function end(User $user): array {
+    private function end(User $user): array
+    {
+        if ($this->player->getFolded()) {
+            return ["Bank wins"];
+        }
+        if ($this->bank->getFolded()) {
+            $user->setBalance($user->getBalance() + $this->pot);
+            return ["Player wins"];
+        }
         $messages = ["Calculating"];
         $count = count($this->rules);
         $playerPoint = false;
         $bankPoint = false;
-        for ($i = 0; $i < $count && !$playerPoint && !$bankPoint; $i++) {
+        for ($i = 0; $i < $count && (!$playerPoint || !$bankPoint); $i++) {
             if (!$playerPoint) {
                 $playerPoint = $this->rules[$i]->calculate(array_merge($this->player->hand(), $this->table->hand()));
             }
@@ -254,25 +370,25 @@ class PokerGame
         }
         // Assume points became Point objects
         if ($playerPoint->getPoint() > $bankPoint->getPoint()) {
-            array_push($messages, "Player wins");
+            array_push($messages, "Player wins with a " . $playerPoint->getMessage());
             $user->setBalance($user->getBalance() + $this->pot);
         } elseif ($playerPoint->getPoint() < $bankPoint->getPoint()) {
-            array_push($messages, "Bank wins");
+            array_push($messages, "Bank wins with a " . $bankPoint->getMessage());
         } else {
             if ($playerPoint->getTieBreakerPoint() > $bankPoint->getTieBreakerPoint()) {
-                array_push($messages, "Player wins");
+                array_push($messages, "Player wins with a " . $playerPoint->getMessage());
                 $user->setBalance($user->getBalance() + $this->pot);
             } elseif ($playerPoint->getTieBreakerPoint() < $bankPoint->getTieBreakerPoint()) {
-                array_push($messages, "Bank wins");
+                array_push($messages, "Bank wins with a " . $bankPoint->getMessage());
             } else {
                 $highHand = new HighHand();
                 $playerHighestCardPoint = $highHand->calculate($this->player->hand());
                 $bankHighestCardPoint = $highHand->calculate($this->bank->hand());
                 if ($playerHighestCardPoint->getTieBreakerPoint() > $bankHighestCardPoint->getTieBreakerPoint()) {
-                    array_push($messages, "Player wins");
+                    array_push($messages, "Player wins on a tie with the highest card");
                     $user->setBalance($user->getBalance() + $this->pot);
                 } elseif ($playerHighestCardPoint->getTieBreakerPoint() < $bankHighestCardPoint->getTieBreakerPoint()) {
-                    array_push($messages, "Bank wins");
+                    array_push($messages, "Bank wins on a tie with the highest card");
                 } else {
                     array_push($messages, "It's a tie");
                     $user->setBalance($user->getBalance() + ($this->pot / 2));
@@ -283,16 +399,18 @@ class PokerGame
     }
 
     /**
-     * 
+     *
      * @return array<string>
      */
-    private function reset(): array {
+    private function reset(): array
+    {
         $this->player->clear();
         $this->bank->clear();
         $this->table->clear();
         $this->deck = new TwigDeck(true);
         $this->deck->shuffleCards();
         $this->pot = 0;
+        $this->bankRaise = 0;
         $this->state->set("BLIND");
         return ["Reshuffling"];
     }
@@ -300,14 +418,16 @@ class PokerGame
     /**
      * @return array<string>
      */
-    private function river(): array {
+    private function river(): array
+    {
         $messages = ["Dealing river card"];
         $this->table->addCards($this->deck->draw(1));
         $this->state->advance();
         return $messages;
     }
 
-    public function renderPath(): string {
+    public function renderPath(): string
+    {
         return "poker/game/" . strtolower($this->state->current()) . ".html.twig";
     }
 }

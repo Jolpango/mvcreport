@@ -21,7 +21,7 @@ class UserController extends AbstractController
         if (!$session->get("user")) {
             return $this->redirectToRoute("proj-login");
         }
-        
+
         $user = $userRepository->find($session->get("user"));
         if ($user->getAdmin()) {
             $all = $userRepository->findAll();
@@ -36,7 +36,7 @@ class UserController extends AbstractController
     /**
      * @Route("/proj/add", name="proj-add-balance", methods={"POST"})
      */
-    public function addBalance(SessionInterface $session, Request $request , ManagerRegistry $doctrine): Response
+    public function addBalance(SessionInterface $session, Request $request, ManagerRegistry $doctrine): Response
     {
         $userName = $session->get("user");
         if (!$userName) {
@@ -52,7 +52,7 @@ class UserController extends AbstractController
     /**
      * @Route("/proj/change-image", name="proj-change-image", methods={"POST"})
      */
-    public function changeImage(SessionInterface $session, Request $request , ManagerRegistry $doctrine): Response
+    public function changeImage(SessionInterface $session, Request $request, ManagerRegistry $doctrine): Response
     {
         $userName = $session->get("user");
         if (!$userName) {
@@ -119,7 +119,7 @@ class UserController extends AbstractController
         $session->set("pokergame", null);
         $entityManager = $doctrine->getManager();
         $user = $entityManager->getRepository(User::class)->find($request->get("username"));
-        if($user && $user->getPassword() === $request->get("password")) {
+        if ($user && $user->getPassword() === $request->get("password")) {
             $session->set("user", $user->getName());
             $this->addFlash("messages", "Logged in successfully");
             return $this->redirectToRoute("proj");

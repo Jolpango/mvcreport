@@ -21,10 +21,31 @@ class Player implements \Countable, \Serializable
      * @param array<Card> $cards
      * @param string $name
      */
+    /**
+     * @var bool
+     */
+    private bool $folded;
     public function __construct(array $cards = [], string $name = "NoName")
     {
         $this->name = $name;
+        $this->folded = false;
         $this->addCards($cards);
+    }
+
+    /**
+     * @return void
+     */
+    public function fold(): void
+    {
+        $this->folded = true;
+    }
+
+    /**
+     * @return bool
+     */
+    public function getFolded(): bool
+    {
+        return $this->folded;
     }
 
     /**
@@ -68,6 +89,7 @@ class Player implements \Countable, \Serializable
      */
     public function clear(): array
     {
+        $this->folded = false;
         $hand = $this->hand;
         $this->hand = [];
         return $hand;
@@ -90,7 +112,8 @@ class Player implements \Countable, \Serializable
     {
         $data = [
             "hand" => serialize($this->hand),
-            "name" => serialize($this->name)
+            "name" => serialize($this->name),
+            "folded" => serialize($this->folded)
         ];
         return serialize($data);
     }
@@ -104,5 +127,6 @@ class Player implements \Countable, \Serializable
         $data = unserialize($data);
         $this->hand = unserialize($data["hand"]);
         $this->name = unserialize($data["name"]);
+        $this->folded = unserialize($data["folded"]);
     }
 }

@@ -15,7 +15,8 @@ use App\Repository\UserRepository;
 
 class PokerController extends AbstractController
 {
-    private function getCurrentUser(UserRepository $userRepository, SessionInterface $session): User|null {
+    private function getCurrentUser(UserRepository $userRepository, SessionInterface $session): User|null
+    {
         $username = $session->get("user");
         if (!$username) {
             return null;
@@ -29,10 +30,11 @@ class PokerController extends AbstractController
     /**
      * Returns current pokergame from session. New game is started if none exists
      * @param SessionInterface $session
-     * 
+     *
      * @return PokerGame
      */
-    private function getCurrentGame(SessionInterface $session): PokerGame {
+    private function getCurrentGame(SessionInterface $session): PokerGame
+    {
         return $session->get("pokergame") ?? new PokerGame();
     }
     /**

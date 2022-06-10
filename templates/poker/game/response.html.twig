@@ -1,0 +1,8 @@
+{% extends "poker/game/base.html.twig" %}
+{% block controls %}
+<h2>The bank raised by {{game.bankRaise}}</h2>
+<form method="post" action="{{url("proj-play-process")}}">
+    <button type="submit" name="type" value="CALL">Call</button>
+    <button type="submit" name="type" value="FOLD">Fold</button>
+</form>
+{% endblock %}
