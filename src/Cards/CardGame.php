@@ -198,8 +198,10 @@ class CardGame implements \Serializable
     private function buildPlayerData(): array
     {
         return [
-            "player" => array_merge($this->player->twigArray(), ["points" => PointSystem::points21($this->player->hand())]),
-            "cpu" => array_merge($this->cpu->twigArray(), ["points" => PointSystem::points21($this->cpu->hand())])
+            "player" =>
+                array_merge($this->player->twigArray(), ["points" => PointSystem::points21($this->player->hand())]),
+            "cpu" =>
+                array_merge($this->cpu->twigArray(), ["points" => PointSystem::points21($this->cpu->hand())])
         ];
     }
 

@@ -706,6 +706,11 @@ Search.appendIndex(
             "summary": "",
             "url": "classes/App-Controller-PokerController.html#method_reset"
         },                {
+            "fqsen": "\\App\\Controller\\PokerController\u003A\u003Aabout\u0028\u0029",
+            "name": "about",
+            "summary": "",
+            "url": "classes/App-Controller-PokerController.html#method_about"
+        },                {
             "fqsen": "\\App\\Controller\\UserController",
             "name": "UserController",
             "summary": "",
@@ -905,11 +910,6 @@ Search.appendIndex(
             "name": "User",
             "summary": "",
             "url": "classes/App-Entity-User.html"
-        },                {
-            "fqsen": "\\App\\Entity\\User\u003A\u003AgetId\u0028\u0029",
-            "name": "getId",
-            "summary": "",
-            "url": "classes/App-Entity-User.html#method_getId"
         },                {
             "fqsen": "\\App\\Entity\\User\u003A\u003AgetName\u0028\u0029",
             "name": "getName",
@@ -1361,21 +1361,6 @@ Search.appendIndex(
             "summary": "Returns\u0020the\u0020point\u0020of\u0020a\u0020hand",
             "url": "classes/App-Poker-Rules-ThreeOfAKind.html#method_calculate"
         },                {
-            "fqsen": "\\App\\Poker\\Rules\\TwoPair",
-            "name": "TwoPair",
-            "summary": "class\u0020TwoPair",
-            "url": "classes/App-Poker-Rules-TwoPair.html"
-        },                {
-            "fqsen": "\\App\\Poker\\Rules\\TwoPair\u003A\u003A__construct\u0028\u0029",
-            "name": "__construct",
-            "summary": "",
-            "url": "classes/App-Poker-Rules-TwoPair.html#method___construct"
-        },                {
-            "fqsen": "\\App\\Poker\\Rules\\TwoPair\u003A\u003Acalculate\u0028\u0029",
-            "name": "calculate",
-            "summary": "Returns\u0020the\u0020point\u0020of\u0020a\u0020hand",
-            "url": "classes/App-Poker-Rules-TwoPair.html#method_calculate"
-        },                {
             "fqsen": "\\App\\Repository\\BookRepository",
             "name": "BookRepository",
             "summary": "",
@@ -1435,6 +1420,21 @@ Search.appendIndex(
             "name": "remove",
             "summary": "",
             "url": "classes/App-Repository-UserRepository.html#method_remove"
+        },                {
+            "fqsen": "\\App\\Poker\\Rules\\TwoPair",
+            "name": "TwoPair",
+            "summary": "class\u0020TwoPair",
+            "url": "classes/App-Poker-Rules-TwoPair.html"
+        },                {
+            "fqsen": "\\App\\Poker\\Rules\\TwoPair\u003A\u003A__construct\u0028\u0029",
+            "name": "__construct",
+            "summary": "",
+            "url": "classes/App-Poker-Rules-TwoPair.html#method___construct"
+        },                {
+            "fqsen": "\\App\\Poker\\Rules\\TwoPair\u003A\u003Acalculate\u0028\u0029",
+            "name": "calculate",
+            "summary": "Returns\u0020the\u0020point\u0020of\u0020a\u0020hand",
+            "url": "classes/App-Poker-Rules-TwoPair.html#method_calculate"
         },                {
             "fqsen": "\\",
             "name": "\\",

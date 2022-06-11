@@ -1,0 +1,20 @@
+{% extends "poker/base.html.twig" %}
+{% block content %}
+<h1>Om Poker the game</h1>
+<h2>Kort beskrivning</h2>
+<p>Jag har valt att implementera Texas Hold'em. Du som spelare spelar mot "banken/datorn".</p>
+<p>Du har möjlighet att checka, betta och lägga dig. När du har gjort ditt val är det datorns tur. Datorn kommer att "analysera" vad du gjorde och beräkna vad den ska göra näst.</p>
+<p>Har du tillexempel bettat så kommer datorn att ha i åtanke hur mycket du bettade i relation till din total. Den jämför det du bettade med en uppskattning av sin egen hand och gör sitt beslut därefter. Det finns också en chans att datorn beter sig oförutsägbart, det finns alltså en chans att den bluffar eller försöker syna din bluff. Det är inte särskilt sofistikerat men ganska kul att spela mot den.</p>
+<p>För att kunna spela måste du skapa ett konto och sätta in lite pengar.</p>
+<h2>Kodkvalitet</h2>
+<p>Min fokus för kodkvalitet har varit att ha en bra struktur på enligt mvc designmönstret. Själva spelloopen fungerar på samma sätt som mitt andra kortspel 21.</p>
+<p>Kontrollern har som uppgift att ta emot användarens input, skicka vidare till spelet(Modellen) som uppdaterar sig själv. Beroende på vilket state spelet befinner sig i så kommer kontrollern att använda olika vyer. Vyernas enda uppgift är att visa upp information på skärmen. Det finns olika vyer som visar upp olika states av spelet och förser spelaren med olika knappar att klicka på.</p>
+<p>Jag tycker att jag har generellt sätt en bra struktur på spelet. Alla mina regelklasser är korta och bra som fungerar väl tillsammans med PokerGame klassen. Däremot är PokerGame klassen lite för stor och komplex. Hade jag haft mer tid hade jag brytit ut mer funktionalitet från den klassen och sett till att den har en tydlig uppgift. Just nu gör den lite för mycket. Men jag tycker fortfarande att den klassen förser en annan utvecklare med ett bra interface mot klassen. Jag tycker den är lätt att använda, däremot just nu är den lite svår att vidareutveckla utan strukturella förändringar.</p>
+<p>Mina klasser exkluderat(Controller, Entity, Repository och Kernel.php) har en kodtäckning på 66.89-79.17% beroende om på vilken mätsätt man tittar på. Detta syns dock inte på Scrutinizer för dom verkar inte vilja exkludera dom andra klasserna. Men om ni följer länken till phpunit sidan så kommer ni till min coverage sida.</p>
+
+<a href="../../docs/metrics">PHPmetrics</a>
+<a href="../../build/coverage">PHPUnit</a>
+<a href="../../docs/api">PHPdoc</a>
+<a href="https://github.com/Jolpango/mvcreport">GitHub</a>
+<a href="https://scrutinizer-ci.com/g/Jolpango/mvcreport/">Scrutinizer</a>
+{% endblock %}

@@ -3,6 +3,9 @@ MVCREPORT
 
 Report page built with symfony for course MVC at bth.
 
+Finns 2 olika kortspel att spela. Ett bibliotek att använda.
+Pokerspelet nås genom länken Projekt.
+
 Badges
 ----------
 [![Scrutinizer Code Quality](https://scrutinizer-ci.com/g/Jolpango/mvcreport/badges/quality-score.png?b=main)](https://scrutinizer-ci.com/g/Jolpango/mvcreport/?branch=main)

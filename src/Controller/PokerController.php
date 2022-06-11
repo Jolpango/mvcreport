@@ -63,8 +63,12 @@ class PokerController extends AbstractController
     /**
      * @Route("/proj/play", name="proj-play-process", methods={"POST"})
      */
-    public function process(SessionInterface $session, UserRepository $userRepository, Request $request, ManagerRegistry $doctrine): Response
-    {
+    public function process(
+        SessionInterface $session,
+        UserRepository $userRepository,
+        Request $request,
+        ManagerRegistry $doctrine
+    ): Response {
         $user = $this->getCurrentUser($userRepository, $session);
         if (!$user) {
             return $this->redirectToRoute("proj-login");
@@ -85,5 +89,12 @@ class PokerController extends AbstractController
     {
         $session->set("pokergame", null);
         return $this->redirectToRoute("proj-play");
+    }
+    /**
+     * @Route("/proj/about", name="proj-about", methods={"GET"})
+     */
+    public function about(): Response
+    {
+        return $this->render("poker/about.html.twig");
     }
 }

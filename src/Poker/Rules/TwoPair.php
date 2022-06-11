@@ -27,7 +27,10 @@ class TwoPair extends Rule
         $biggestCard = $cards[0]->getValue();
         $size = count($cards);
         for ($i = 1; $i < $size && $counter < 2; $i++) {
-            if (array_search($cards[$i]->getValue(), $pairs) === false && $cards[$i]->getValue() === $cards[$i - 1]->getValue()) {
+            if (
+                array_search($cards[$i]->getValue(), $pairs) === false
+                && $cards[$i]->getValue() === $cards[$i - 1]->getValue()
+            ) {
                 $counter++;
                 array_push($pairs, $cards[$i]->getValue());
             }

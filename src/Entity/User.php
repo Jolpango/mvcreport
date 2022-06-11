@@ -24,11 +24,6 @@ class User
     #[ORM\Column(type: 'string', length: 255)]
     private $image;
 
-    public function getId(): ?int
-    {
-        return $this->id;
-    }
-
     public function getName(): ?string
     {
         return $this->name;

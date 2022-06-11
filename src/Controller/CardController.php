@@ -13,16 +13,26 @@ use Symfony\Component\HttpFoundation\Session\SessionInterface;
 class CardController extends AbstractController
 {
     private TwigDeck $deck;
-    private function loadFromSession(SessionInterface $session)
+    /**
+     * @param SessionInterface $session
+     *
+     * @return void
+     */
+    private function loadFromSession(SessionInterface $session): void
     {
         // If there are no cards in session. load a new deck
         if ($session->get("cards")) {
-            $this->deck = TwigDeck::fromArray($session->get("cards") ?? []);
+            $this->deck = TwigDeck::fromArray($session->get("cards"));
         } else {
-            $this->deck = new TwigDeck($newDeck = true);
+            $this->deck = new TwigDeck(true);
         }
     }
-    private function saveToSession(SessionInterface $session)
+    /**
+     * @param SessionInterface $session
+     *
+     * @return void
+     */
+    private function saveToSession(SessionInterface $session): void
     {
         $session->set("cards", $this->deck->toArray());
     }

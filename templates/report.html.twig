@@ -79,5 +79,26 @@ TIL: Att det är trevligt att jobba med scrutinizer. Skönt att få sina tester 
 
 Kursmoment 7-10
 ------------
+### Krav 1, 2, 3
+#### Projektfokus
+Jag har valt att implementera pokerspelet Texas Hold'em där du möter banken istället för andra spelare.
+#### Databas med ORM
+Jag kände inte att jag hade någon bra ide om hur/varför jag kan/ska kombinera allt jag skrivit i tidigare kursmoment med kort till någon slags databas.
+Därför valde jag att implementera ett login system där användarna ligger i databasen. För att kunna spela måste man logga in. Pengarna man satsar ligger i databasen och det används utav pokerspelet.
+#### Utseende och användbarhet
+Jag försökte lite snabbt att imitera någon slags pokerbord. Tycker jag lyckades någorlunda, med "lite" fantasi ser det ut som jag tänkt, ser dock ut att vara från tidigt 2000. Den är dock simpel att använda. Det ska inte gå att göra fel. Användaren kan enkelt navigera med knappar och länkar.
+
+### Krav 5: Inloggning
+Jag har implementerat ett simpelt användarsystem. Det finns två olika typer av användare, admin eller ej admin.
+Är man en administratör så har man möjlighet att registrera nya användare, ändra all information om dom(förutom användarnamn för det är min primary-key). Du kan också ta bort och lägga till administratörsrättigheter från dig själv och andra användare.
+Om man inte är admin så kan man ändra information om sin egen användare bara. Du kan inte heller ta bort pengar från kontot utan bara göra insättningar och byta profilbild.
+
+### Allmänt stycke
+Jag tycker att detta projektet har gått ganska bra att genomföra. Tog längre tid än vad jag först trott att det skulle göra, samt att jag läste lite fel på datumen. Har annars inte haft särskilt mycket problem med logik eller liknande. Har väl haft mer problem med språket och ramverket, känner att det tar tid att göra saker med den stacken(förmodligen för att jag är dålig med det). Jag har ändå lärt mig mycket av projektet och tycker att det har innefattat en lagom stor del, rimligt med andra ord. Tycker själva projektiden var rolig, men inte lika roligt att skriva det symfony.
+
+### Om kursen
+Tycker att kursen har varit lärorik. Inte världen största fan av php eller symfony, men det har funkat. Gillade dock starkt kursmomentet om ORM, för det kändes som ett väldigt nyttigt och lärorikt, ett smidigt sätt att arbeta på, hade gärna sett mer fokus på det. Om jag hade fått välja skulle jag ha bytt språk och ramverk.
+Har varit bra och informativa lektioner/föreläsningar. Hade rekomenderat kursen till andra, även fast jag inte gillar php/symfony så är principerna densamma och information vi har fått har varit bra.
+
 {% endapply %}
 {% endblock %}

@@ -20,12 +20,16 @@ use App\Poker\Rules\TwoPair;
 use App\Poker\Rules\Pair;
 use App\Poker\Rules\Flush;
 use App\Poker\Rules\Point;
+use App\Poker\Rules\Rule;
 
 /**
  * Card Game 21ish. handles requests and returns proper data for rendering
  */
 class PokerGame
 {
+    /**
+     * @var array<Rule>
+     */
     private array $rules;
     private State $state;
     private int $pot;
@@ -151,8 +155,9 @@ class PokerGame
     /**
      * Processes the request from the user
      * @param Request $request
-     *
+     * $request->get("type") Acceptable values = ["BLIND", "DEAL_FLOP", "BET", "CHECK", "FOLD", "CALL", "RESET"]
      * @return array<string>
+     * Returns a string of messages for you to display. These messages document what happend during the request.
      */
     public function processRequest(Request $request, User $user): array
     {
@@ -179,7 +184,7 @@ class PokerGame
                 }
                 return $this->check($user);
             case "FOLD":
-                if (!$this->state->is("TURN") || !$this->state->is("RESPONSE")) {
+                if (!$this->state->is("TURN") && !$this->state->is("RESPONSE")) {
                     return ["Wrong state"];
                 }
                 return $this->fold();
@@ -245,7 +250,14 @@ class PokerGame
     }
 
 
-    private function handWorth($cards, $opponentTotal, $opponentRaise): int
+    /**
+     * @param array $cards
+     * @param int $opponentTotal
+     * @param int $opponentRaise
+     *
+     * @return int
+     */
+    private function handWorth(array $cards, int $opponentTotal, int $opponentRaise): int
     {
         // $cardsLeft = 7 - count($cards);
         $confidenceCoefficient = 2;
@@ -275,8 +287,9 @@ class PokerGame
         $bluffCallCoefficient = 50;
         $reckless = rand(1, 100) < $recklessCoefficient;
         $callBluff = rand(1, 100) < $bluffCallCoefficient;
+        $mergedHand = array_merge($this->bank->hand(), $this->table->hand());
         if ($amount === 0) {
-            $worth = $this->handWorth(array_merge($this->bank->hand(), $this->table->hand()), $user->getBalance(), $amount);
+            $worth = $this->handWorth($mergedHand, $user->getBalance(), $amount);
             if (($worth >= $raiseCoefficient * $user->getBalance() / 10 || $reckless) && $user->getBalance() !== 0) {
                 $this->bankRaise = $worth;
                 array_push($messages, "The bank raises by " . $this->bankRaise);
@@ -293,7 +306,7 @@ class PokerGame
                 }
             }
         } else {
-            $worth = $this->handWorth(array_merge($this->bank->hand(), $this->table->hand()), $user->getBalance(), $amount);
+            $worth = $this->handWorth($mergedHand, $user->getBalance(), $amount);
             if ($worth > $amount * $raiseCoefficient && $user->getBalance() !== 0) {
                 $this->bankRaise = $worth - $amount;
                 array_push($messages, "The bank raises by " . $this->bankRaise);
