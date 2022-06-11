@@ -23,7 +23,7 @@ class ThreeOfAKind extends Rule
     {
         $cards = $this->sortCardsDescending($cards);
         $counter = 0;
-        $biggestCard = $cards[0]->getValue();
+        $biggestCard = $cards[0];
         $size = count($cards);
         for ($i = 1; $i < $size && $counter < 3; $i++) {
             if ($cards[$i]->getValue() === $cards[$i - 1]->getValue()) {

@@ -28,14 +28,14 @@ class Straight extends Rule
             }
         }
         $cards = $this->sortCardsDescending($cards);
-        $counter = 0;
+        $counter = 1;
         $biggestCard = $cards[0]->getValue();
         $size = count($cards);
         for ($i = 1; $i < $size && $counter < 5; $i++) {
             if ($cards[$i]->getValue() + 1 === $cards[$i - 1]->getValue()) {
                 $counter++;
             } elseif ($cards[$i]->getValue() !== $cards[$i - 1]->getValue()) {
-                $counter = 0;
+                $counter = 1;
                 $biggestCard = $cards[$i]->getValue();
             }
         }

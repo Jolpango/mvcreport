@@ -214,3 +214,8 @@ textarea {
     border-radius: 10px;
     border: 1px black solid;
 }
+
+.poker-nav {
+    font-family: monospace;
+    background-color: green;
+}

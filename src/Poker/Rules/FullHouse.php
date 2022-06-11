@@ -22,7 +22,7 @@ class FullHouse extends Rule
     public function calculate(array $cards): Point|bool
     {
         $cards = $this->sortCardsDescending($cards);
-        $counter = 0;
+        $counter = 1;
         $pairs = [];
         $threes = [];
         $size = count($cards);
@@ -30,7 +30,7 @@ class FullHouse extends Rule
             if ($cards[$i]->getValue() === $cards[$i - 1]->getValue()) {
                 $counter++;
             } elseif ($cards[$i]->getValue() !== $cards[$i - 1]->getValue()) {
-                $counter = 0;
+                $counter = 1;
             }
             if ($counter === 2) {
                 array_push($pairs, $cards[$i]->getValue());

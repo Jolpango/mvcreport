@@ -159,16 +159,34 @@ class PokerGame
         $type = $request->get("type");
         switch ($type) {
             case "BLIND":
+                if (!$this->state->is("BLIND")) {
+                    return ["Wrong state"];
+                }
                 return $this->blind($user);
             case "DEAL_FLOP":
+                if (!$this->state->is("FLOP")) {
+                    return ["Wrong state"];
+                }
                 return $this->flop();
             case "BET":
+                if (!$this->state->is("TURN")) {
+                    return ["Wrong state"];
+                }
                 return $this->bet($request, $user);
             case "CHECK":
+                if (!$this->state->is("TURN")) {
+                    return ["Wrong state"];
+                }
                 return $this->check($user);
             case "FOLD":
+                if (!$this->state->is("TURN") || !$this->state->is("RESPONSE")) {
+                    return ["Wrong state"];
+                }
                 return $this->fold();
             case "CALL":
+                if (!$this->state->is("RESPONSE")) {
+                    return ["Wrong state"];
+                }
                 return $this->call($user);
             case "RESET":
                 return $this->reset();
@@ -184,6 +202,9 @@ class PokerGame
      */
     private function blind(User $user): array
     {
+        if ($user->getBalance() < $this->smallBlind) {
+            return ["Not enough coins"];
+        }
         $messages = ["Adding blinds"];
         $user->setBalance($user->getBalance() - $this->smallBlind);
         $this->pot += $this->smallBlind * 2;
@@ -226,7 +247,7 @@ class PokerGame
 
     private function handWorth($cards, $opponentTotal, $opponentRaise): int
     {
-        $cardsLeft = 7 - count($cards);
+        // $cardsLeft = 7 - count($cards);
         $confidenceCoefficient = 2;
         $points = false;
         for ($i = 0; $i < count($this->rules) && !$points; $i++) {

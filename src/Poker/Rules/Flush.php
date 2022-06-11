@@ -25,12 +25,12 @@ class Flush extends Rule
             return strcmp($a->getSuit(), $b->getSuit());
         });
         $size = count($cards);
-        $counter = 0;
+        $counter = 1;
         for ($i = 1; $i < $size && $counter < 5; $i++) {
             if ($cards[$i]->getSuit() === $cards[$i - 1]->getSuit()) {
                 $counter++;
             } else {
-                $counter = 0;
+                $counter = 1;
             }
         }
         if ($counter >= 5) {

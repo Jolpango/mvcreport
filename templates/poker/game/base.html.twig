@@ -1,10 +1,9 @@
 {% extends "poker/base.html.twig" %}
 {% block content %}
 {% include "views/flash.html.twig" %}
-{{dump(game)}}
-<form method="post" action="{{url("proj-reset-game")}}">
+<!-- <form method="post" action="{{url("proj-reset-game")}}">
     <button type="submit">Reset</button>
-</form>
+</form> -->
 <h2>bank</h2>
 <div class="card-container flex">
     {% for card in game.bank.hand %}
